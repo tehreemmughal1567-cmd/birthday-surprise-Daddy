@@ -18,8 +18,17 @@
 function checkPassword() {
   const password = document.getElementById("password").value;
   if (password === "Infinity") {
-    document.getElementById("opening").innerHTML = "Happy Birthday Daddy 🥹❤️✨";
+    document.getElementById("opening").innerHTML = `
+  <h1>Happy Birthday Daddy ❤️</h1>
+  <button onclick="showSurprise()">💌 Open Your Surprise 💌</button>
+`;
   } else {
+      function showSurprise() {
+  document.getElementById("opening").innerHTML = `
+    <h1>🎂 Happy Birthday Daddy ❤️</h1>
+    <p>My love, this little surprise is just for you. 🥹❤️</p>
+  `;
+}
     alert("Wrong password 😭");
   }
 }
