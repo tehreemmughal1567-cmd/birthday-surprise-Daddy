@@ -29,9 +29,38 @@ function checkPassword() {
 }
 
 function showSurprise() {
-  document.getElementById("opening").innerHTML =
-    "<h1>🎂 Happy Birthday Daddy ❤️</h1>" +
-    "<p>My love, this little surprise is just for you. 🥹❤️</p>";
+  document.getElementById("opening").innerHTML = `
+    <h1>🎂 Happy Birthday Daddy ❤️</h1>
+
+    <p>
+      My love, this little surprise is just for you. 🥹❤️
+      I love you more than words can explain.
+      You are my favorite person and my happiest place. ❤️
+    </p>
+
+    <p>
+      I hope your birthday is as beautiful and special as you are to me. 🎂✨
+    </p>
+
+    <button onclick="window.open('https://open.spotify.com/track/04y4lqZt14y7k7pXYE19Zy', '_blank')">
+      🎵 Our Song
+    </button>
+
+    <br><br>
+
+    <button onclick="showNextSurprise()">
+      💖 Next Surprise
+    </button>
+  `;
+}
+
+function showNextSurprise() {
+  document.getElementById("opening").innerHTML = `
+    <h1>💌 One More Thing...</h1>
+    <p>
+      This is only the beginning of your little surprise. 🥹❤️
+    </p>
+  `;
 }
 </script>
     
