@@ -306,11 +306,178 @@ function openLoveLetter() {
 
 function showFinalSurprise() {
   document.getElementById("opening").innerHTML = `
-    <h1>💖 Your Next Surprise</h1>
-    <p>
-      Something special is waiting for you... 🥹❤️
-    </p>
+    <div style="
+      min-height:100vh;
+      background:linear-gradient(#071a33,#0d3158);
+      color:white;
+      text-align:center;
+      padding:40px 18px;
+      box-sizing:border-box;
+      overflow:hidden;
+    ">
+
+      <div style="font-size:42px; letter-spacing:12px;">
+        🤍 🎈 🤍 🎈 🤍
+      </div>
+
+      <h1 style="
+        font-size:32px;
+        margin:25px 0 10px;
+        letter-spacing:1px;
+      ">
+        🎉 Happy Birthday Aman 🎉
+      </h1>
+
+      <p style="font-size:17px;">
+        Make a wish, my love... 🥹💙
+      </p>
+
+      <div style="
+        margin:35px auto;
+        max-width:340px;
+        position:relative;
+      ">
+
+        <div style="
+          font-size:70px;
+          margin-bottom:-10px;
+        ">
+          🧸 &nbsp; 🐻
+        </div>
+
+        <div style="
+          background:#f5f7fa;
+          color:#071a33;
+          border-radius:15px;
+          padding:18px;
+          box-shadow:0 12px 30px rgba(0,0,0,.35);
+        ">
+
+          <div style="
+            font-size:30px;
+            letter-spacing:5px;
+            margin-bottom:8px;
+          ">
+            🕯️ 🕯️ 🕯️
+          </div>
+
+          <div style="
+            font-size:28px;
+            font-weight:bold;
+            color:#123d68;
+          ">
+            A ∞ M
+          </div>
+
+          <div style="
+            margin:12px auto;
+            width:230px;
+            height:70px;
+            background:#dce8f5;
+            border-radius:12px 12px 20px 20px;
+            box-shadow:0 8px 0 #9db8d3;
+          "></div>
+
+        </div>
+      </div>
+
+      <div id="candleText" style="
+        font-size:20px;
+        margin:25px 0;
+      ">
+        1... 2... 3... 🕯️✨
+      </div>
+
+      <button onclick="blowCandles()" style="
+        border:none;
+        background:white;
+        color:#071a33;
+        padding:14px 28px;
+        border-radius:30px;
+        font-size:17px;
+        font-weight:bold;
+        cursor:pointer;
+      ">
+        💨 Blow the candles
+      </button>
+
+      <div id="birthdayReveal" style="
+        display:none;
+        margin-top:30px;
+      ">
+        <h1 style="
+          font-size:34px;
+          color:white;
+        ">
+          🎉 HAPPY BIRTHDAY AMAN 🎉
+        </h1>
+
+        <div style="
+          font-size:28px;
+          letter-spacing:8px;
+        ">
+          🤍 ♡ 🤍 ♡ 🤍
+        </div>
+
+        <p style="
+          font-size:18px;
+          line-height:1.6;
+        ">
+          May your life always be filled with happiness,
+          success, peace and beautiful moments. 💙
+        </p>
+
+        <div style="
+          margin-top:45px;
+          background:#f7f1e3;
+          color:#263238;
+          padding:15px;
+          border-radius:12px;
+        ">
+
+          <div style="
+            height:260px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:20px;
+          ">
+            📸<br>
+            Your Childhood Photo
+          </div>
+
+          <p style="
+            font-size:17px;
+            line-height:1.7;
+          ">
+            Before you became the man carrying so many
+            responsibilities, you were once this little boy
+            with so many dreams. And today, I’m so proud of
+            the man you’ve become. No matter how grown-up
+            you get, this little boy will always have a
+            special place in my heart. 💙🥹
+          </p>
+
+        </div>
+
+        <div style="
+          margin-top:35px;
+          font-size:55px;
+        ">
+          ∞
+        </div>
+
+      </div>
+
+    </div>
   `;
+}
+
+function blowCandles() {
+  document.getElementById("candleText").innerHTML =
+    "💨✨ The candles are blown out! ✨💨";
+
+  document.getElementById("birthdayReveal").style.display = "block";
 }
 function revealMemory(number) {
   const photos = document.querySelectorAll(".memoryPhoto");
