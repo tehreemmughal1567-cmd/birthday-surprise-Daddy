@@ -56,11 +56,112 @@ function showSurprise() {
 
 function showNextSurprise() {
   document.getElementById("opening").innerHTML = `
-    <h1>💌 One More Thing...</h1>
-    <p>
-      This is only the beginning of your little surprise. 🥹❤️
-    </p>
+    <div style="
+      min-height:100vh;
+      background:#071a33;
+      color:white;
+      text-align:center;
+      padding:40px 20px;
+      box-sizing:border-box;
+    ">
+
+      <h1 style="margin-bottom:10px;">💙 Our Memories 💙</h1>
+
+      <p style="margin-bottom:35px; opacity:.9;">
+        Tap each memory to reveal it. 🥹❤️
+      </p>
+
+      <div id="memoryHeart" style="
+        position:relative;
+        width:320px;
+        height:300px;
+        margin:0 auto 30px;
+      ">
+
+        <div class="memoryPhoto" onclick="revealMemory(0)" style="
+          position:absolute; left:65px; top:10px;
+          width:90px; height:90px;
+          border-radius:18px;
+          background:#29496b;
+          display:flex; align-items:center; justify-content:center;
+          font-size:18px; cursor:pointer;
+          filter:blur(7px);
+          transition:.5s;
+        ">📷 1</div>
+
+        <div class="memoryPhoto" onclick="revealMemory(1)" style="
+          position:absolute; left:165px; top:10px;
+          width:90px; height:90px;
+          border-radius:18px;
+          background:#29496b;
+          display:flex; align-items:center; justify-content:center;
+          font-size:18px; cursor:pointer;
+          filter:blur(7px);
+          transition:.5s;
+        ">📷 2</div>
+
+        <div class="memoryPhoto" onclick="revealMemory(2)" style="
+          position:absolute; left:20px; top:105px;
+          width:90px; height:90px;
+          border-radius:18px;
+          background:#29496b;
+          display:flex; align-items:center; justify-content:center;
+          font-size:18px; cursor:pointer;
+          filter:blur(7px);
+          transition:.5s;
+        ">📷 3</div>
+
+        <div class="memoryPhoto" onclick="revealMemory(3)" style="
+          position:absolute; left:210px; top:105px;
+          width:90px; height:90px;
+          border-radius:18px;
+          background:#29496b;
+          display:flex; align-items:center; justify-content:center;
+          font-size:18px; cursor:pointer;
+          filter:blur(7px);
+          transition:.5s;
+        ">📷 4</div>
+
+        <div class="memoryPhoto" onclick="revealMemory(4)" style="
+          position:absolute; left:115px; top:190px;
+          width:90px; height:90px;
+          border-radius:18px;
+          background:#29496b;
+          display:flex; align-items:center; justify-content:center;
+          font-size:18px; cursor:pointer;
+          filter:blur(7px);
+          transition:.5s;
+        ">📷 5</div>
+
+      </div>
+
+      <div id="memoryMessage" style="
+        max-width:320px;
+        margin:0 auto;
+        min-height:70px;
+        font-size:17px;
+        line-height:1.6;
+      "></div>
+
+    </div>
   `;
+}
+
+function revealMemory(number) {
+  const photos = document.querySelectorAll(".memoryPhoto");
+
+  photos[number].style.filter = "blur(0)";
+
+  const messages = [
+    "Memory 1 — یہاں ہماری پہلی memory کا message آئے گا۔ ❤️",
+    "Memory 2 — یہاں دوسری memory کا message آئے گا۔ 🥹",
+    "Memory 3 — یہاں تیسری memory کا message آئے گا۔ 💙",
+    "Memory 4 — یہاں چوتھی memory کا message آئے گا۔ ✨",
+    "Memory 5 — یہاں ہماری پانچویں memory کا message آئے گا۔ ❤️"
+  ];
+
+  document.getElementById("memoryMessage").innerHTML =
+    `<p>${messages[number]}</p>`;
 }
 </script>
     
