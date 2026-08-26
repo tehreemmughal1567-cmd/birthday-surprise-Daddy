@@ -479,7 +479,25 @@ function blowCandles() {
 
   document.getElementById("birthdayReveal").style.display = "block";
 }
-        <!-- FINAL INFINITY PAGE -->
+        
+function revealMemory(number) {
+  const photos = document.querySelectorAll(".memoryPhoto");
+
+  photos[number].style.filter = "blur(0)";
+
+  const messages = [
+    "Memory 1 — یہاں ہماری پہلی memory کا message آئے گا۔ ❤️",
+    "Memory 2 — یہاں دوسری memory کا message آئے گا۔ 🥹",
+    "Memory 3 — یہاں تیسری memory کا message آئے گا۔ 💙",
+    "Memory 4 — یہاں چوتھی memory کا message آئے گا۔ ✨",
+    "Memory 5 — یہاں ہماری پانچویں memory کا message آئے گا۔ ❤️"
+  ];
+
+  document.getElementById("memoryMessage").innerHTML =
+    `<p>${messages[number]}</p>`;
+}
+</script>
+    <!-- FINAL INFINITY PAGE -->
 <div id="finalPage" class="final-page">
 
   <div class="paper">
@@ -638,27 +656,30 @@ function blowCandles() {
   margin: 20px 0;
 }
 
-.special,
-.quote,
-.promise,
-.together,
-.forever,
-.love {
+.special {
+  font-size: 21px !important;
   color: #244b88;
   font-weight: bold;
 }
 
-.special {
-  font-size: 21px !important;
-}
-
 .quote {
   font-size: 22px !important;
+  color: #244b88;
+  font-weight: bold;
   font-style: italic;
 }
 
 .promise {
   font-size: 23px !important;
+  color: #244b88;
+  font-weight: bold;
+}
+
+.together,
+.forever,
+.love {
+  color: #244b88;
+  font-weight: bold;
 }
 
 .together {
@@ -772,23 +793,6 @@ function blowCandles() {
   }
 }
 </style>
-function revealMemory(number) {
-  const photos = document.querySelectorAll(".memoryPhoto");
-
-  photos[number].style.filter = "blur(0)";
-
-  const messages = [
-    "Memory 1 — یہاں ہماری پہلی memory کا message آئے گا۔ ❤️",
-    "Memory 2 — یہاں دوسری memory کا message آئے گا۔ 🥹",
-    "Memory 3 — یہاں تیسری memory کا message آئے گا۔ 💙",
-    "Memory 4 — یہاں چوتھی memory کا message آئے گا۔ ✨",
-    "Memory 5 — یہاں ہماری پانچویں memory کا message آئے گا۔ ❤️"
-  ];
-
-  document.getElementById("memoryMessage").innerHTML =
-    `<p>${messages[number]}</p>`;
-}
-</script>
     
     
 
