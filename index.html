@@ -796,7 +796,37 @@ function revealMemory(number) {
     
     
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const finalPage = document.getElementById("finalPage");
 
+  if (!finalPage) return;
+
+  // Keep the final page hidden until Infinity is clicked
+  finalPage.style.display = "none";
+
+  const elements = document.querySelectorAll("button, a");
+
+  elements.forEach(function (element) {
+    const text = element.textContent.trim().toLowerCase();
+
+    if (text.includes("infinity") || text.includes("♾")) {
+      element.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        finalPage.style.display = "flex";
+
+        setTimeout(function () {
+          finalPage.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        }, 100);
+      });
+    }
+  });
+});
+</script>
 </body>
 </html>
 
