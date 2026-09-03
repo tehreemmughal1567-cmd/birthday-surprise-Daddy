@@ -1,72 +1,567 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Daddy Birthday ❤️</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daddy Birthday ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #071a33;
+    }
+
+    button {
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .memoryPhoto {
+      position: absolute;
+      width: 90px;
+      height: 90px;
+      border-radius: 18px;
+      background: #29496b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      font-size: 18px;
+      cursor: pointer;
+      filter: blur(7px);
+      transition: .5s;
+      box-shadow: 0 6px 15px rgba(0,0,0,.3);
+    }
+
+    .memoryPhoto img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 18px;
+      display: block;
+    }
+
+    .final-page {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #173b72, #315fa3, #173b72);
+      padding: 45px 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .paper {
+      position: relative;
+      width: 100%;
+      max-width: 650px;
+      background: rgba(255,255,255,0.97);
+      border: 3px solid white;
+      border-radius: 8px;
+      padding: 45px 30px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+
+    .letter {
+      text-align: center;
+      color: #26344d;
+      line-height: 1.8;
+    }
+
+    .letter h1 {
+      font-size: 27px;
+      color: #243f72;
+      margin-bottom: 30px;
+    }
+
+    .letter p {
+      font-size: 16px;
+      margin: 20px 0;
+    }
+
+    .special {
+      font-size: 21px !important;
+      color: #244b88;
+      font-weight: bold;
+    }
+
+    .quote {
+      font-size: 22px !important;
+      color: #244b88;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    .promise {
+      font-size: 23px !important;
+      color: #244b88;
+      font-weight: bold;
+    }
+
+    .together,
+    .forever,
+    .love {
+      color: #244b88;
+      font-weight: bold;
+    }
+
+    .together {
+      font-size: 20px !important;
+    }
+
+    .infinity {
+      font-size: 75px;
+      line-height: 1;
+      margin: 30px 0;
+      animation: infinityGlow 2s ease-in-out infinite alternate;
+    }
+
+    .ending {
+      font-size: 18px !important;
+    }
+
+    .love {
+      font-size: 19px !important;
+      margin-top: 35px !important;
+    }
+
+    .final-signature {
+      margin-top: 45px;
+      padding-top: 25px;
+      border-top: 1px solid rgba(36,75,136,0.25);
+      text-align: center;
+    }
+
+    .big-infinity {
+      border: none;
+      background: transparent;
+      font-size: 100px;
+      line-height: 1;
+      color: #244b88;
+      animation: infinityGlow 2s ease-in-out infinite alternate;
+    }
+
+    .alm {
+      font-family: Georgia, serif;
+      font-size: 34px;
+      font-weight: bold;
+      color: #243f72;
+      margin-top: 12px;
+      display: none;
+    }
+
+    .alm span {
+      font-size: 30px;
+    }
+
+    .birthday {
+      font-size: 20px;
+      color: #405779;
+      margin-top: 12px;
+      letter-spacing: 1px;
+      display: none;
+    }
+
+    .lipstick {
+      position: absolute;
+      font-size: 42px;
+      opacity: 0.85;
+    }
+
+    .lipstick-left {
+      left: -12px;
+      top: 80px;
+      transform: rotate(-15deg);
+    }
+
+    .lipstick-right {
+      right: -12px;
+      top: 145px;
+      transform: rotate(15deg);
+    }
+
+    @keyframes infinityGlow {
+      from {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+
+      to {
+        transform: scale(1.08);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .final-page {
+        padding: 25px 10px;
+      }
+
+      .paper {
+        padding: 35px 20px;
+      }
+
+      .letter h1 {
+        font-size: 23px;
+      }
+
+      .letter p {
+        font-size: 15px;
+      }
+
+      .big-infinity {
+        font-size: 80px;
+      }
+
+      .alm {
+        font-size: 29px;
+      }
+
+      .birthday {
+        font-size: 17px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<h1>Happy Birthday Daddy 🥹❤️</h1>
+<!-- MAIN PAGE -->
+<div id="opening" style="
+  min-height:100vh;
+  background:#071a33;
+  color:white;
+  text-align:center;
+  padding:40px 20px;
+">
 
-<p>Welcome to your special surprise.</p>
+  <h1>Happy Birthday Daddy 🥹❤️</h1>
 
-</body
-   <div>♾️</div> 
-<div id="opening">🌸 For Daddy ❤️ 🌸</div>
-<input id="password" type="password" placeholder="Enter Password">
-   <button onclick="checkPassword()">Unlock</button> 
-    <script>
+  <p>Welcome to your special surprise.</p>
+
+  <div style="font-size:55px; margin:25px 0;">
+    ♾️
+  </div>
+
+  <div style="font-size:24px; margin-bottom:25px;">
+    🌸 For Daddy ❤️ 🌸
+  </div>
+
+  <input
+    id="password"
+    type="password"
+    placeholder="Enter Password"
+    style="
+      padding:13px;
+      border-radius:10px;
+      border:none;
+      font-size:16px;
+      width:230px;
+      text-align:center;
+    "
+  >
+
+  <br><br>
+
+  <button
+    onclick="checkPassword()"
+    style="
+      border:none;
+      background:white;
+      color:#071a33;
+      padding:13px 25px;
+      border-radius:25px;
+      font-size:17px;
+      font-weight:bold;
+    "
+  >
+    Unlock ❤️
+  </button>
+
+</div>
+
+
+<!-- FINAL INFINITY PAGE -->
+<div id="finalPage" style="display:none;">
+
+  <div class="final-page">
+
+    <div class="paper">
+
+      <div class="lipstick lipstick-left">💄</div>
+      <div class="lipstick lipstick-right">💋</div>
+
+      <div class="letter">
+
+        <h1>
+          If Only I Could Be There With You… 🥹❤️
+        </h1>
+
+        <p>
+          If only I could be there with you today… sitting beside you,
+          looking at your smile and watching your eyes light up while you
+          celebrate your special day.
+        </p>
+
+        <p>
+          I wish I could see your happiness with my own eyes, hold your hand,
+          give you the tightest hug, and simply be there beside you.
+        </p>
+
+        <p>
+          But this is the hardest part of loving someone from a long distance…
+          sometimes you have so much love to give, but you can't be there to
+          give it in person. 🥹
+        </p>
+
+        <p>
+          I may not have everything I wish I could have with you right now.
+          I don't have your hand in mine, I can't sit beside you, I can't
+          surprise you by showing up at your door, and I can't see your
+          beautiful smile when you read this.
+        </p>
+
+        <p>
+          But you know what I do have?
+        </p>
+
+        <p class="special">
+          I HAVE YOU IN MY HEART. ❤️
+        </p>
+
+        <p>
+          No matter how many miles are between us, you are still one of the
+          closest people to my heart. Distance can keep me away from your
+          arms, but it can never keep my love away from you.
+        </p>
+
+        <p>
+          Sometimes I wish I could pause everything, cross all these miles,
+          and just appear beside you for a little while… just to look at you
+          and say,
+        </p>
+
+        <p class="quote">
+          “Happy Birthday, my love.” 🥹❤️
+        </p>
+
+        <p>
+          Maybe today I can't celebrate your birthday the way I want to.
+          Maybe I can't be there to see your happiness, hear your laughter,
+          or hold you close.
+        </p>
+
+        <p class="promise">
+          But InshaAllah, one day…
+        </p>
+
+        <p>
+          There will be no screens between us.<br>
+          No miles.<br>
+          No goodbyes.<br>
+          No wishing that I could be there.
+        </p>
+
+        <p class="together">
+          I'll just be <b>there. With you. ❤️</b>
+        </p>
+
+        <p>
+          And when that day comes, I want to celebrate every birthday with you,
+          make you smile, annoy you, love you, and remind you again and again
+          how much you mean to me.
+        </p>
+
+        <p>
+          Until then, whenever you miss me, look at this little infinity…
+        </p>
+
+        <div class="infinity">
+          ♾️
+        </div>
+
+        <p class="forever">
+          Because that's what I want my love for you to be.
+        </p>
+
+        <p class="ending">
+          Not temporary.<br>
+          Not for a moment.<br>
+          Not until distance gets difficult.<br><br>
+          <b>But forever. ♾️</b>
+        </p>
+
+        <p class="love">
+          I love you more than these words could ever explain.
+        </p>
+
+        <div class="final-signature">
+
+          <button
+            class="big-infinity"
+            onclick="showFinalNames()"
+          >
+            ♾️
+          </button>
+
+          <div class="alm">
+            A <span>❤️</span> M
+          </div>
+
+          <div class="birthday">
+            Happy Birthday Manni ❤️
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
 function checkPassword() {
-  const password = document.getElementById("password").value;
+
+  const password =
+    document.getElementById("password").value;
 
   if (password === "Infinity") {
+
     document.getElementById("opening").innerHTML = `
-      <h1>Happy Birthday Daddy ❤️</h1>
-      <button onclick="showSurprise()">💌 Open Your Surprise 💌</button>
+
+      <div style="
+        min-height:100vh;
+        background:#071a33;
+        color:white;
+        text-align:center;
+        padding:40px 20px;
+      ">
+
+        <div style="font-size:60px;">
+          ♾️
+        </div>
+
+        <h1>
+          Happy Birthday Daddy ❤️
+        </h1>
+
+        <p style="font-size:17px;">
+          Your surprise is waiting for you. 🥹❤️
+        </p>
+
+        <button
+          onclick="showSurprise()"
+          style="
+            border:none;
+            background:white;
+            color:#071a33;
+            padding:15px 25px;
+            border-radius:30px;
+            font-size:17px;
+            font-weight:bold;
+          "
+        >
+          💌 Open Your Surprise 💌
+        </button>
+
+      </div>
     `;
+
   } else {
+
     alert("Wrong password 😭");
+
   }
 }
 
+
 function showSurprise() {
+
   document.getElementById("opening").innerHTML = `
-    <h1>🎂 Happy Birthday Daddy ❤️</h1>
 
-    <p>
-      My love, this little surprise is just for you. 🥹❤️
-      I love you more than words can explain.
-      You are my favorite person and my happiest place. ❤️
-    </p>
-
-    <p>
-      I hope your birthday is as beautiful and special as you are to me. 🎂✨
-    </p>
-
-
-    <br><br>
-
-    <button onclick="showNextSurprise()">
-      💖 Next Surprise
-    </button>
-  `;
-}
-
-function showNextSurprise() {
-  document.getElementById("opening").innerHTML = `
     <div style="
       min-height:100vh;
       background:#071a33;
       color:white;
       text-align:center;
       padding:40px 20px;
-      box-sizing:border-box;
     ">
 
-      <h1>💙 Our Memories 💙</h1>
+      <h1>
+        🎂 Happy Birthday Daddy ❤️
+      </h1>
 
-      <p style="margin-bottom:35px; opacity:.9;">
+      <p style="
+        font-size:17px;
+        line-height:1.7;
+      ">
+        My love, this little surprise is just for you. 🥹❤️
+        I love you more than words can explain.
+        You are my favorite person and my happiest place. ❤️
+      </p>
+
+      <p style="
+        font-size:17px;
+        line-height:1.7;
+      ">
+        I hope your birthday is as beautiful and special
+        as you are to me. 🎂✨
+      </p>
+
+      <br>
+
+      <button
+        onclick="showNextSurprise()"
+        style="
+          border:none;
+          background:white;
+          color:#071a33;
+          padding:14px 27px;
+          border-radius:30px;
+          font-size:17px;
+          font-weight:bold;
+        "
+      >
+        💖 Next Surprise
+      </button>
+
+    </div>
+  `;
+}
+
+
+function showNextSurprise() {
+
+  document.getElementById("opening").innerHTML = `
+
+    <div style="
+      min-height:100vh;
+      background:#071a33;
+      color:white;
+      text-align:center;
+      padding:40px 20px;
+    ">
+
+      <h1>
+        💙 Our Memories 💙
+      </h1>
+
+      <p style="
+        margin-bottom:35px;
+        opacity:.9;
+      ">
         Tap each memory to reveal it. 🥹❤️
       </p>
+
 
       <div id="memoryHeart" style="
         position:relative;
@@ -75,69 +570,88 @@ function showNextSurprise() {
         margin:0 auto 30px;
       ">
 
-     <div class="memoryPhoto" onclick="revealMemory(0)" style="
-        
-          position:absolute; left:65px; top:10px;
-          width:90px; height:90px;
-          border-radius:18px;
-          background:#29496b;
-          display:flex; align-items:center; justify-content:center;
-          font-size:18px; cursor:pointer;
-          filter:blur(7px);
-          transition:.5s;
-        ">
-        <img src="471DBFA2-5788-45A0-AC2F-3D14ADE51C0E.jpeg"
-     style="width:100%; height:100%; object-fit:cover; border-radius:18px;">
-       </div>
-        <div class="memoryPhoto" onclick="revealMemory(1)" style="
-          position:absolute; left:165px; top:10px;
-          width:90px; height:90px;
-          border-radius:18px;
-          background:#29496b;
-          display:flex; align-items:center; justify-content:center;
-          font-size:18px; cursor:pointer;
-          filter:blur(7px);
-          transition:.5s;
-          ">
-        <img src="54CD354B-0E3F-4100-A519-05EC68A424BB.jpeg" alt="Memory 2" style="width:100%;height:100%;object-fit:cover;border-radius:18px;">
-     alt="Memory 2"
-     style="width:100%; height:100%; object-fit:cover; border-radius:18px;">
-     style="width:100%; height:100%; object-fit:cover; border-radius:18px;">
-     </div>
-        <div class="memoryPhoto" onclick="revealMemory(2)" style="
-          position:absolute; left:20px; top:105px;
-          width:90px; height:90px;
-          border-radius:18px;
-          background:#29496b;
-          display:flex; align-items:center; justify-content:center;
-          font-size:18px; cursor:pointer;
-          filter:blur(7px);
-          transition:.5s;
-        ">📷 3</div>
 
-        <div class="memoryPhoto" onclick="revealMemory(3)" style="
-          position:absolute; left:210px; top:105px;
-          width:90px; height:90px;
-          border-radius:18px;
-          background:#29496b;
-          display:flex; align-items:center; justify-content:center;
-          font-size:18px; cursor:pointer;
-          filter:blur(7px);
-          transition:.5s;
-        ">📷 4</div>
+        <!-- MEMORY 1 -->
 
-        <div class="memoryPhoto" onclick="revealMemory(4)" style="
-          position:absolute; left:115px; top:190px;
-          width:90px; height:90px;
-          border-radius:18px;
-          background:#29496b;
-          display:flex; align-items:center; justify-content:center;
-          font-size:18px; cursor:pointer;
-          filter:blur(7px);
-          transition:.5s;
-        ">📷 5</div>
+        <div
+          class="memoryPhoto"
+          onclick="revealMemory(0)"
+          style="
+            left:65px;
+            top:10px;
+          "
+        >
 
-      </div>   
+          <img
+            src="471DBFA2-5788-45A0-AC2F-3D14ADE51C0E.jpeg"
+            alt="Memory 1"
+          >
+
+        </div>
+
+
+        <!-- MEMORY 2 -->
+
+        <div
+          class="memoryPhoto"
+          onclick="revealMemory(1)"
+          style="
+            left:165px;
+            top:10px;
+          "
+        >
+
+          <img
+            src="54CD354B-0E3F-4100-A519-05EC68A424BB.jpeg"
+            alt="Memory 2"
+          >
+
+        </div>
+
+
+        <!-- MEMORY 3 -->
+
+        <div
+          class="memoryPhoto"
+          onclick="revealMemory(2)"
+          style="
+            left:20px;
+            top:105px;
+          "
+        >
+          📷 3
+        </div>
+
+
+        <!-- MEMORY 4 -->
+
+        <div
+          class="memoryPhoto"
+          onclick="revealMemory(3)"
+          style="
+            left:210px;
+            top:105px;
+          "
+        >
+          📷 4
+        </div>
+
+
+        <!-- MEMORY 5 -->
+
+        <div
+          class="memoryPhoto"
+          onclick="revealMemory(4)"
+          style="
+            left:115px;
+            top:190px;
+          "
+        >
+          📷 5
+        </div>
+
+      </div>
+
 
       <div id="memoryMessage" style="
         max-width:320px;
@@ -146,6 +660,7 @@ function showNextSurprise() {
         font-size:17px;
         line-height:1.6;
       "></div>
+
 
       <div id="letterSection" style="
         max-width:360px;
@@ -167,7 +682,9 @@ function showNextSurprise() {
               font-size:65px;
               margin-bottom:12px;
             "
-          >∞</div>
+          >
+            ∞
+          </div>
 
           <p style="
             font-size:15px;
@@ -180,6 +697,7 @@ function showNextSurprise() {
           </p>
 
         </div>
+
 
         <div id="loveLetter" style="
           display:none;
@@ -197,73 +715,83 @@ function showNextSurprise() {
           <p><b>My Love,</b></p>
 
           <p>
-          I love you every second, every minute, every hour,
-          today, tomorrow, and every single day of our future.
-          You are so close to my heart, and I never want to lose
-          you or be apart from you. I want to spend my whole life
-          with you, sharing every moment, every happiness, and
-          every dream.
+            I love you every second, every minute, every hour,
+            today, tomorrow, and every single day of our future.
+            You are so close to my heart, and I never want to lose
+            you or be apart from you. I want to spend my whole life
+            with you, sharing every moment, every happiness, and
+            every dream.
           </p>
 
           <p>
-          I want to see you happy, successful, and achieving
-          everything you desire. I pray that Allah blesses you
-          with even more success, prosperity, and happiness.
+            I want to see you happy, successful, and achieving
+            everything you desire. I pray that Allah blesses you
+            with even more success, prosperity, and happiness.
           </p>
 
           <p>
-          InshaAllah, one day we’ll have our beautiful marriage,
-          a cozy little home filled with love, and a happy family
-          with our two little children.
+            InshaAllah, one day we’ll have our beautiful marriage,
+            a cozy little home filled with love, and a happy family
+            with our two little children.
           </p>
 
           <p>
-          My greatest wish is that we stay together forever,
-          loving and supporting each other through every chapter
-          of life. ❤️🥹✨
+            My greatest wish is that we stay together forever,
+            loving and supporting each other through every chapter
+            of life. ❤️🥹✨
           </p>
 
           <p>
-          InshaAllah, by your next birthday, you will be my husband,
-          my mahram, and my life partner. 🥹❤️
+            InshaAllah, by your next birthday, you will be my husband,
+            my mahram, and my life partner. 🥹❤️
           </p>
 
           <p>
-          I’m genuinely so happy, so peaceful, and so grateful
-          knowing that you are going to be my husband and my
-          مجازی خدا.
+            I’m genuinely so happy, so peaceful, and so grateful
+            knowing that you are going to be my husband and my
+            مجازی خدا.
           </p>
 
           <p>
-          You are the person who taught me what love really feels like.
-          Before you, I never knew that love could be such a beautiful,
-          warm, and peaceful feeling.
+            You are the person who taught me what love really feels like.
+            Before you, I never knew that love could be such a beautiful,
+            warm, and peaceful feeling.
           </p>
 
           <p>
-          You made me understand what it means to love someone
-          with your whole heart and to feel safe with them.
-          I feel so blessed knowing that I have you, and I truly
-          believe that my whole life ahead is safe in your hands.
+            You made me understand what it means to love someone
+            with your whole heart and to feel safe with them.
+            I feel so blessed knowing that I have you, and I truly
+            believe that my whole life ahead is safe in your hands.
           </p>
 
           <p>
-          I feel peaceful when I think about spending my entire
-          life with you. InshaAllah, next year we will celebrate
-          your birthday together, as husband and wife. ❤️
+            I feel peaceful when I think about spending my entire
+            life with you. InshaAllah, next year we will celebrate
+            your birthday together, as husband and wife. ❤️
           </p>
 
           <p>
-          Just a little more waiting, just a few more moments,
-          and then we’ll finally be together, InshaAllah.
-          I’m waiting for that beautiful day with all my heart,
-          and I can’t wait to spend the rest of my life with you.
-          🥹❤️✨
+            Just a little more waiting, just a few more moments,
+            and then we’ll finally be together, InshaAllah.
+            I’m waiting for that beautiful day with all my heart,
+            and I can’t wait to spend the rest of my life with you.
+            🥹❤️✨
           </p>
 
-          <p style="text-align:center; font-size:35px;">∞</p>
+          <p style="
+            text-align:center;
+            font-size:35px;
+          ">
+            ∞
+          </p>
 
-          <div style="text-align:center; margin-top:25px;">
+
+          <div style="
+            text-align:center;
+            margin-top:25px;
+          ">
+
             <button
               onclick="showFinalSurprise()"
               style="
@@ -274,9 +802,11 @@ function showNextSurprise() {
                 height:65px;
                 border-radius:50%;
                 font-size:32px;
-                cursor:pointer;
               "
-            >∞</button>
+            >
+              ∞
+            </button>
+
           </div>
 
         </div>
@@ -287,545 +817,76 @@ function showNextSurprise() {
   `;
 }
 
-function revealMemory(number) {
-  const photos = document.querySelectorAll(".memoryPhoto");
 
-  photos[number].style.filter = "blur(0)";
+function revealMemory(number) {
+
+  const photos =
+    document.querySelectorAll(".memoryPhoto");
+
+  if (photos[number]) {
+    photos[number].style.filter = "blur(0)";
+  }
 
   const messages = [
-    "Memory 1 — یہاں ہماری پہلی memory کا message آئے گا۔ ❤️",
-    "Memory 2 — یہاں دوسری memory کا message آئے گا۔ 🥹",
-    "Memory 3 — یہاں تیسری memory کا message آئے گا۔ 💙",
-    "Memory 4 — یہاں چوتھی memory کا message آئے گا۔ ✨",
-    "Memory 5 — یہاں ہماری پانچویں memory کا message آئے گا۔ ❤️"
+
+    "Memory 1 — ہماری پہلی beautiful memory. ❤️",
+
+    "Memory 2 — ہماری دوسری special memory. 🥹❤️",
+
+    "Memory 3 — ہماری ایک اور خوبصورت memory. 💙",
+
+    "Memory 4 — ایک اور یاد جو ہمیشہ دل کے قریب رہے گی. ✨",
+
+    "Memory 5 — ہماری پانچویں special memory. ❤️"
+
   ];
 
   document.getElementById("memoryMessage").innerHTML =
     `<p>${messages[number]}</p>`;
 }
 
+
 function openLoveLetter() {
-  document.getElementById("loveLetter").style.display = "block";
+
+  document.getElementById("loveLetter").style.display =
+    "block";
+
 }
+
 
 function showFinalSurprise() {
-  document.getElementById("opening").innerHTML = `
-    <div style="
-      min-height:100vh;
-      background:linear-gradient(#071a33,#0d3158);
-      color:white;
-      text-align:center;
-      padding:40px 18px;
-      box-sizing:border-box;
-      overflow:hidden;
-    ">
 
-      <div style="font-size:42px; letter-spacing:12px;">
-        🤍 🎈 🤍 🎈 🤍
-      </div>
+  document.getElementById("opening").style.display =
+    "none";
 
-      <h1 style="
-        font-size:32px;
-        margin:25px 0 10px;
-        letter-spacing:1px;
-      ">
-        🎉 Happy Birthday Aman 🎉
-      </h1>
+  document.getElementById("finalPage").style.display =
+    "block";
 
-      <p style="font-size:17px;">
-        Make a wish, my love... 🥹💙
-      </p>
-
-      <div style="
-        margin:35px auto;
-        max-width:340px;
-        position:relative;
-      ">
-
-        <div style="
-          font-size:70px;
-          margin-bottom:-10px;
-        ">
-          🧸 &nbsp; 🐻
-        </div>
-
-        <div style="
-          background:#f5f7fa;
-          color:#071a33;
-          border-radius:15px;
-          padding:18px;
-          box-shadow:0 12px 30px rgba(0,0,0,.35);
-        ">
-
-          <div style="
-            font-size:30px;
-            letter-spacing:5px;
-            margin-bottom:8px;
-          ">
-            🕯️ 🕯️ 🕯️
-          </div>
-
-          <div style="
-            font-size:28px;
-            font-weight:bold;
-            color:#123d68;
-          ">
-            A ∞ M
-          </div>
-
-          <div style="
-            margin:12px auto;
-            width:230px;
-            height:70px;
-            background:#dce8f5;
-            border-radius:12px 12px 20px 20px;
-            box-shadow:0 8px 0 #9db8d3;
-          "></div>
-
-        </div>
-      </div>
-
-      <div id="candleText" style="
-        font-size:20px;
-        margin:25px 0;
-      ">
-        1... 2... 3... 🕯️✨
-      </div>
-
-      <button onclick="blowCandles()" style="
-        border:none;
-        background:white;
-        color:#071a33;
-        padding:14px 28px;
-        border-radius:30px;
-        font-size:17px;
-        font-weight:bold;
-        cursor:pointer;
-      ">
-        💨 Blow the candles
-      </button>
-
-      <div id="birthdayReveal" style="
-        display:none;
-        margin-top:30px;
-      ">
-        <h1 style="
-          font-size:34px;
-          color:white;
-        ">
-          🎉 HAPPY BIRTHDAY AMAN 🎉
-        </h1>
-
-        <div style="
-          font-size:28px;
-          letter-spacing:8px;
-        ">
-          🤍 ♡ 🤍 ♡ 🤍
-        </div>
-
-        <p style="
-          font-size:18px;
-          line-height:1.6;
-        ">
-          May your life always be filled with happiness,
-          success, peace and beautiful moments. 💙
-        </p>
-
-        <div style="
-          margin-top:45px;
-          background:#f7f1e3;
-          color:#263238;
-          padding:15px;
-          border-radius:12px;
-        ">
-
-          <div style="
-            height:260px;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            font-size:20px;
-          ">
-            📸<br>
-            Your Childhood Photo
-            <img src="IMG_8595.jpeg" alt="Childhood Photo" style="width: 80%; max-width: 300px; border-radius: 15px; margin: 15px auto; display: block;">
-          </div>
-
-          <p style="
-            font-size:17px;
-            line-height:1.7;
-          ">
-            Before you became the man carrying so many
-            responsibilities, you were once this little boy
-            with so many dreams. And today, I’m so proud of
-            the man you’ve become. No matter how grown-up
-            you get, this little boy will always have a
-            special place in my heart. 💙🥹
-          </p>
-
-        </div>
-
-        <div style="
-          margin-top:35px;
-          font-size:55px;
-        ">
-          ∞
-        </div>
-
-      </div>
-
-    </div>
-  `;
-}
-
-function blowCandles() {
-  document.getElementById("candleText").innerHTML =
-    "💨✨ The candles are blown out! ✨💨";
-
-  document.getElementById("birthdayReveal").style.display = "block";
-}
-        
-function revealMemory(number) {
-  const photos = document.querySelectorAll(".memoryPhoto");
-
-  photos[number].style.filter = "blur(0)";
-
-  
-  
-  document.getElementById("memoryMessage").innerHTML =
-    `<p>${messages[number]}</p>`;
-}
-</script>
-    <!-- FINAL INFINITY PAGE -->
-<div id="finalPage" class="final-page">
-
-  <div class="paper">
-
-    <div class="lipstick lipstick-left">💄</div>
-    <div class="lipstick lipstick-right">💋</div>
-
-    <div class="letter">
-
-      <h1>If Only I Could Be There With You… 🥹❤️</h1>
-
-      <p>
-        If only I could be there with you today… sitting beside you,
-        looking at your smile and watching your eyes light up while you
-        celebrate your special day.
-      </p>
-
-      <p>
-        I wish I could see your happiness with my own eyes, hold your hand,
-        give you the tightest hug, and simply be there beside you.
-      </p>
-
-      <p>
-        But this is the hardest part of loving someone from a long distance…
-        sometimes you have so much love to give, but you can't be there to
-        give it in person. 🥹
-      </p>
-
-      <p>
-        I may not have everything I wish I could have with you right now.
-        I don't have your hand in mine, I can't sit beside you, I can't
-        surprise you by showing up at your door, and I can't see your
-        beautiful smile when you read this.
-      </p>
-
-      <p>
-        But you know what I do have?
-      </p>
-
-      <p class="special">
-        I HAVE YOU IN MY HEART. ❤️
-      </p>
-
-      <p>
-        No matter how many miles are between us, you are still one of the
-        closest people to my heart. Distance can keep me away from your
-        arms, but it can never keep my love away from you.
-      </p>
-
-      <p>
-        Sometimes I wish I could pause everything, cross all these miles,
-        and just appear beside you for a little while… just to look at you
-        and say,
-      </p>
-
-      <p class="quote">
-        “Happy Birthday, my love.” 🥹❤️
-      </p>
-
-      <p>
-        Maybe today I can't celebrate your birthday the way I want to.
-        Maybe I can't be there to see your happiness, hear your laughter,
-        or hold you close.
-      </p>
-
-      <p class="promise">
-        But InshaAllah, one day…
-      </p>
-
-      <p>
-        There will be no screens between us.<br>
-        No miles.<br>
-        No goodbyes.<br>
-        No wishing that I could be there.
-      </p>
-
-      <p class="together">
-        I'll just be <b>there. With you. ❤️</b>
-      </p>
-
-      <p>
-        And when that day comes, I want to celebrate every birthday with you,
-        make you smile, annoy you, love you, and remind you again and again
-        how much you mean to me.
-      </p>
-
-      <p>
-        Until then, whenever you miss me, look at this little infinity…
-      </p>
-
-      <div class="infinity">♾️</div>
-
-      <p class="forever">
-        Because that's what I want my love for you to be.
-      </p>
-
-      <p class="ending">
-        Not temporary.<br>
-        Not for a moment.<br>
-        Not until distance gets difficult.<br><br>
-        <b>But forever. ♾️</b>
-      </p>
-
-      <p class="love">
-        I love you more than these words could ever explain.
-      </p>
-
-      <div class="final-signature">
-        <button class="big-infinity" onclick="document.querySelector('.alm').style.display='block'; document.querySelector('.birthday').style.display='block'; document.querySelector('.final-signature').scrollIntoView({behavior:'smooth', block:'center'});">♾️</button>
-        <div class="alm">A <span>❤️</span> M</div>
-        <div class="birthday">Happy Birthday Manni ❤️</div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<style>
-.final-page {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #173b72, #315fa3, #173b72);
-  padding: 45px 18px;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Georgia, "Times New Roman", serif;
-}
-
-.paper {
-  position: relative;
-  width: 100%;
-  max-width: 650px;
-  background: rgba(255,255,255,0.97);
-  border: 3px solid white;
-  border-radius: 8px;
-  padding: 45px 30px;
-  box-sizing: border-box;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
-}
-
-.letter {
-  text-align: center;
-  color: #26344d;
-  line-height: 1.8;
-}
-
-.letter h1 {
-  font-size: 27px;
-  color: #243f72;
-  margin-bottom: 30px;
-}
-
-.letter p {
-  font-size: 16px;
-  margin: 20px 0;
-}
-
-.special {
-  font-size: 21px !important;
-  color: #244b88;
-  font-weight: bold;
-}
-
-.quote {
-  font-size: 22px !important;
-  color: #244b88;
-  font-weight: bold;
-  font-style: italic;
-}
-
-.promise {
-  font-size: 23px !important;
-  color: #244b88;
-  font-weight: bold;
-}
-
-.together,
-.forever,
-.love {
-  color: #244b88;
-  font-weight: bold;
-}
-
-.together {
-  font-size: 20px !important;
-}
-
-.infinity {
-  font-size: 75px;
-  line-height: 1;
-  margin: 30px 0;
-  animation: infinityGlow 2s ease-in-out infinite alternate;
-}
-
-.ending {
-  font-size: 18px !important;
-}
-
-.love {
-  font-size: 19px !important;
-  margin-top: 35px !important;
-}
-
-.final-signature {
-  margin-top: 45px;
-  padding-top: 25px;
-  border-top: 1px solid rgba(36,75,136,0.25);
-}
-
-.big-infinity {
-  font-size: 100px;
-  line-height: 1;
-  color: #244b88;
-  animation: infinityGlow 2s ease-in-out infinite alternate;
-}
-
-.alm {
-  font-family: Georgia, serif;
-  font-size: 34px;
-  font-weight: bold;
-  color: #243f72;
-  margin-top: 12px;
-}
-
-.alm span {
-  font-size: 30px;
-}
-
-.birthday {
-  font-size: 20px;
-  color: #405779;
-  margin-top: 12px;
-  letter-spacing: 1px;
-}
-
-.lipstick {
-  position: absolute;
-  font-size: 42px;
-  opacity: 0.85;
-}
-
-.lipstick-left {
-  left: -12px;
-  top: 80px;
-  transform: rotate(-15deg);
-}
-
-.lipstick-right {
-  right: -12px;
-  top: 145px;
-  transform: rotate(15deg);
-}
-
-@keyframes infinityGlow {
-  from {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  to {
-    transform: scale(1.08);
-    opacity: 1;
-  }
-}
-
-@media (max-width: 600px) {
-  .final-page {
-    padding: 25px 10px;
-  }
-
-  .paper {
-    padding: 35px 20px;
-  }
-
-  .letter h1 {
-    font-size: 23px;
-  }
-
-  .letter p {
-    font-size: 15px;
-  }
-
-  .big-infinity {
-    font-size: 80px;
-  }
-
-  .alm {
-    font-size: 29px;
-  }
-
-  .birthday {
-    font-size: 17px;
-  }
-}
-</style>
-    
-    
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const finalPage = document.getElementById("finalPage");
-
-  if (!finalPage) return;
-
-  // Keep the final page hidden until Infinity is clicked
-  finalPage.style.display = "none";
-
-  const elements = document.querySelectorAll("button, a");
-
-  elements.forEach(function (element) {
-    const text = element.textContent.trim().toLowerCase();
-
-    if (text.includes("infinity") || text.includes("♾")) {
-      element.addEventListener("click", function (event) {
-        event.preventDefault();
-
-        finalPage.style.display = "flex";
-
-        setTimeout(function () {
-          finalPage.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-          });
-        }, 100);
-      });
-    }
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
   });
-});
+
+}
+
+
+function showFinalNames() {
+
+  document.querySelector(".alm").style.display =
+    "block";
+
+  document.querySelector(".birthday").style.display =
+    "block";
+
+  document.querySelector(".final-signature").scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+  });
+
+}
+
+
 </script>
+
 </body>
 </html>
-
