@@ -1,2956 +1,504 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>Happy Birthday Daddy ❤️</title>
-
-
-  <style>
-
-    * {
-      box-sizing: border-box;
-    }
-
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      background: #071a33;
-      overflow-x: hidden;
-    }
-
-
-    button {
-      cursor: pointer;
-      -webkit-tap-highlight-color: transparent;
-      font-family: inherit;
-    }
-
-
-    input {
-      font-family: inherit;
-    }
-
-
-    /* =========================
-       FLOATING FLOWERS / HEARTS
-    ========================= */
-
-    .floating {
-      position: fixed;
-      bottom: -60px;
-      pointer-events: none;
-      z-index: 20;
-      animation: floatUp 7s linear infinite;
-      opacity: .8;
-    }
-
-
-    @keyframes floatUp {
-
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
-      }
-
-      15% {
-        opacity: .9;
-      }
-
-      85% {
-        opacity: .9;
-      }
-
-      100% {
-        transform: translateY(-115vh) rotate(360deg);
-        opacity: 0;
-      }
-
-    }
-
-
-    .flower1 {
-      left: 8%;
-      animation-delay: 0s;
-    }
-
-    .flower2 {
-      left: 24%;
-      animation-delay: 2s;
-    }
-
-    .flower3 {
-      left: 45%;
-      animation-delay: 4s;
-    }
-
-    .flower4 {
-      left: 67%;
-      animation-delay: 1s;
-    }
-
-    .flower5 {
-      left: 86%;
-      animation-delay: 3s;
-    }
-
-
-    /* =========================
-       OPENING PAGE
-    ========================= */
-
-    .opening-page {
-
-      min-height: 100vh;
-
-      position: relative;
-
-      overflow: hidden;
-
-      background:
-        radial-gradient(
-          circle at top,
-          #315b91 0%,
-          #102d52 40%,
-          #071a33 100%
-        );
-
-      color: white;
-
-      text-align: center;
-
-      padding: 30px 18px 60px;
-
-      display: flex;
-
-      justify-content: center;
-
-      align-items: center;
-
-    }
-
-
-    .opening-glow {
-
-      position: absolute;
-
-      width: 300px;
-
-      height: 300px;
-
-      border-radius: 50%;
-
-      background: rgba(255,255,255,.08);
-
-      filter: blur(25px);
-
-      animation: glowPulse 3s ease-in-out infinite alternate;
-
-    }
-
-
-    @keyframes glowPulse {
-
-      from {
-        transform: scale(.8);
-        opacity: .4;
-      }
-
-      to {
-        transform: scale(1.2);
-        opacity: .8;
-      }
-
-    }
-
-
-    .birthday-card {
-
-      position: relative;
-
-      z-index: 5;
-
-      width: 100%;
-
-      max-width: 390px;
-
-      background: rgba(255,255,255,.96);
-
-      color: #26344d;
-
-      border-radius: 24px;
-
-      padding: 32px 22px 30px;
-
-      box-shadow:
-        0 20px 60px rgba(0,0,0,.45);
-
-      animation: cardAppear 1.3s ease;
-
-    }
-
-
-    @keyframes cardAppear {
-
-      from {
-        opacity: 0;
-        transform: translateY(50px) scale(.9);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-
-    }
-
-
-    .tiny-title {
-
-      font-size: 12px;
-
-      letter-spacing: 4px;
-
-      color: #6d829f;
-
-      margin-bottom: 12px;
-
-    }
-
-
-    .opening-title {
-
-      font-size: 32px;
-
-      line-height: 1.25;
-
-      margin: 8px 0;
-
-      color: #243f72;
-
-    }
-
-
-    .opening-name {
-
-      font-size: 25px;
-
-      color: #8aaed8;
-
-      margin: 8px 0 20px;
-
-      font-style: italic;
-
-    }
-
-
-    .flower-circle {
-
-      width: 90px;
-
-      height: 90px;
-
-      margin: 0 auto 20px;
-
-      border-radius: 50%;
-
-      background: #edf7ff;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      font-size: 55px;
-
-      animation: flowerPulse 2s ease-in-out infinite;
-
-      box-shadow:
-        0 8px 25px rgba(60,120,180,.2);
-
-    }
-
-
-    @keyframes flowerPulse {
-
-      0%,100% {
-        transform: scale(1) rotate(-3deg);
-      }
-
-      50% {
-        transform: scale(1.08) rotate(3deg);
-      }
-
-    }
-
-
-    .opening-line {
-
-      width: 80%;
-
-      height: 1px;
-
-      background: #d7e4f2;
-
-      margin: 20px auto;
-
-    }
-
-
-    .opening-text {
-
-      font-size: 15px;
-
-      line-height: 1.7;
-
-      color: #52657e;
-
-    }
-
-
-    .main-button {
-
-      border: none;
-
-      background:
-        linear-gradient(135deg,#244b88,#6f9fd1);
-
-      color: white;
-
-      padding: 15px 27px;
-
-      border-radius: 30px;
-
-      font-size: 16px;
-
-      font-weight: bold;
-
-      box-shadow:
-        0 8px 20px rgba(36,75,136,.3);
-
-      transition: .3s;
-
-    }
-
-
-    .main-button:active {
-
-      transform: scale(.94);
-
-    }
-
-
-    .mini-infinity {
-
-      font-size: 34px;
-
-      margin-top: 20px;
-
-      color: #5279a8;
-
-      animation: infinityGlow 2s ease-in-out infinite alternate;
-
-    }
-
-
-    /* =========================
-       PASSWORD PAGE
-    ========================= */
-
-    .password-page {
-
-      min-height: 100vh;
-
-      background:
-        linear-gradient(
-          180deg,
-          #eaf6ff,
-          #ffffff,
-          #dceeff
-        );
-
-      display: flex;
-
-      justify-content: center;
-
-      align-items: center;
-
-      padding: 30px 18px;
-
-      color: #243f72;
-
-      text-align: center;
-
-    }
-
-
-    .password-card {
-
-      width: 100%;
-
-      max-width: 350px;
-
-      background: rgba(255,255,255,.94);
-
-      padding: 35px 24px;
-
-      border-radius: 25px;
-
-      box-shadow:
-        0 15px 45px rgba(36,75,136,.2);
-
-      animation: cardAppear .8s ease;
-
-    }
-
-
-    .lock {
-
-      font-size: 55px;
-
-      margin-bottom: 10px;
-
-      animation: lockFloat 2s ease-in-out infinite;
-
-    }
-
-
-    @keyframes lockFloat {
-
-      0%,100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-8px);
-      }
-
-    }
-
-
-    .password-card h1 {
-
-      margin: 8px 0;
-
-      font-size: 27px;
-
-    }
-
-
-    .password-card p {
-
-      font-size: 15px;
-
-      color: #637997;
-
-      line-height: 1.6;
-
-    }
-
-
-    .password-input {
-
-      width: 100%;
-
-      padding: 14px;
-
-      border: 2px solid #d5e5f5;
-
-      border-radius: 14px;
-
-      text-align: center;
-
-      font-size: 17px;
-
-      outline: none;
-
-      margin: 15px 0;
-
-      color: #243f72;
-
-      background: #fafdff;
-
-    }
-
-
-    .password-input:focus {
-
-      border-color: #7ea9d4;
-
-    }
-
-
-    .wrong-password {
-
-      color: #b65b6b;
-
-      font-size: 14px;
-
-      min-height: 20px;
-
-      margin-top: 10px;
-
-    }
-
-
-    /* =========================
-       BALLOON SURPRISE
-    ========================= */
-
-    .balloon-page {
-
-      min-height: 100vh;
-
-      position: relative;
-
-      overflow: hidden;
-
-      background:
-        linear-gradient(
-          180deg,
-          #071a33,
-          #173b72,
-          #dcefff
-        );
-
-      color: white;
-
-      text-align: center;
-
-      padding: 50px 20px;
-
-    }
-
-
-    .balloon {
-
-      position: absolute;
-
-      font-size: 55px;
-
-      animation: balloonFloat 4s ease-in-out infinite;
-
-    }
-
-
-    .balloon-a {
-      left: 5%;
-      top: 20%;
-      animation-delay: .2s;
-    }
-
-
-    .balloon-b {
-      right: 5%;
-      top: 15%;
-      animation-delay: 1s;
-    }
-
-
-    .balloon-c {
-      left: 12%;
-      bottom: 15%;
-      animation-delay: 1.7s;
-    }
-
-
-    .balloon-d {
-      right: 12%;
-      bottom: 20%;
-      animation-delay: 2.3s;
-    }
-
-
-    @keyframes balloonFloat {
-
-      0%,100% {
-        transform: translateY(0) rotate(-4deg);
-      }
-
-      50% {
-        transform: translateY(-25px) rotate(4deg);
-      }
-
-    }
-
-
-    .surprise-box {
-
-      position: relative;
-
-      z-index: 5;
-
-      max-width: 360px;
-
-      margin: 0 auto;
-
-      padding-top: 80px;
-
-      animation: cardAppear 1s ease;
-
-    }
-
-
-    .surprise-gift {
-
-      font-size: 80px;
-
-      animation: giftBounce 1.7s ease-in-out infinite;
-
-    }
-
-
-    @keyframes giftBounce {
-
-      0%,100% {
-        transform: translateY(0) rotate(0);
-      }
-
-      50% {
-        transform: translateY(-15px) rotate(3deg);
-      }
-
-    }
-
-
-    .surprise-box h1 {
-
-      font-size: 31px;
-
-      line-height: 1.3;
-
-    }
-
-
-    .surprise-box p {
-
-      font-size: 17px;
-
-      line-height: 1.8;
-
-    }
-
-
-    /* =========================
-       MEMORY PHOTOS
-    ========================= */
-
-    .memoryPhoto {
-
-      position: absolute;
-
-      width: 90px;
-
-      height: 90px;
-
-      border-radius: 18px;
-
-      background: #29496b;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      overflow: hidden;
-
-      cursor: pointer;
-
-      filter: blur(7px);
-
-      transition: .6s;
-
-      box-shadow:
-        0 6px 15px rgba(0,0,0,.3);
-
-      border: 2px solid rgba(255,255,255,.6);
-
-    }
-
-
-    .memoryPhoto img {
-
-      width: 100%;
-
-      height: 100%;
-
-      object-fit: cover;
-
-      border-radius: 18px;
-
-      display: block;
-
-    }
-
-
-    .memory-page {
-
-      min-height: 100vh;
-
-      background:
-        linear-gradient(
-          180deg,
-          #071a33,
-          #102f58
-        );
-
-      color: white;
-
-      text-align: center;
-
-      padding: 40px 20px 70px;
-
-    }
-
-
-    .memory-page h1 {
-
-      font-size: 29px;
-
-      margin-bottom: 10px;
-
-    }
-
-
-    .memory-page > p {
-
-      opacity: .9;
-
-      font-size: 15px;
-
-      line-height: 1.6;
-
-    }
-
-
-    .memory-heart {
-
-      position: relative;
-
-      width: 320px;
-
-      height: 300px;
-
-      max-width: 100%;
-
-      margin: 35px auto 20px;
-
-    }
-
-
-    #memoryMessage {
-
-      max-width: 320px;
-
-      min-height: 70px;
-
-      margin: 60px auto 45px;
-
-      font-size: 17px;
-
-      line-height: 1.6;
-
-    }
-
-
-    .letter-card {
-
-      max-width: 360px;
-
-      margin: 60px auto 20px;
-
-    }
-
-
-    .letter-cover {
-
-      background: #f7f1e3;
-
-      color: #263238;
-
-      padding: 35px 25px;
-
-      border-radius: 10px;
-
-      box-shadow:
-        0 10px 30px rgba(0,0,0,.35);
-
-    }
-
-
-    .letter-cover-infinity {
-
-      cursor: pointer;
-
-      font-size: 65px;
-
-      margin-bottom: 12px;
-
-      animation: infinityGlow 2s ease-in-out infinite alternate;
-
-    }
-
-
-    .letter-cover p {
-
-      font-size: 15px;
-
-      line-height: 1.5;
-
-      margin: 0;
-
-    }
-
-
-    #loveLetter {
-
-      display: none;
-
-      margin-top: 25px;
-
-      background: #fffdf7;
-
-      color: #263238;
-
-      padding: 30px 24px;
-
-      border-radius: 6px;
-
-      text-align: left;
-
-      line-height: 1.8;
-
-      font-size: 16px;
-
-      box-shadow:
-        0 10px 30px rgba(0,0,0,.35);
-
-      animation: letterOpen .8s ease;
-
-    }
-
-
-    @keyframes letterOpen {
-
-      from {
-        opacity: 0;
-        transform: translateY(25px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-    }
-
-
-    /* =========================
-       CHILDHOOD
-    ========================= */
-
-    .childhood-page {
-
-      min-height: 100vh;
-
-      background:
-        radial-gradient(
-          circle at top,
-          #ffffff,
-          #e7f5ff 45%,
-          #9bc7ea 100%
-        );
-
-      color: #071a33;
-
-      text-align: center;
-
-      padding: 45px 20px 70px;
-
-      animation: cardAppear .8s ease;
-
-    }
-
-
-    .childhood-title {
-
-      font-size: 29px;
-
-      color: #244b88;
-
-      margin: 5px 0 25px;
-
-      line-height: 1.3;
-
-    }
-
-
-    .childhood-photo {
-
-      max-width: 300px;
-
-      margin: 0 auto 25px;
-
-      background: white;
-
-      padding: 14px;
-
-      border-radius: 22px;
-
-      box-shadow:
-        0 12px 35px rgba(0,0,0,.2);
-
-    }
-
-
-    .childhood-photo img {
-
-      width: 100%;
-
-      display: block;
-
-      border-radius: 15px;
-
-    }
-
-
-    .childhood-message {
-
-      max-width: 330px;
-
-      margin: 0 auto;
-
-      background: rgba(255,255,255,.94);
-
-      padding: 22px 18px;
-
-      border-radius: 20px;
-
-      font-size: 17px;
-
-      line-height: 1.7;
-
-      box-shadow:
-        0 8px 25px rgba(0,0,0,.12);
-
-    }
-
-
-    .round-infinity {
-
-      margin-top: 32px;
-
-      border: none;
-
-      background: #071a33;
-
-      color: white;
-
-      width: 72px;
-
-      height: 72px;
-
-      border-radius: 50%;
-
-      font-size: 35px;
-
-      box-shadow:
-        0 8px 20px rgba(0,0,0,.25);
-
-      animation: infinityGlow 2s ease-in-out infinite alternate;
-
-    }
-
-
-    /* =========================
-       CAKE SELECTION
-    ========================= */
-
-    .cake-page {
-
-      min-height: 100vh;
-
-      background:
-        linear-gradient(
-          180deg,
-          #eaf6ff,
-          #ffffff
-        );
-
-      color: #071a33;
-
-      text-align: center;
-
-      padding: 35px 18px 70px;
-
-    }
-
-
-    .cake-page h1 {
-
-      font-size: 31px;
-
-      margin: 8px 0;
-
-    }
-
-
-    .cake-page > p {
-
-      font-size: 16px;
-
-      line-height: 1.6;
-
-      color: #55708e;
-
-    }
-
-
-    .cake-options {
-
-      display: flex;
-
-      justify-content: center;
-
-      gap: 10px;
-
-      flex-wrap: wrap;
-
-      max-width: 380px;
-
-      margin: 25px auto;
-
-    }
-
-
-    .cake-choice {
-
-      border: 2px solid #c8e1f5;
-
-      background: white;
-
-      color: #244b88;
-
-      padding: 10px 13px;
-
-      border-radius: 20px;
-
-      font-size: 13px;
-
-      font-weight: bold;
-
-    }
-
-
-    .cake-choice.active {
-
-      background: #244b88;
-
-      color: white;
-
-    }
-
-
-    .cake-stage {
-
-      width: 280px;
-
-      height: 300px;
-
-      margin: 20px auto;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: flex-end;
-
-      flex-direction: column;
-
-      position: relative;
-
-    }
-
-
-    .cake-candles {
-
-      font-size: 40px;
-
-      letter-spacing: 4px;
-
-      height: 60px;
-
-      z-index: 3;
-
-      transition: .4s;
-
-    }
-
-
-    .cake-body {
-
-      width: 230px;
-
-      height: 80px;
-
-      background: white;
-
-      border: 4px solid #b9ddf7;
-
-      border-radius: 18px 18px 10px 10px;
-
-      box-shadow:
-        0 10px 25px rgba(0,0,0,.15);
-
-      position: relative;
-
-      z-index: 2;
-
-    }
-
-
-    .cake-body::before {
-
-      content: "";
-
-      position: absolute;
-
-      top: -18px;
-
-      left: 8px;
-
-      right: 8px;
-
-      height: 30px;
-
-      background: #ffffff;
-
-      border: 3px solid #c9e6fa;
-
-      border-radius: 50%;
-
-    }
-
-
-    .cake-decoration {
-
-      position: absolute;
-
-      top: 28px;
-
-      left: 0;
-
-      right: 0;
-
-      font-size: 23px;
-
-      z-index: 3;
-
-    }
-
-
-    .cake-base {
-
-      width: 250px;
-
-      height: 48px;
-
-      background: #dcefff;
-
-      border: 4px solid #b9ddf7;
-
-      border-radius: 8px 8px 18px 18px;
-
-      box-shadow:
-        0 10px 20px rgba(0,0,0,.12);
-
-    }
-
-
-    .cake-style-2 .cake-body {
-
-      background: #fffdf7;
-
-      border-color: #9fc5e8;
-
-    }
-
-
-    .cake-style-2 .cake-base {
-
-      background: #f4f9ff;
-
-    }
-
-
-    .cake-style-3 .cake-body {
-
-      background: #ffffff;
-
-      border-color: #88afd5;
-
-    }
-
-
-    .cake-style-3 .cake-base {
-
-      background: #e5f3ff;
-
-    }
-
-
-    .cake-name {
-
-      margin-top: -5px;
-
-      font-size: 22px;
-
-      font-weight: bold;
-
-      color: #244b88;
-
-    }
-
-
-    .blow-button {
-
-      border: none;
-
-      background: #071a33;
-
-      color: white;
-
-      padding: 14px 25px;
-
-      border-radius: 30px;
-
-      font-size: 17px;
-
-      box-shadow:
-        0 7px 18px rgba(0,0,0,.2);
-
-    }
-
-
-    .cake-message {
-
-      display: none;
-
-      max-width: 330px;
-
-      margin: 30px auto 0;
-
-      background: white;
-
-      padding: 22px;
-
-      border-radius: 18px;
-
-      box-shadow:
-        0 8px 25px rgba(0,0,0,.15);
-
-      font-size: 17px;
-
-      line-height: 1.6;
-
-      animation: letterOpen .7s ease;
-
-    }
-
-
-    /* =========================
-       FINAL PAGE
-    ========================= */
-
-    .final-page {
-
-      min-height: 100vh;
-
-      background:
-        linear-gradient(
-          135deg,
-          #173b72,
-          #315fa3,
-          #173b72
-        );
-
-      padding: 45px 18px;
-
-      display: flex;
-
-      justify-content: center;
-
-      align-items: center;
-
-      font-family: Georgia, "Times New Roman", serif;
-
-    }
-
-
-    .paper {
-
-      position: relative;
-
-      width: 100%;
-
-      max-width: 650px;
-
-      background: rgba(255,255,255,0.97);
-
-      border: 3px solid white;
-
-      border-radius: 8px;
-
-      padding: 45px 30px;
-
-      box-shadow:
-        0 20px 60px rgba(0,0,0,0.35);
-
-    }
-
-
-    .letter {
-
-      text-align: center;
-
-      color: #26344d;
-
-      line-height: 1.8;
-
-    }
-
-
-    .letter h1 {
-
-      font-size: 27px;
-
-      color: #243f72;
-
-      margin-bottom: 30px;
-
-    }
-
-
-    .letter p {
-
-      font-size: 16px;
-
-      margin: 20px 0;
-
-    }
-
-
-    .special {
-
-      font-size: 21px !important;
-
-      color: #244b88;
-
-      font-weight: bold;
-
-    }
-
-
-    .quote {
-
-      font-size: 22px !important;
-
-      color: #244b88;
-
-      font-weight: bold;
-
-      font-style: italic;
-
-    }
-
-
-    .promise {
-
-      font-size: 23px !important;
-
-      color: #244b88;
-
-      font-weight: bold;
-
-    }
-
-
-    .together,
-    .forever,
-    .love {
-
-      color: #244b88;
-
-      font-weight: bold;
-
-    }
-
-
-    .together {
-
-      font-size: 20px !important;
-
-    }
-
-
-    .infinity {
-
-      font-size: 75px;
-
-      line-height: 1;
-
-      margin: 30px 0;
-
-      animation:
-        infinityGlow 2s ease-in-out infinite alternate;
-
-    }
-
-
-    .ending {
-
-      font-size: 18px !important;
-
-    }
-
-
-    .love {
-
-      font-size: 19px !important;
-
-      margin-top: 35px !important;
-
-    }
-
-
-    .final-signature {
-
-      margin-top: 45px;
-
-      padding-top: 25px;
-
-      border-top:
-        1px solid rgba(36,75,136,0.25);
-
-      text-align: center;
-
-    }
-
-
-    .big-infinity {
-
-      border: none;
-
-      background: transparent;
-
-      font-size: 100px;
-
-      line-height: 1;
-
-      color: #244b88;
-
-      animation:
-        infinityGlow 2s ease-in-out infinite alternate;
-
-    }
-
-
-    .alm {
-
-      font-family: Georgia, serif;
-
-      font-size: 34px;
-
-      font-weight: bold;
-
-      color: #243f72;
-
-      margin-top: 12px;
-
-      display: none;
-
-      animation: letterOpen .8s ease;
-
-    }
-
-
-    .alm span {
-
-      font-size: 30px;
-
-    }
-
-
-    .birthday {
-
-      font-size: 20px;
-
-      color: #405779;
-
-      margin-top: 12px;
-
-      letter-spacing: 1px;
-
-      display: none;
-
-      animation: letterOpen .8s ease;
-
-    }
-
-
-    .lipstick {
-
-      position: absolute;
-
-      font-size: 42px;
-
-      opacity: 0.85;
-
-    }
-
-
-    .lipstick-left {
-
-      left: -12px;
-
-      top: 80px;
-
-      transform: rotate(-15deg);
-
-    }
-
-
-    .lipstick-right {
-
-      right: -12px;
-
-      top: 145px;
-
-      transform: rotate(15deg);
-
-    }
-
-
-    @keyframes infinityGlow {
-
-      from {
-
-        transform: scale(1);
-
-        opacity: .8;
-
-      }
-
-      to {
-
-        transform: scale(1.08);
-
-        opacity: 1;
-
-      }
-
-    }
-
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width:600px) {
-
-      .opening-title {
-        font-size: 28px;
-      }
-
-      .birthday-card {
-        padding: 28px 18px;
-      }
-
-      .memory-heart {
-        width: 320px;
-      }
-
-      .final-page {
-        padding: 25px 10px;
-      }
-
-      .paper {
-        padding: 35px 20px;
-      }
-
-      .letter h1 {
-        font-size: 23px;
-      }
-
-      .letter p {
-        font-size: 15px;
-      }
-
-      .big-infinity {
-        font-size: 80px;
-      }
-
-      .alm {
-        font-size: 29px;
-      }
-
-      .birthday {
-        font-size: 17px;
-      }
-
-    }
-
-  </style>
-
-</head>
-
-
-<body>
-
-
-<!-- =========================================
-     MAIN OPENING
-========================================= -->
-
-<div id="opening">
-
-  <div class="opening-page">
-
-    <div class="opening-glow"></div>
-
-
-    <div class="floating flower1">🌸</div>
-    <div class="floating flower2">🤍</div>
-    <div class="floating flower3">🌸</div>
-    <div class="floating flower4">✨</div>
-    <div class="floating flower5">💙</div>
-
-
-    <div class="birthday-card">
-
-      <div class="tiny-title">
-        ONLY FOR YOU...
-      </div>
-
-
-      <div class="flower-circle">
-        🌸
-      </div>
-
-
-      <h1 class="opening-title">
-        Happy Birthday
-      </h1>
-
-
-      <div class="opening-name">
-        Daddy ❤️
-      </div>
-
-
-      <div class="opening-line"></div>
-
-
-      <p class="opening-text">
-
-        Today is yours. A little surprise made
-        especially for you — with all my love,
-        all my heart, and a little piece of us. 🥹❤️
-
-      </p>
-
-
-      <br>
-
-
-      <button
-        class="main-button"
-        onclick="showPasswordScreen()"
-      >
-        💌 Open Your Birthday Card
-      </button>
-
-
-      <div class="mini-infinity">
-        ♾️
-      </div>
-
-
-      <div style="
-        font-size:13px;
-        color:#8192a8;
-      ">
-        made with love ❤️
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-
-<!-- =========================================
-     ORIGINAL FINAL PAGE
-========================================= -->
-
-<div id="finalPage" style="display:none;">
-
-  <div class="final-page">
-
-    <div class="paper">
-
-
-      <div class="lipstick lipstick-left">
-        💄
-      </div>
-
-      <div class="lipstick lipstick-right">
-        💋
-      </div>
-
-
-      <div class="letter">
-
-
-        <h1>
-          If Only I Could Be There With You… 🥹❤️
-        </h1>
-
-
-        <p>
-
-          If only I could be there with you today… sitting beside you,
-          looking at your smile and watching your eyes light up while you
-          celebrate your special day.
-
-        </p>
-
-
-        <p>
-
-          I wish I could see your happiness with my own eyes, hold your hand,
-          give you the tightest hug, and simply be there beside you.
-
-        </p>
-
-
-        <p>
-
-          But this is the hardest part of loving someone from a long distance…
-          sometimes you have so much love to give, but you can't be there to
-          give it in person. 🥹
-
-        </p>
-
-
-        <p>
-
-          I may not have everything I wish I could have with you right now.
-          I don't have your hand in mine, I can't sit beside you, I can't
-          surprise you by showing up at your door, and I can't see your
-          beautiful smile when you read this.
-
-        </p>
-
-
-        <p>
-          But you know what I do have?
-        </p>
-
-
-        <p class="special">
-          I HAVE YOU IN MY HEART. ❤️
-        </p>
-
-
-        <p>
-
-          No matter how many miles are between us, you are still one of the
-          closest people to my heart. Distance can keep me away from your
-          arms, but it can never keep my love away from you.
-
-        </p>
-
-
-        <p>
-
-          Sometimes I wish I could pause everything, cross all these miles,
-          and just appear beside you for a little while… just to look at you
-          and say,
-
-        </p>
-
-
-        <p class="quote">
-          “Happy Birthday, my love.” 🥹❤️
-        </p>
-
-
-        <p>
-
-          Maybe today I can't celebrate your birthday the way I want to.
-          Maybe I can't be there to see your happiness, hear your laughter,
-          or hold you close.
-
-        </p>
-
-
-        <p class="promise">
-          But InshaAllah, one day…
-        </p>
-
-
-        <p>
-
-          There will be no screens between us.<br>
-          No miles.<br>
-          No goodbyes.<br>
-          No wishing that I could be there.
-
-        </p>
-
-
-        <p class="together">
-          I'll just be <b>there. With you. ❤️</b>
-        </p>
-
-
-        <p>
-
-          And when that day comes, I want to celebrate every birthday with you,
-          make you smile, annoy you, love you, and remind you again and again
-          how much you mean to me.
-
-        </p>
-
-
-        <p>
-
-          Until then, whenever you miss me, look at this little infinity…
-
-        </p>
-
-
-        <div class="infinity">
-          ♾️
-        </div>
-
-
-        <p class="forever">
-          Because that's what I want my love for you to be.
-        </p>
-
-
-        <p class="ending">
-
-          Not temporary.<br>
-          Not for a moment.<br>
-          Not until distance gets difficult.<br><br>
-
-          <b>But forever. ♾️</b>
-
-        </p>
-
-
-        <p class="love">
-          I love you more than these words could ever explain.
-        </p>
-
-
-        <div class="final-signature">
-
-
-          <button
-            class="big-infinity"
-            onclick="showFinalNames()"
-          >
-            ♾️
-          </button>
-
-
-          <div class="alm">
-            A <span>❤️</span> M
-          </div>
-
-
-          <div class="birthday">
-            Happy Birthday Manni ❤️
-          </div>
-
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-
-<script>
-
-
-/* =========================================
-   PASSWORD SCREEN
-========================================= */
-
-function showPasswordScreen() {
-
-  document.getElementById("opening").innerHTML = `
-
-    <div class="password-page">
-
-      <div class="password-card">
-
-        <div class="lock">
-          🔐
-        </div>
-
-        <h1>
-          A Little Surprise Awaits 💙
-        </h1>
-
-        <p>
-          This little world is only for you.
-          Enter the secret password to continue. 🥹❤️
-        </p>
-
-        <input
-          id="password"
-          class="password-input"
-          type="password"
-          placeholder="Enter Password"
-        >
-
-        <button
-          class="main-button"
-          onclick="checkPassword()"
-        >
-          Unlock ❤️
-        </button>
-
-        <div
-          id="wrongPassword"
-          class="wrong-password"
-        ></div>
-
-        <div style="
-          margin-top:20px;
-          font-size:30px;
-        ">
-          ♾️
-        </div>
-
-      </div>
-
-    </div>
-
-  `;
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daddy Birthday</title>
+
+<style>
+
+/* =====================================================
+   BASIC
+===================================================== */
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:#071a33;
+  font-family:Georgia,"Times New Roman",serif;
+  overflow-x:hidden;
+}
+
+button,
+input{
+  font-family:inherit;
+  -webkit-tap-highlight-color:transparent;
+}
+
+button{
+  cursor:pointer;
+}
+
+.hidden{
+  display:none!important;
 }
 
 
-/* =========================================
-   CHECK PASSWORD
-========================================= */
+/* =====================================================
+   GLOBAL ANIMATIONS
+===================================================== */
 
-function checkPassword() {
-
-  const password =
-    document.getElementById("password").value;
-
-  if (password === "Infinity") {
-
-    showUnlockedPage();
-
-  } else {
-
-    document.getElementById("wrongPassword").innerHTML =
-      "Oops… wrong password 😭❤️ Try again.";
-
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(25px);
   }
-
-}
-
-
-/* =========================================
-   UNLOCKED BALLOON PAGE
-========================================= */
-
-function showUnlockedPage() {
-
-  document.getElementById("opening").innerHTML = `
-
-    <div class="balloon-page">
-
-      <div class="balloon balloon-a">
-        🎈
-      </div>
-
-      <div class="balloon balloon-b">
-        🤍
-      </div>
-
-      <div class="balloon balloon-c">
-        💙
-      </div>
-
-      <div class="balloon balloon-d">
-        🎈
-      </div>
-
-
-      <div class="surprise-box">
-
-        <div class="surprise-gift">
-          🎁
-        </div>
-
-
-        <h1>
-          Happy Birthday Daddy ❤️
-        </h1>
-
-
-        <p>
-          Your little surprise is finally unlocked. 🥹❤️
-        </p>
-
-
-        <p>
-          I made this little world just for you.
-        </p>
-
-
-        <br>
-
-
-        <button
-          class="main-button"
-          onclick="showSurprise()"
-        >
-          💌 Open Your Surprise
-        </button>
-
-      </div>
-
-    </div>
-
-  `;
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-
-}
-
-
-/* =========================================
-   FIRST SURPRISE
-========================================= */
-
-function showSurprise() {
-
-  document.getElementById("opening").innerHTML = `
-
-    <div class="balloon-page">
-
-      <div class="balloon balloon-a">
-        🎈
-      </div>
-
-      <div class="balloon balloon-b">
-        🤍
-      </div>
-
-      <div class="balloon balloon-c">
-        💙
-      </div>
-
-      <div class="balloon balloon-d">
-        🎈
-      </div>
-
-
-      <div class="surprise-box">
-
-        <div style="
-          font-size:70px;
-          animation:giftBounce 1.5s infinite;
-        ">
-          🎂
-        </div>
-
-
-        <h1>
-          Happy Birthday Daddy ❤️
-        </h1>
-
-
-        <p>
-
-          My love, this little surprise is just for you. 🥹❤️
-          I love you more than words can explain.
-          You are my favorite person and my happiest place. ❤️
-
-        </p>
-
-
-        <p>
-
-          I hope your birthday is as beautiful and special
-          as you are to me. 🎂✨
-
-        </p>
-
-
-        <br>
-
-
-        <button
-          class="main-button"
-          onclick="showNextSurprise()"
-        >
-          💖 Next Surprise
-        </button>
-
-      </div>
-
-    </div>
-
-  `;
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-
-}
-
-
-/* =========================================
-   MEMORIES
-========================================= */
-
-function showNextSurprise() {
-
-  document.getElementById("opening").innerHTML = `
-
-    <div class="memory-page">
-
-      <h1>
-        💙 Our Memories 💙
-      </h1>
-
-
-      <p>
-        Tap each memory to reveal it. 🥹❤️
-      </p>
-
-
-      <div
-        id="memoryHeart"
-        class="memory-heart"
-      >
-
-
-        <!-- MEMORY 1 -->
-
-        <div
-          class="memoryPhoto"
-          onclick="revealMemory(0)"
-          style="
-            left:65px;
-            top:10px;
-          "
-        >
-
-          <img
-            src="471DBFA2-5788-45A0-AC2F-3D14ADE51C0E.jpeg"
-            alt="Memory 1"
-          >
-
-        </div>
-
-
-        <!-- MEMORY 2 -->
-
-        <div
-          class="memoryPhoto"
-          onclick="revealMemory(1)"
-          style="
-            left:165px;
-            top:10px;
-          "
-        >
-
-          <img
-            src="54CD354B-0E3F-4100-A519-05EC68A424BB.jpeg"
-            alt="Memory 2"
-          >
-
-        </div>
-
-
-        <!-- MEMORY 3 -->
-
-        <div
-          class="memoryPhoto"
-          onclick="revealMemory(2)"
-          style="
-            left:20px;
-            top:105px;
-          "
-        >
-
-          <img
-            src="EF3F30E1-97F2-4E17-AE7D-C8E7A59D1FFE.jpeg"
-            alt="Memory 3"
-          >
-
-        </div>
-
-
-        <!-- MEMORY 4 -->
-
-        <div
-          class="memoryPhoto"
-          onclick="revealMemory(3)"
-          style="
-            left:210px;
-            top:105px;
-          "
-        >
-
-          <img
-            src="IMG_4665.jpeg"
-            alt="Memory 4"
-          >
-
-        </div>
-
-
-        <!-- MEMORY 5 -->
-
-        <div
-          class="memoryPhoto"
-          onclick="revealMemory(4)"
-          style="
-            left:115px;
-            top:190px;
-          "
-        >
-
-          <img
-            src="IMG_7137.jpeg"
-            alt="Memory 5"
-          >
-
-        </div>
-
-
-      </div>
-
-
-      <div id="memoryMessage">
-      </div>
-
-
-      <div class="letter-card">
-
-
-        <div class="letter-cover">
-
-
-          <div
-            class="letter-cover-infinity"
-            onclick="openLoveLetter()"
-          >
-            ∞
-          </div>
-
-
-          <p>
-
-            This is my infinity of love for you —
-            a love with no ending, no limits,
-            just you and me. ❤️
-
-          </p>
-
-
-        </div>
-
-
-        <div id="loveLetter">
-
-
-          <p>
-            <b>My Love,</b>
-          </p>
-
-
-          <p>
-
-            I love you every second, every minute, every hour,
-            today, tomorrow, and every single day of our future.
-            You are so close to my heart, and I never want to lose
-            you or be apart from you. I want to spend my whole life
-            with you, sharing every moment, every happiness, and
-            every dream.
-
-          </p>
-
-
-          <p>
-
-            I want to see you happy, successful, and achieving
-            everything you desire. I pray that Allah blesses you
-            with even more success, prosperity, and happiness.
-
-          </p>
-
-
-          <p>
-
-            InshaAllah, one day we’ll have our beautiful marriage,
-            a cozy little home filled with love, and a happy family
-            with our two little children.
-
-          </p>
-
-
-          <p>
-
-            My greatest wish is that we stay together forever,
-            loving and supporting each other through every chapter
-            of life. ❤️🥹✨
-
-          </p>
-
-
-          <p>
-
-            InshaAllah, by your next birthday, you will be my husband,
-            my mahram, and my life partner. 🥹❤️
-
-          </p>
-
-
-          <p>
-
-            I’m genuinely so happy, so peaceful, and so grateful
-            knowing that you are going to be my husband and my
-            مجازی خدا.
-
-          </p>
-
-
-          <p>
-
-            You are the person who taught me what love really feels like.
-            Before you, I never knew that love could be such a beautiful,
-            warm, and peaceful feeling.
-
-          </p>
-
-
-          <p>
-
-            You made me understand what it means to love someone
-            with your whole heart and to feel safe with them.
-            I feel so blessed knowing that I have you, and I truly
-            believe that my whole life ahead is safe in your hands.
-
-          </p>
-
-
-          <p>
-
-            I feel peaceful when I think about spending my entire
-            life with you. InshaAllah, next year we will celebrate
-            your birthday together, as husband and wife. ❤️
-
-          </p>
-
-
-          <p>
-
-            Just a little more waiting, just a few more moments,
-            and then we’ll finally be together, InshaAllah.
-            I’m waiting for that beautiful day with all my heart,
-            and I can’t wait to spend the rest of my life with you.
-            🥹❤️✨
-
-          </p>
-
-
-          <p style="
-            text-align:center;
-            font-size:35px;
-          ">
-            ∞
-          </p>
-
-
-          <div style="
-            text-align:center;
-            margin-top:25px;
-          ">
-
-
-            <button
-              onclick="showFinalSurprise()"
-              style="
-                border:none;
-                background:#071a33;
-                color:white;
-                width:65px;
-                height:65px;
-                border-radius:50%;
-                font-size:32px;
-              "
-            >
-              ∞
-            </button>
-
-
-          </div>
-
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-  `;
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-
-}
-
-
-/* =========================================
-   REVEAL MEMORY
-========================================= */
-
-function revealMemory(number) {
-
-  const photos =
-    document.querySelectorAll(".memoryPhoto");
-
-
-  if (photos[number]) {
-
-    photos[number].style.filter =
-      "blur(0)";
-
-    photos[number].style.transform =
-      "scale(1.05)";
-
+  to{
+    opacity:1;
+    transform:translateY(0);
   }
-
-
-  const messages = [
-
-    "Memory 1 — ہماری پہلی beautiful memory. ❤️",
-
-    "Memory 2 — ہماری دوسری special memory. 🥹❤️",
-
-    "Memory 3 — ہماری ایک اور خوبصورت memory. 💙",
-
-    "Memory 4 — ایک اور یاد جو ہمیشہ دل کے قریب رہے گی. ✨",
-
-    "Memory 5 — ہماری پانچویں special memory. ❤️"
-
-  ];
-
-
-  document.getElementById("memoryMessage").innerHTML =
-    `<p>${messages[number]}</p>`;
-
 }
 
-
-/* =========================================
-   LOVE LETTER
-========================================= */
-
-function openLoveLetter() {
-
-  document.getElementById("loveLetter").style.display =
-    "block";
-
-  setTimeout(function() {
-
-    document.getElementById("loveLetter").scrollIntoView({
-      behavior:"smooth",
-      block:"start"
-    });
-
-  },100);
-
+@keyframes softFade{
+  from{opacity:0;}
+  to{opacity:1;}
 }
 
-
-/* =========================================
-   CHILDHOOD PAGE
-========================================= */
-
-function showFinalSurprise() {
-
-  document.getElementById("finalPage").style.display =
-    "none";
-
-  document.getElementById("opening").style.display =
-    "block";
-
-
-  document.getElementById("opening").innerHTML = `
-
-    <div class="childhood-page">
-
-
-      <div style="
-        font-size:45px;
-        margin-bottom:8px;
-      ">
-        🌸 🤍 🌸
-      </div>
-
-
-      <h1 class="childhood-title">
-        A Little Memory From Your Childhood 🥹💙
-      </h1>
-
-
-      <div class="childhood-photo">
-
-        <img
-          src="IMG_8595.jpeg"
-          alt="Childhood Memory"
-        >
-
-      </div>
-
-
-      <div class="childhood-message">
-
-
-        <p style="margin:0;">
-          Once you were just my little boy… 🥹❤️
-        </p>
-
-
-        <p style="margin:12px 0;">
-          And look at you now — so hardworking, wise, and strong.
-        </p>
-
-
-        <p style="margin:0;">
-          My little bee, I’m so proud of the person you’ve become. ♾️❤️
-        </p>
-
-
-      </div>
-
-
-      <button
-        class="round-infinity"
-        onclick="showBirthdayCake()"
-      >
-        ∞
-      </button>
-
-
-      <div style="
-        margin-top:15px;
-        color:#55708e;
-        font-size:14px;
-      ">
-        One more little surprise… 💙
-      </div>
-
-
-    </div>
-
-  `;
-
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-
-}
-
-
-/* =========================================
-   CAKE PAGE
-========================================= */
-
-let selectedCake = 1;
-
-
-function showBirthdayCake() {
-
-  document.getElementById("opening").innerHTML = `
-
-    <div class="cake-page">
-
-
-      <div style="
-        font-size:45px;
-        margin-bottom:5px;
-      ">
-        🎈 🤍 🎈
-      </div>
-
-
-      <h1>
-        Happy Birthday Aman 🎂💙
-      </h1>
-
-
-      <p>
-        Choose your favorite cake… 🥹❤️
-      </p>
-
-
-      <div class="cake-options">
-
-
-        <button
-          id="cakeChoice1"
-          class="cake-choice active"
-          onclick="selectCake(1)"
-        >
-          🤍 Blue Ribbon
-        </button>
-
-
-        <button
-          id="cakeChoice2"
-          class="cake-choice"
-          onclick="selectCake(2)"
-        >
-          💙 Heart Cake
-        </button>
-
-
-        <button
-          id="cakeChoice3"
-          class="cake-choice"
-          onclick="selectCake(3)"
-        >
-          🌸 Blue Floral
-        </button>
-
-
-      </div>
-
-
-      <div
-        id="cakeContainer"
-        class="cake-stage cake-style-1"
-      >
-
-        <div
-          id="cakeCandles"
-          class="cake-candles"
-        >
-          🕯️ 🕯️ 🕯️
-        </div>
-
-
-        <div class="cake-body">
-
-          <div
-            id="cakeDecoration"
-            class="cake-decoration"
-          >
-            💙 🤍 💙 🤍 💙
-          </div>
-
-        </div>
-
-
-        <div class="cake-base">
-        </div>
-
-
-        <div class="cake-name">
-          Aman ❤️
-        </div>
-
-      </div>
-
-
-      <p style="
-        font-size:16px;
-        color:#526e8d;
-      ">
-        Make a wish… then blow the candles 🕯️✨
-      </p>
-
-
-      <button
-        id="blowButton"
-        class="blow-button"
-        onclick="blowCandles()"
-      >
-        💨 Blow Candles
-      </button>
-
-
-      <div
-        id="cakeMessage"
-        class="cake-message"
-      >
-
-        <b>
-          Wish made… 🥹✨
-        </b>
-
-        <br><br>
-
-        May Allah fill your life with endless happiness,
-        success, peace and love. ❤️
-
-        <br><br>
-
-        You deserve every beautiful thing in this world. 💙
-
-
-        <br><br>
-
-
-        <button
-          class="round-infinity"
-          onclick="showFinalPage()"
-        >
-          ∞
-        </button>
-
-
-        <div style="
-          font-size:14px;
-          color:#607997;
-          margin-top:5px;
-        ">
-          Continue to the final surprise ❤️
-        </div>
-
-
-      </div>
-
-
-    </div>
-
-  `;
-
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-
-}
-
-
-/* =========================================
-   SELECT CAKE
-========================================= */
-
-function selectCake(number) {
-
-  selectedCake = number;
-
-
-  document
-    .querySelectorAll(".cake-choice")
-    .forEach(function(button) {
-
-      button.classList.remove("active");
-
-    });
-
-
-  document
-    .getElementById("cakeChoice" + number)
-    .classList.add("active");
-
-
-  const cakeContainer =
-    document.getElementById("cakeContainer");
-
-
-  cakeContainer.className =
-    "cake-stage cake-style-" + number;
-
-
-  const decoration =
-    document.getElementById("cakeDecoration");
-
-
-  if (number === 1) {
-
-    decoration.innerHTML =
-      "💙 🤍 💙 🤍 💙";
-
+@keyframes floatUp{
+  0%,100%{
+    transform:translateY(0);
   }
-
-
-  if (number === 2) {
-
-    decoration.innerHTML =
-      "♡ 💙 ♡ 💙 ♡";
-
+  50%{
+    transform:translateY(-12px);
   }
+}
 
-
-  if (number === 3) {
-
-    decoration.innerHTML =
-      "🌸 🤍 🌸 🤍 🌸";
-
+@keyframes balloonFloat{
+  0%,100%{
+    transform:translateY(0) rotate(-2deg);
   }
+  50%{
+    transform:translateY(-22px) rotate(3deg);
+  }
+}
 
+@keyframes flowerGrow{
+  0%{
+    transform:scale(0) rotate(-20deg);
+    opacity:0;
+  }
+  70%{
+    transform:scale(1.08) rotate(4deg);
+    opacity:1;
+  }
+  100%{
+    transform:scale(1) rotate(0);
+    opacity:1;
+  }
+}
 
-  const candles =
-    document.getElementById("cakeCandles");
+@keyframes stemGrow{
+  from{
+    height:0;
+  }
+  to{
+    height:115px;
+  }
+}
 
+@keyframes glow{
+  0%,100%{
+    box-shadow:0 0 10px rgba(180,220,255,.35);
+  }
+  50%{
+    box-shadow:0 0 28px rgba(180,220,255,.8);
+  }
+}
 
-  candles.innerHTML =
-    "🕯️ 🕯️ 🕯️";
+@keyframes flame{
+  0%,100%{
+    transform:scaleY(1) rotate(-2deg);
+  }
+  50%{
+    transform:scaleY(1.18) rotate(3deg);
+  }
+}
 
+@keyframes smoke{
+  0%{
+    opacity:.8;
+    transform:translateY(0) scale(.8);
+  }
+  100%{
+    opacity:0;
+    transform:translateY(-35px) scale(1.5);
+  }
+}
 
-  document.getElementById("blowButton").style.display =
-    "inline-block";
+@keyframes letterAppear{
+  from{
+    opacity:0;
+    transform:translateY(35px) rotate(1deg);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0) rotate(0);
+  }
+}
 
-
-  document.getElementById("cakeMessage").style.display =
-    "none";
-
+@keyframes infinityPulse{
+  0%,100%{
+    transform:scale(1);
+  }
+  50%{
+    transform:scale(1.08);
+  }
 }
 
 
-/* =========================================
-   BLOW CANDLES
-========================================= */
+/* =====================================================
+   MAIN OPENING
+===================================================== */
 
-function blowCandles() {
+#opening{
+  min-height:100vh;
+}
 
-  const candles =
-    document.getElementById("cakeCandles");
+.opening-screen{
+  position:relative;
+  min-height:100vh;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 30%,#173b72 0%,#0b2548 42%,#04101f 100%);
+  color:white;
+  text-align:center;
+  padding:35px 20px 70px;
+}
 
+.opening-stars{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+}
 
-  candles.innerHTML =
-    "✨ ✨ ✨";
+.opening-stars span{
+  position:absolute;
+  width:3px;
+  height:3px;
+  background:rgba(255,255,255,.7);
+  border-radius:50%;
+  animation:softFade 3s infinite alternate;
+}
 
+.opening-content{
+  position:relative;
+  z-index:10;
+  max-width:430px;
+  margin:auto;
+  padding-top:55px;
+  animation:fadeIn 1.2s ease;
+}
 
-  candles.style.transform =
-    "scale(1.2)";
+.opening-small{
+  font-size:13px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  opacity:.72;
+  margin-bottom:18px;
+}
 
+.opening-title{
+  font-size:34px;
+  line-height:1.2;
+  margin:0;
+  font-weight:bold;
+}
 
-  document.getElementById("blowButton").style.display =
-    "none";
+.opening-subtitle{
+  font-size:16px;
+  opacity:.82;
+  margin:18px 0 28px;
+}
 
+.infinity-opening{
+  font-size:68px;
+  margin:10px 0 22px;
+  color:#dcefff;
+  animation:infinityPulse 2.4s ease-in-out infinite;
+}
 
-  document.getElementById("cakeMessage").style.display =
-    "block";
+.for-daddy{
+  font-size:22px;
+  letter-spacing:1px;
+  margin-bottom:28px;
+}
 
+.password-box{
+  width:100%;
+  max-width:280px;
+  margin:auto;
+}
 
-  setTimeout(function() {
+.password-box input{
+  width:100%;
+  padding:15px 18px;
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:30px;
+  background:rgba(255,255,255,.1);
+  color:white;
+  text-align:center;
+  font-size:16px;
+  outline:none;
+  backdrop-filter:blur(8px);
+}
 
-    document.getElementById("cakeMessage").scrollIntoView({
-      behavior:"smooth",
-      block:"center"
-    });
+.password-box input::placeholder{
+  color:rgba(255,255,255,.7);
+}
 
-  },200);
+.unlock-button{
+  margin-top:15px;
+  border:none;
+  border-radius:30px;
+  padding:14px 32px;
+  background:white;
+  color:#071a33;
+  font-size:16px;
+  font-weight:bold;
+  box-shadow:0 8px 25px rgba(0,0,0,.25);
+  transition:.25s;
+}
 
+.unlock-button:active{
+  transform:scale(.95);
 }
 
 
-/* =========================================
-   FINAL PAGE
-========================================= */
+/* =====================================================
+   FLOWER GARDEN
+===================================================== */
 
-function showFinalPage() {
+.flower-garden{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-5px;
+  height:190px;
+  pointer-events:none;
+}
 
-  document.getElementById("opening").style.display =
-    "none";
+.flower{
+  position:absolute;
+  bottom:20px;
+  width:100px;
+  height:155px;
+  transform-origin:bottom center;
+  opacity:0;
+  animation:flowerGrow .9s ease forwards;
+}
 
-  document.getElementById("finalPage").style.display =
-    "block";
+.flower:nth-child(1){left:2%;animation-delay:.2s;}
+.flower:nth-child(2){left:18%;animation-delay:.45s;transform:scale(.8);}
+.flower:nth-child(3){left:36%;animation-delay:.7s;transform:scale(.9);}
+.flower:nth-child(4){left:55%;animation-delay:.95s;transform:scale(.75);}
+.flower:nth-child(5){left:72%;animation-delay:1.2s;transform:scale(.9);}
+.flower:nth-child(6){left:88%;animation-delay:1.45s;transform:scale(.78);}
 
+.flower-head{
+  position:absolute;
+  left:50%;
+  top:5px;
+  width:58px;
+  height:58px;
+  transform:translateX(-50%);
+}
 
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+.petal{
+  position:absolute;
+  width:29px;
+  height:40px;
+  border-radius:50% 50% 45% 45%;
+  left:15px;
+  top:8px;
+  transform-origin:50% 85%;
+}
 
+.petal:nth-child(1){
+  transform:rotate(0deg) translateY(-16px);
+}
+
+.petal:nth-child(2){
+  transform:rotate(60deg) translateY(-16px);
+}
+
+.petal:nth-child(3){
+  transform:rotate(120deg) translateY(-16px);
+}
+
+.petal:nth-child(4){
+  transform:rotate(180deg) translateY(-16px);
+}
+
+.petal:nth-child(5){
+  transform:rotate(240deg) translateY(-16px);
+}
+
+.petal:nth-child(6){
+  transform:rotate(300deg) translateY(-16px);
+}
+
+.flower.white .petal{
+  background:linear-gradient(145deg,#ffffff,#dcefff);
+  box-shadow:
+    inset 0 -4px 7px rgba(90,145,190,.18),
+    0 3px 9px rgba(0,0,0,.15);
+}
+
+.flower.blue .petal{
+  background:linear-gradient(145deg,#ffffff,#a9d9ff);
+  box-shadow:
+    inset 0 -5px 8px rgba(50,130,190,.2),
+    0 3px 9px rgba(0,0,0,.15);
+}
+
+.flower-center{
+  position:absolute;
+  width:17px;
+  height:17px;
+  border-radius:50%;
+  background:#d8b76a;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  box-shadow:0 0 7px rgba(255,220,130,.7);
+  z-index:3;
+}
+
+.flower-stem{
+  position:absolute;
+  width:5px;
+  height:115px;
+  background:linear-gradient(to right,#315f49,#7aa77e,#315f49);
+  left:50%;
+  top:53px;
+  transform:translateX(-50%);
+  border-radius:5px;
+}
+
+.leaf{
+  position:absolute;
+  width:30px;
+  height:14px;
+  background:linear-gradient(135deg,#426e56,#9abf9b);
+  border-radius:100% 0 100% 0;
+  top:105px;
+}
+
+.leaf.left{
+  left:18px;
+  transform:rotate(-25deg);
+}
+
+.leaf.right{
+  right:18px;
+  transform:scaleX(-1) rotate(-25deg);
 }
 
 
-/* =========================================
-   FINAL A ❤️ M
-========================================= */
+/* =====================================================
+   SIMPLE PAGE SCREENS
+===================================================== */
 
-function showFinalNames() {
+.simple-screen{
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 50% 20%,#173b72,#071a33 65%);
+  color:white;
+  text-align:center;
+  padding:60px 20px;
+  animation:softFade .8s ease;
+}
 
-  document.querySelector(".alm").style.display =
-    "block";
+.simple-inner{
+  max-width:430px;
+  margin:auto;
+  padding-top:70px;
+}
 
-  document.querySelector(".birthday").style.display =
-    "block";
+.simple-inner h1{
+  font-size:32px;
+  margin-bottom:18px;
+}
 
+.simple-inner p{
+  font-size:17px;
+  line-height:1.8;
+  opacity:.9;
+}
 
-  document.querySelector(".final-signature").scrollIntoView({
-    behavior:"smooth",
-    block:"center"
-  });
+.primary-button{
+  border:none;
+  background:white;
+  color:#071a33;
+  padding:15px 28px;
+  border-radius:30px;
+  font-size:17px;
+  font-weight:bold;
+  box-shadow:0 8px 25px rgba(0,0,0,.25);
+  margin-top:20px;
+}
 
+.round-infinity{
+  border:none;
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  background:#071a33;
+  color:white;
+  font-size:34px;
+  box-shadow:0 8px 22px rgba(0,0,0,.3);
+  animation:infinityPulse 2s infinite;
 }
 
 
-</script>
+/* =====================================================
+   MEMORY SECTION
+===================================================== */
 
+.memory-screen{
+  min-height:100vh;
+  background:
+    linear-gradient(180deg,#071a33 0%,#0d3158 65%,#071a33 100%);
+  color:white;
+  text-align:center;
+  padding:45px 15px 70px;
+  animation:fadeIn .8s ease;
+}
 
-</body>
+.memory-screen h1{
+  font-size:31px;
+  margin:0 0 12px;
+}
 
-</html>
+.memory-intro{
+  opacity:.82;
+  font-size:16px;
+  margin-bottom:35px;
+}
+
+.memory-heart{
+  position:relative;
+  width:320px;
+  height:300px;
+  margin:0 auto 25px;
+}
+
+.memoryPhoto{
+  position:absolute;
+  width:90px;
+  height:90px;
+  border-radius:18px;
+  overflow:hidden;
+  background:#29496b;
+  filter:blur(7px);
+  transition:.6s;
+  box-shadow:0 8px 20px rgba(0,0,0,.35);
+  border:2px solid rgba(255,255,255,.
