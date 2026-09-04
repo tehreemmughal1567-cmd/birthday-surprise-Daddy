@@ -851,7 +851,6 @@ function revealMemory(number) {
     `<p>${messages[number]}</p>`;
 }
 
-
 function openLoveLetter() {
 
   document.getElementById("loveLetter").style.display =
@@ -860,7 +859,296 @@ function openLoveLetter() {
 }
 
 
+/* ================================
+   CHILDHOOD SURPRISE
+================================ */
+
 function showFinalSurprise() {
+
+  document.getElementById("finalPage").style.display =
+    "none";
+
+  document.getElementById("opening").style.display =
+    "block";
+
+  document.getElementById("opening").innerHTML = `
+
+    <div style="
+      min-height:100vh;
+      box-sizing:border-box;
+      padding:40px 20px 60px;
+      background:linear-gradient(180deg,#071a33,#dcefff);
+      text-align:center;
+      color:#071a33;
+    ">
+
+      <h1 style="
+        color:white;
+        font-size:28px;
+        margin:10px 0 25px;
+      ">
+        A Little Memory From Your Childhood 🥹💙
+      </h1>
+
+      <div style="
+        background:#fffdf7;
+        padding:15px;
+        border-radius:20px;
+        max-width:300px;
+        margin:0 auto 25px;
+        box-shadow:0 10px 30px rgba(0,0,0,.25);
+      ">
+
+        <img
+          src="IMG_8595.jpeg"
+          alt="Childhood Memory"
+          style="
+            width:100%;
+            display:block;
+            border-radius:14px;
+          "
+        >
+
+      </div>
+
+      <div style="
+        max-width:330px;
+        margin:0 auto;
+        background:rgba(255,255,255,.92);
+        padding:22px 18px;
+        border-radius:18px;
+        font-size:17px;
+        line-height:1.7;
+        box-shadow:0 8px 25px rgba(0,0,0,.15);
+      ">
+
+        <p style="margin:0;">
+          Once you were just my little boy… 🥹❤️
+        </p>
+
+        <p style="margin:12px 0;">
+          And look at you now — so hardworking, wise, and strong.
+        </p>
+
+        <p style="margin:0;">
+          My little bee, I’m so proud of the person you’ve become. ♾️❤️
+        </p>
+
+      </div>
+
+      <button
+        onclick="showBirthdayCake()"
+        style="
+          margin-top:35px;
+          border:none;
+          background:#071a33;
+          color:white;
+          width:70px;
+          height:70px;
+          border-radius:50%;
+          font-size:34px;
+          box-shadow:0 6px 18px rgba(0,0,0,.3);
+        "
+      >
+        ∞
+      </button>
+
+    </div>
+
+  `;
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+/* ================================
+   BIRTHDAY CAKE
+================================ */
+
+function showBirthdayCake() {
+
+  document.getElementById("opening").innerHTML = `
+
+    <div style="
+      min-height:100vh;
+      box-sizing:border-box;
+      padding:35px 20px 60px;
+      background:linear-gradient(180deg,#eaf6ff,#ffffff);
+      text-align:center;
+      color:#071a33;
+    ">
+
+      <div style="
+        font-size:42px;
+        margin-bottom:5px;
+      ">
+        🎈 🤍 🎈
+      </div>
+
+      <div style="
+        font-size:42px;
+        margin-bottom:10px;
+      ">
+        🤍 🎈 🤍
+      </div>
+
+      <h1 style="
+        font-size:32px;
+        margin:15px 0 8px;
+        color:#071a33;
+      ">
+        Happy Birthday Aman 🎂💙
+      </h1>
+
+      <p style="
+        font-size:17px;
+        margin-bottom:30px;
+      ">
+        Make a wish… then blow the candles 🕯️🎂✨
+      </p>
+
+
+      <!-- CAKE -->
+
+      <div style="
+        width:230px;
+        margin:0 auto 30px;
+      ">
+
+        <div
+          id="candles"
+          style="
+            font-size:38px;
+            letter-spacing:8px;
+            margin-bottom:-5px;
+          "
+        >
+          🕯️ 🕯️ 🕯️
+        </div>
+
+        <div style="
+          height:65px;
+          background:white;
+          border-radius:15px 15px 8px 8px;
+          border:4px solid #b9ddf7;
+          box-shadow:0 8px 20px rgba(0,0,0,.15);
+        ">
+
+          <div style="
+            font-size:25px;
+            padding-top:12px;
+          ">
+            💙 🤍 💙 🤍 💙
+          </div>
+
+        </div>
+
+        <div style="
+          height:45px;
+          background:#d9efff;
+          border-radius:8px 8px 15px 15px;
+          border:4px solid #b9ddf7;
+        ">
+        </div>
+
+      </div>
+
+
+      <button
+        id="blowButton"
+        onclick="blowCandles()"
+        style="
+          border:none;
+          background:#071a33;
+          color:white;
+          padding:14px 25px;
+          border-radius:30px;
+          font-size:17px;
+          box-shadow:0 6px 18px rgba(0,0,0,.2);
+        "
+      >
+        💨 Blow Candles
+      </button>
+
+
+      <div
+        id="cakeMessage"
+        style="
+          display:none;
+          margin:30px auto 0;
+          max-width:330px;
+          background:white;
+          padding:22px;
+          border-radius:18px;
+          box-shadow:0 8px 25px rgba(0,0,0,.15);
+          font-size:18px;
+          line-height:1.6;
+        "
+      >
+
+        Wish made… 🥹✨<br>
+        May Allah fill your life with endless happiness,
+        success and love. ❤️
+
+        <br><br>
+
+        <button
+          onclick="showFinalPage()"
+          style="
+            border:none;
+            background:#071a33;
+            color:white;
+            width:70px;
+            height:70px;
+            border-radius:50%;
+            font-size:34px;
+            box-shadow:0 6px 18px rgba(0,0,0,.3);
+          "
+        >
+          ∞
+        </button>
+
+      </div>
+
+    </div>
+
+  `;
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+/* ================================
+   BLOW CANDLES
+================================ */
+
+function blowCandles() {
+
+  document.getElementById("candles").innerHTML =
+    "✨ ✨ ✨";
+
+  document.getElementById("blowButton").style.display =
+    "none";
+
+  document.getElementById("cakeMessage").style.display =
+    "block";
+
+}
+
+
+/* ================================
+   ORIGINAL FINAL PAGE
+================================ */
+
+function showFinalPage() {
 
   document.getElementById("opening").style.display =
     "none";
@@ -876,6 +1164,10 @@ function showFinalSurprise() {
 }
 
 
+/* ================================
+   FINAL NAMES
+================================ */
+
 function showFinalNames() {
 
   document.querySelector(".alm").style.display =
@@ -890,6 +1182,7 @@ function showFinalNames() {
   });
 
 }
+
 
 
 </script>
