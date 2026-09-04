@@ -502,3 +502,320 @@ button{
   transition:.6s;
   box-shadow:0 8px 20px rgba(0,0,0,.35);
   border:2px solid rgba(255,255,255,.
+memoryPhoto img{
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  display:block;
+
+}
+
+.memoryPhoto.revealed{
+
+  filter:blur(0);
+
+  transform:scale(1.05);
+
+}
+
+.memory-message{
+
+  max-width:320px;
+
+  min-height:70px;
+
+  margin:55px auto 45px;
+
+  font-size:17px;
+
+  line-height:1.7;
+
+}
+
+.letter-section{
+
+  max-width:360px;
+
+  margin:55px auto 20px;
+
+}
+
+.infinity-card{
+
+  background:#f7f1e3;
+
+  color:#263238;
+
+  padding:32px 24px;
+
+  border-radius:8px;
+
+  box-shadow:0 12px 35px rgba(0,0,0,.35);
+
+}
+
+.infinity-card-button{
+
+  border:none;
+
+  background:none;
+
+  font-size:68px;
+
+  color:#244b88;
+
+  animation:infinityPulse 2s infinite;
+
+}
+
+.infinity-card p{
+
+  font-size:15px;
+
+  line-height:1.6;
+
+  margin:0;
+
+}
+
+/* =====================================================
+
+   LOVE LETTER INSIDE MEMORY
+
+===================================================== */
+
+.love-letter{
+
+  display:none;
+
+  margin-top:25px;
+
+  background:#fffdf7;
+
+  color:#263238;
+
+  padding:30px 24px;
+
+  border-radius:5px;
+
+  text-align:left;
+
+  line-height:1.8;
+
+  font-size:16px;
+
+  box-shadow:0 12px 35px rgba(0,0,0,.35);
+
+  animation:letterAppear .8s ease;
+
+  position:relative;
+
+}
+
+.love-letter:before,
+
+.love-letter:after{
+
+  content:"";
+
+  position:absolute;
+
+  width:32px;
+
+  height:25px;
+
+  border-radius:50% 45% 50% 45%;
+
+  background:#b85a72;
+
+  opacity:.65;
+
+}
+
+.love-letter:before{
+
+  left:10px;
+
+  top:10px;
+
+  transform:rotate(-25deg);
+
+}
+
+.love-letter:after{
+
+  right:10px;
+
+  bottom:10px;
+
+  transform:rotate(25deg);
+
+}
+
+.love-letter p{
+
+  margin:17px 0;
+
+}
+
+.love-letter-ending{
+
+  text-align:center;
+
+  font-size:38px;
+
+  color:#244b88;
+
+  margin:25px 0;
+
+}
+
+.next-letter-button{
+
+  text-align:center;
+
+  margin-top:25px;
+
+}
+
+.next-letter-button button{
+
+  border:none;
+
+  background:#071a33;
+
+  color:white;
+
+  width:65px;
+
+  height:65px;
+
+  border-radius:50%;
+
+  font-size:32px;
+
+}
+
+/* =====================================================
+
+   CHILDHOOD PAGE
+
+===================================================== */
+
+.childhood-screen{
+
+  min-height:100vh;
+
+  background:
+
+    radial-gradient(circle at 50% 15%,#ffffff 0%,#eaf6ff 38%,#b9dcf7 100%);
+
+  color:#071a33;
+
+  text-align:center;
+
+  padding:45px 20px 65px;
+
+  animation:fadeIn .8s ease;
+
+}
+
+.childhood-inner{
+
+  max-width:400px;
+
+  margin:auto;
+
+}
+
+.childhood-title{
+
+  font-size:29px;
+
+  line-height:1.25;
+
+  margin:5px 0 28px;
+
+}
+
+.childhood-photo{
+
+  background:#fffdf7;
+
+  padding:12px;
+
+  border-radius:20px;
+
+  max-width:300px;
+
+  margin:0 auto 25px;
+
+  box-shadow:0 12px 35px rgba(0,45,90,.2);
+
+}
+
+.childhood-photo img{
+
+  width:100%;
+
+  display:block;
+
+  border-radius:13px;
+
+}
+
+.childhood-text{
+
+  background:rgba(255,255,255,.9);
+
+  padding:22px 18px;
+
+  border-radius:18px;
+
+  font-size:17px;
+
+  line-height:1.7;
+
+  box-shadow:0 8px 25px rgba(0,45,90,.12);
+
+}
+
+.childhood-text p{
+
+  margin:10px 0;
+
+}
+
+.childhood-button{
+
+  margin-top:32px;
+
+}
+
+/* =====================================================
+
+   REAL CSS BALLOONS
+
+===================================================== */
+
+.cake-screen{
+
+  position:relative;
+
+  min-height:100vh;
+
+  overflow:hidden;
+
+  background:
+
+    radial-gradient(circle at 50% 20%,#ffffff 0%,#eaf6ff 48%,#c5e3f9 100%);
+
+  color:#071a33;
+
+  text-align:center;
+
+  padding:30
