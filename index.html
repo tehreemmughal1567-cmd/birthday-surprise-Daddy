@@ -341,3 +341,2732 @@ button{
     background:#ff9db8;
     transform:rotate(45deg);
     opacity
+    animation:heartRise 4s ease forwards;
+
+}
+
+.heart:before,
+
+.heart:after{
+
+    content:"";
+
+    position:absolute;
+
+    width:15px;
+
+    height:15px;
+
+    border-radius:50%;
+
+    background:inherit;
+
+}
+
+.heart:before{
+
+    left:-7px;
+
+}
+
+.heart:after{
+
+    top:-7px;
+
+}
+
+@keyframes heartRise{
+
+    0%{opacity:0;transform:translateY(30px) rotate(45deg) scale(.4)}
+
+    20%{opacity:.9}
+
+    100%{opacity:0;transform:translateY(-90vh) rotate(45deg) scale(1.2)}
+
+}
+
+/* =========================
+
+   ENTER PASSWORD
+
+========================= */
+
+#passwordScreen{
+
+    background:
+
+      radial-gradient(circle at 50% 35%,rgba(90,150,240,.2),transparent 32%),
+
+      linear-gradient(145deg,#04143d,#09285e,#06173d);
+
+}
+
+.sparkles{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+.sparkle{
+
+    position:absolute;
+
+    width:3px;
+
+    height:3px;
+
+    border-radius:50%;
+
+    background:#dcecff;
+
+    opacity:.5;
+
+    animation:sparkle 2.8s infinite ease-in-out;
+
+}
+
+@keyframes sparkle{
+
+    0%,100%{opacity:.15;transform:scale(.7)}
+
+    50%{opacity:.75;transform:scale(1.5)}
+
+}
+
+.lock-title{
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:clamp(45px,10vw,78px);
+
+}
+
+.lock-sub{
+
+    margin-top:8px;
+
+    font-size:22px;
+
+    color:#bfdcff;
+
+}
+
+.password-box{
+
+    margin:28px auto 0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+.password-input{
+
+    width:min(300px,85vw);
+
+    padding:15px 20px;
+
+    border:1px solid rgba(220,240,255,.45);
+
+    border-radius:40px;
+
+    outline:none;
+
+    background:rgba(255,255,255,.1);
+
+    color:white;
+
+    text-align:center;
+
+    font-size:19px;
+
+}
+
+.password-input::placeholder{
+
+    color:#bad0ed;
+
+}
+
+.error-box{
+
+    min-height:50px;
+
+    margin-top:18px;
+
+    color:#ffc0d0;
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:29px;
+
+}
+
+/* =========================
+
+   CARTOON COUPLE
+
+========================= */
+
+.cartoon-stage{
+
+    width:260px;
+
+    height:180px;
+
+    margin:20px auto 0;
+
+    position:relative;
+
+}
+
+.char{
+
+    position:absolute;
+
+    bottom:20px;
+
+    width:95px;
+
+    height:125px;
+
+    transition:.6s;
+
+}
+
+.char-left{
+
+    left:20px;
+
+}
+
+.char-right{
+
+    right:20px;
+
+}
+
+.head{
+
+    width:78px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    position:absolute;
+
+    top:0;
+
+    left:8px;
+
+    background:#fff;
+
+    border:2px solid rgba(0,0,0,.08);
+
+    box-shadow:0 5px 12px rgba(0,0,0,.15);
+
+}
+
+.ear{
+
+    position:absolute;
+
+    width:25px;
+
+    height:25px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    top:-5px;
+
+}
+
+.ear.one{left:-7px}
+
+.ear.two{right:-7px}
+
+.eye{
+
+    position:absolute;
+
+    width:6px;
+
+    height:9px;
+
+    border-radius:50%;
+
+    background:#17213b;
+
+    top:30px;
+
+}
+
+.eye.one{left:25px}
+
+.eye.two{right:25px}
+
+.mouth{
+
+    position:absolute;
+
+    width:22px;
+
+    height:11px;
+
+    border-bottom:3px solid #27304b;
+
+    border-radius:50%;
+
+    left:28px;
+
+    top:45px;
+
+}
+
+.body{
+
+    position:absolute;
+
+    width:75px;
+
+    height:65px;
+
+    left:10px;
+
+    bottom:0;
+
+    border-radius:42px 42px 25px 25px;
+
+    background:#a8d3ff;
+
+}
+
+.arm{
+
+    position:absolute;
+
+    width:45px;
+
+    height:15px;
+
+    border-radius:20px;
+
+    background:#fff;
+
+    top:82px;
+
+}
+
+.char-left .arm{
+
+    right:-16px;
+
+    transform:rotate(-20deg);
+
+}
+
+.char-right .arm{
+
+    left:-16px;
+
+    transform:rotate(20deg);
+
+}
+
+.bow-head{
+
+    position:absolute;
+
+    top:-15px;
+
+    left:25px;
+
+    width:38px;
+
+    height:22px;
+
+    z-index:5;
+
+}
+
+.bow-head:before,
+
+.bow-head:after{
+
+    content:"";
+
+    position:absolute;
+
+    width:22px;
+
+    height:19px;
+
+    background:#8dbef4;
+
+    border-radius:60%;
+
+}
+
+.bow-head:before{left:0;transform:rotate(15deg)}
+
+.bow-head:after{right:0;transform:rotate(-15deg)}
+
+.bow-head span{
+
+    position:absolute;
+
+    width:11px;
+
+    height:11px;
+
+    background:#5d95d9;
+
+    border-radius:50%;
+
+    left:14px;
+
+    top:5px;
+
+    z-index:2;
+
+}
+
+.kiss{
+
+    display:none;
+
+    position:absolute;
+
+    left:50%;
+
+    top:35px;
+
+    transform:translateX(-50%);
+
+    font-size:30px;
+
+    color:#ff8eae;
+
+    animation:kissPop 1s ease infinite alternate;
+
+}
+
+@keyframes kissPop{
+
+    from{transform:translateX(-50%) scale(.8)}
+
+    to{transform:translateX(-50%) scale(1.15)}
+
+}
+
+.cartoon-stage.wrong .char-left{
+
+    animation:pullLeft 1.7s ease-in-out forwards;
+
+}
+
+.cartoon-stage.wrong .char-right{
+
+    animation:pullRight 1.7s ease-in-out forwards;
+
+}
+
+@keyframes pullLeft{
+
+    50%{transform:translateX(75px) rotate(7deg)}
+
+    100%{transform:translateX(115px) rotate(10deg)}
+
+}
+
+@keyframes pullRight{
+
+    50%{transform:translateX(-45px)}
+
+    100%{transform:translateX(-75px)}
+
+}
+
+.cartoon-stage.correct .char-left{
+
+    animation:kissLeft 1.8s ease forwards;
+
+}
+
+.cartoon-stage.correct .char-right{
+
+    animation:kissRight 1.8s ease forwards;
+
+}
+
+.cartoon-stage.correct .kiss{
+
+    display:block;
+
+}
+
+@keyframes kissLeft{
+
+    to{transform:translateX(32px)}
+
+}
+
+@keyframes kissRight{
+
+    to{transform:translateX(-32px)}
+
+}
+
+/* =========================
+
+   WAIT / GIFT
+
+========================= */
+
+#waitScreen{
+
+    background:linear-gradient(145deg,#061640,#0a2e70,#06183e);
+
+}
+
+.gift{
+
+    width:140px;
+
+    height:120px;
+
+    margin:30px auto;
+
+    position:relative;
+
+    animation:giftFloat 1.8s ease-in-out infinite;
+
+}
+
+.gift-box{
+
+    position:absolute;
+
+    width:140px;
+
+    height:90px;
+
+    bottom:0;
+
+    background:#b9ddff;
+
+    border-radius:8px;
+
+}
+
+.gift-box:before{
+
+    content:"";
+
+    position:absolute;
+
+    left:58px;
+
+    width:24px;
+
+    height:90px;
+
+    background:#4e82c5;
+
+}
+
+.gift-lid{
+
+    position:absolute;
+
+    width:150px;
+
+    height:25px;
+
+    left:-5px;
+
+    top:15px;
+
+    background:#d7ecff;
+
+    border-radius:7px;
+
+    z-index:2;
+
+}
+
+.gift-lid:before{
+
+    content:"";
+
+    position:absolute;
+
+    left:63px;
+
+    width:24px;
+
+    height:25px;
+
+    background:#4e82c5;
+
+}
+
+@keyframes giftFloat{
+
+    0%,100%{transform:translateY(0)}
+
+    50%{transform:translateY(-12px)}
+
+}
+
+.wait-title{
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:45px;
+
+}
+
+.wait-text{
+
+    margin-top:10px;
+
+    font-size:22px;
+
+}
+
+/* =========================
+
+   CHILDHOOD
+
+========================= */
+
+#childhoodScreen,
+
+#memoryScreen,
+
+#cakeScreen{
+
+    background:linear-gradient(145deg,#061640,#0b2d6d,#06183e);
+
+}
+
+.photo-frame{
+
+    width:min(320px,82vw);
+
+    padding:10px;
+
+    background:#f4f0e7;
+
+    border-radius:5px;
+
+    margin:25px auto;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.3);
+
+}
+
+.photo-frame img{
+
+    display:block;
+
+    width:100%;
+
+    max-height:420px;
+
+    object-fit:cover;
+
+    border-radius:2px;
+
+}
+
+.section-title{
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:clamp(42px,10vw,68px);
+
+}
+
+.section-text{
+
+    max-width:650px;
+
+    margin:15px auto;
+
+    font-size:21px;
+
+    line-height:1.6;
+
+    color:#e0edff;
+
+}
+
+.proud{
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:29px;
+
+    color:#c7e3ff;
+
+    margin-top:15px;
+
+}
+
+/* =========================
+
+   MEMORIES
+
+========================= */
+
+.memory-title{
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:55px;
+
+}
+
+.memory-grid{
+
+    width:min(380px,90vw);
+
+    height:450px;
+
+    margin:25px auto;
+
+    position:relative;
+
+}
+
+.memory{
+
+    position:absolute;
+
+    width:125px;
+
+    height:155px;
+
+    padding:7px;
+
+    background:#fff;
+
+    border-radius:5px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+
+    cursor:pointer;
+
+    transition:.5s;
+
+}
+
+.memory img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    filter:blur(9px);
+
+    transition:.7s;
+
+}
+
+.memory.revealed img{
+
+    filter:blur(0);
+
+}
+
+.memory:after{
+
+    content:"TAP";
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:white;
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:28px;
+
+    text-shadow:0 2px 8px #000;
+
+    pointer-events:none;
+
+}
+
+.memory.revealed:after{
+
+    display:none;
+
+}
+
+.m1{top:20px;left:125px;transform:rotate(-3deg)}
+
+.m2{top:110px;left:10px;transform:rotate(-12deg)}
+
+.m3{top:110px;right:10px;transform:rotate(12deg)}
+
+.m4{top:265px;left:65px;transform:rotate(-7deg)}
+
+.m5{top:265px;right:65px;transform:rotate(7deg)}
+
+.memory-note{
+
+    font-size:19px;
+
+    color:#bddcff;
+
+}
+
+/* =========================
+
+   PROPER CAKE
+
+========================= */
+
+.cake-title{
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:52px;
+
+}
+
+.cake-scene{
+
+    position:relative;
+
+    width:350px;
+
+    height:370px;
+
+    margin:10px auto 0;
+
+}
+
+.cake{
+
+    position:absolute;
+
+    bottom:45px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:290px;
+
+    height:180px;
+
+}
+
+.cake-bottom{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:290px;
+
+    height:95px;
+
+    background:linear-gradient(#e8f3ff,#b8d8f8);
+
+    border-radius:0 0 22px 22px;
+
+    box-shadow:0 15px 25px rgba(0,0,0,.3);
+
+}
+
+.cake-middle{
+
+    position:absolute;
+
+    bottom:72px;
+
+    left:15px;
+
+    width:260px;
+
+    height:70px;
+
+    background:linear-gradient(#ffffff,#d5e8fa);
+
+    border-radius:50% 50% 18px 18px;
+
+}
+
+.cake-top{
+
+    position:absolute;
+
+    bottom:126px;
+
+    left:15px;
+
+    width:260px;
+
+    height:55px;
+
+    background:#f8fcff;
+
+    border-radius:50%;
+
+    box-shadow:inset 0 -8px 0 #b5d7f5;
+
+}
+
+.cream{
+
+    position:absolute;
+
+    bottom:112px;
+
+    width:32px;
+
+    height:42px;
+
+    border-radius:0 0 20px 20px;
+
+    background:white;
+
+}
+
+.c1{left:35px}
+
+.c2{left:88px}
+
+.c3{left:141px}
+
+.c4{left:194px}
+
+.c5{left:240px}
+
+.cake-decoration{
+
+    position:absolute;
+
+    bottom:90px;
+
+    width:100%;
+
+    text-align:center;
+
+    color:#4f83c0;
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:27px;
+
+}
+
+.candle{
+
+    position:absolute;
+
+    bottom:174px;
+
+    width:13px;
+
+    height:70px;
+
+    background:repeating-linear-gradient(
+
+        45deg,
+
+        #76a9dc 0 8px,
+
+        #f7fbff 8px 16px
+
+    );
+
+    border-radius:4px 4px 2px 2px;
+
+    cursor:pointer;
+
+    z-index:5;
+
+}
+
+.candle.off{
+
+    opacity:.45;
+
+}
+
+.candle .flame{
+
+    position:absolute;
+
+    width:18px;
+
+    height:25px;
+
+    left:-2px;
+
+    top:-22px;
+
+    background:#ffd77a;
+
+    border-radius:50% 50% 50% 0;
+
+    transform:rotate(-45deg);
+
+    box-shadow:0 0 15px rgba(255,205,90,.8);
+
+    animation:flame .45s infinite alternate;
+
+}
+
+.candle.off .flame{
+
+    display:none;
+
+}
+
+@keyframes flame{
+
+    from{transform:rotate(-45deg) scale(.9)}
+
+    to{transform:rotate(-38deg) scale(1.1)}
+
+}
+
+.can1{left:52px}
+
+.can2{left:110px;height:82px;bottom:174px}
+
+.can3{left:168px;height:62px}
+
+.can4{left:215px;height:86px}
+
+.can5{left:270px;height:67px}
+
+.cake-next{
+
+    display:none;
+
+    margin-top:5px;
+
+}
+
+.cake-next.show{
+
+    display:inline-block;
+
+}
+
+/* =========================
+
+   PAPER LETTER
+
+========================= */
+
+#letterScreen,
+
+#finalLetterScreen{
+
+    background:
+
+      radial-gradient(circle at 50% 50%,rgba(80,130,220,.2),transparent 35%),
+
+      #06183e;
+
+    padding:35px 16px;
+
+    align-items:flex-start;
+
+}
+
+.paper{
+
+    width:min(760px,94vw);
+
+    margin:20px auto;
+
+    padding:38px 30px;
+
+    position:relative;
+
+    color:#17233b;
+
+    background:
+
+      linear-gradient(rgba(255,255,255,.4),rgba(255,255,255,.4)),
+
+      #f5efdf;
+
+    border:2px solid #d7c9a9;
+
+    box-shadow:
+
+      0 20px 60px rgba(0,0,0,.35),
+
+      inset 0 0 35px rgba(120,90,40,.08);
+
+    border-radius:4px;
+
+}
+
+.paper:before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:8px;
+
+    border:1px solid #c9b88f;
+
+    pointer-events:none;
+
+}
+
+.lip{
+
+    position:absolute;
+
+    width:38px;
+
+    height:20px;
+
+    border-radius:50% 40% 50% 40%;
+
+    background:#b84e69;
+
+    opacity:.72;
+
+    transform:rotate(-15deg);
+
+}
+
+.lip:after{
+
+    content:"";
+
+    position:absolute;
+
+    width:30px;
+
+    height:7px;
+
+    left:4px;
+
+    top:7px;
+
+    background:#f5efdf;
+
+    border-radius:50%;
+
+}
+
+.lip1{top:18px;left:18px}
+
+.lip2{top:20px;right:22px;transform:rotate(17deg)}
+
+.lip3{bottom:20px;left:20px;transform:rotate(10deg)}
+
+.lip4{bottom:18px;right:20px;transform:rotate(-13deg)}
+
+.letter-heading{
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:45px;
+
+    color:#102e62;
+
+    margin-bottom:25px;
+
+}
+
+.letter p{
+
+    position:relative;
+
+    z-index:2;
+
+    font-size:20px;
+
+    line-height:1.75;
+
+    margin-bottom:17px;
+
+}
+
+.hand{
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:29px;
+
+    color:#143d79;
+
+}
+
+.important{
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:29px;
+
+    color:#143d79;
+
+    text-align:center;
+
+    margin:20px 0;
+
+}
+
+.signature{
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:31px;
+
+    color:#143d79;
+
+    text-align:right;
+
+    margin-top:25px;
+
+}
+
+/* =========================
+
+   FINAL
+
+========================= */
+
+.final-title{
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:clamp(39px,9vw,65px);
+
+    text-align:center;
+
+}
+
+.final-big{
+
+    text-align:center;
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:35px;
+
+    color:#123a76;
+
+    margin:25px 0;
+
+}
+
+.infinity-btn{
+
+    display:block;
+
+    margin:35px auto 0;
+
+    width:110px;
+
+    height:110px;
+
+    border-radius:50%;
+
+    background:#dcecff;
+
+    color:#12396e;
+
+    font-size:55px;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.25);
+
+    transition:.25s;
+
+}
+
+.infinity-btn:active{
+
+    transform:scale(.9);
+
+}
+
+.final-names{
+
+    display:none;
+
+    text-align:center;
+
+    animation:finalReveal 1s ease both;
+
+}
+
+.final-names.show{
+
+    display:block;
+
+}
+
+@keyframes finalReveal{
+
+    from{opacity:0;transform:scale(.7)}
+
+    to{opacity:1;transform:scale(1)}
+
+}
+
+.names{
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:clamp(65px,16vw,105px);
+
+    color:#12396e;
+
+}
+
+.final-birthday{
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:clamp(32px,8vw,50px);
+
+    color:#163e76;
+
+}
+
+/* =========================
+
+   MOBILE
+
+========================= */
+
+@media(max-width:500px){
+
+    .screen{
+
+        padding:18px;
+
+    }
+
+    .bow1{
+
+        left:-5px;
+
+        top:7%;
+
+    }
+
+    .bow2{
+
+        right:-8px;
+
+        top:18%;
+
+    }
+
+    .bow3{
+
+        left:-3px;
+
+        bottom:8%;
+
+    }
+
+    .paper{
+
+        padding:32px 21px;
+
+    }
+
+    .paper p{
+
+        font-size:18px;
+
+        line-height:1.7;
+
+    }
+
+    .memory-grid{
+
+        transform:scale(.88);
+
+        margin-top:5px;
+
+        margin-bottom:-15px;
+
+    }
+
+    .cake-scene{
+
+        transform:scale(.84);
+
+        margin-top:-15px;
+
+        margin-bottom:-25px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================================================
+
+     1. START
+
+========================================================= -->
+
+<section id="startScreen" class="screen active blue-bg">
+
+    <div class="bow bow1">
+
+        <span class="knot"></span>
+
+        <span class="tail1"></span>
+
+        <span class="tail2"></span>
+
+    </div>
+
+    <div class="bow bow2">
+
+        <span class="knot"></span>
+
+        <span class="tail1"></span>
+
+        <span class="tail2"></span>
+
+    </div>
+
+    <div class="bow bow3">
+
+        <span class="knot"></span>
+
+        <span class="tail1"></span>
+
+        <span class="tail2"></span>
+
+    </div>
+
+    <div class="center">
+
+        <div class="start-title">
+
+            Do you want to see
+
+        </div>
+
+        <div class="start-subtitle">
+
+            what I made for you?
+
+        </div>
+
+        <div class="choice-row">
+
+            <button class="choice" onclick="startTimeJourney()">YES</button>
+
+            <button class="choice" id="noBtn" onclick="noReaction()">NO</button>
+
+        </div>
+
+        <div id="noMessage" class="no-message"></div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+
+     2. TIME JOURNEY
+
+========================================================= -->
+
+<section id="timeScreen" class="screen blue-bg">
+
+    <div class="heart-field" id="heartField"></div>
+
+    <div class="center">
+
+        <div id="countNumber" class="count-number">3</div>
+
+        <div id="timeJourneyContent" class="time-card hidden">
+
+            <div class="time-label">DAY</div>
+
+            <div id="dayValue" class="time-value">01</div>
+
+            <div class="time-label">MONTH</div>
+
+            <div id="monthValue" class="time-value">SEPTEMBER</div>
+
+            <div class="time-label">YEAR</div>
+
+            <div id="yearValue" class="time-value">2003</div>
+
+            <div id="fastTime" class="fast-time"></div>
+
+            <div id="yearsMessage" class="years-message"></div>
+
+            <div id="now23" class="now-23"></div>
+
+            <div id="dateFinal" class="date-final"></div>
+
+            <button id="timeContinue" class="primary-btn hidden" onclick="openPassword()">
+
+                ENTER YOUR SURPRISE
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+
+     3. PASSWORD
+
+========================================================= -->
+
+<section id="passwordScreen" class="screen blue-bg">
+
+    <div class="sparkles" id="sparkles"></div>
+
+    <div class="center">
+
+        <div class="lock-title">Enter Your Surprise</div>
+
+        <div class="lock-sub">
+
+            Enter the secret password
+
+        </div>
+
+        <div class="cartoon-stage" id="cartoonStage">
+
+            <div class="char char-left">
+
+                <div class="head">
+
+                    <div class="ear one"></div>
+
+                    <div class="ear two"></div>
+
+                    <div class="eye one"></div>
+
+                    <div class="eye two"></div>
+
+                    <div class="mouth"></div>
+
+                </div>
+
+                <div class="bow-head">
+
+                    <span></span>
+
+                </div>
+
+                <div class="body"></div>
+
+                <div class="arm"></div>
+
+            </div>
+
+            <div class="char char-right">
+
+                <div class="head">
+
+                    <div class="ear one"></div>
+
+                    <div class="ear two"></div>
+
+                    <div class="eye one"></div>
+
+                    <div class="eye two"></div>
+
+                    <div class="mouth"></div>
+
+                </div>
+
+                <div class="bow-head">
+
+                    <span></span>
+
+                </div>
+
+                <div class="body"></div>
+
+                <div class="arm"></div>
+
+            </div>
+
+            <div class="kiss">♡</div>
+
+        </div>
+
+        <div class="password-box">
+
+            <input
+
+                id="passwordInput"
+
+                class="password-input"
+
+                type="password"
+
+                placeholder="Password"
+
+                autocomplete="off"
+
+            >
+
+            <button class="primary-btn" onclick="checkPassword()">
+
+                OPEN
+
+            </button>
+
+        </div>
+
+        <div id="errorBox" class="error-box"></div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+
+     4. WAIT / GIFT
+
+========================================================= -->
+
+<section id="waitScreen" class="screen blue-bg">
+
+    <div class="center">
+
+        <div class="wait-title">
+
+            Wait for your special birthday gift...
+
+        </div>
+
+        <div class="gift">
+
+            <div class="gift-lid"></div>
+
+            <div class="gift-box"></div>
+
+        </div>
+
+        <div class="wait-text">
+
+            Something special is coming for you.
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+
+     5. CHILDHOOD
+
+========================================================= -->
+
+<section id="childhoodScreen" class="screen blue-bg">
+
+    <div class="center">
+
+        <div class="section-title">
+
+            Once upon a time...
+
+        </div>
+
+        <div class="photo-frame">
+
+            <img src="IMG_8595.jpeg" alt="Childhood memory">
+
+        </div>
+
+        <div class="section-text">
+
+            Once, you were just a little boy with a whole life waiting
+
+            ahead of you. Years passed, and that little boy grew into
+
+            the mature, hardworking, wise and strong man you are today.
+
+        </div>
+
+        <div class="proud">
+
+            My little bee, I’m genuinely so proud of the person you’ve become.
+
+        </div>
+
+        <button class="primary-btn" onclick="go('memoryScreen')">
+
+            Our Memories
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+
+     6. MEMORIES
+
+========================================================= -->
+
+<section id="memoryScreen" class="screen blue-bg">
+
+    <div class="center">
+
+        <div class="memory-title">
+
+            Little Memories
+
+        </div>
+
+        <div class="memory-note">
+
+            Tap each picture to reveal it.
+
+        </div>
+
+        <div class="memory-grid">
+
+            <div class="memory m1" onclick="revealMemory(this)">
+
+                <img src="471DBFA2-5788-45A0-AC2F-3D14ADE51C0E.jpeg">
+
+            </div>
+
+            <div class="memory m2" onclick="revealMemory(this)">
+
+                <img src="54CD354B-0E3F-4100-A519-05EC68A424BB.jpeg">
+
+            </div>
+
+            <div class="memory m3" onclick="revealMemory(this)">
+
+                <img src="EF3F30E1-97F2-4E17-AE7D-C8E7A59D1FFE.jpeg">
+
+            </div>
+
+            <div class="memory m4" onclick="revealMemory(this)">
+
+                <img src="IMG_4665.jpeg">
+
+            </div>
+
+            <div class="memory m5" onclick="revealMemory(this)">
+
+                <img src="IMG_7137.jpeg">
+
+            </div>
+
+        </div>
+
+        <button class="primary-btn" onclick="go('cakeScreen')">
+
+            One More Surprise
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+
+     7. CAKE
+
+========================================================= -->
+
+<section id="cakeScreen" class="screen blue-bg">
+
+    <div class="center">
+
+        <div class="cake-title">
+
+            Make a Wish
+
+        </div>
+
+        <div class="cake-scene">
+
+            <div class="cake">
+
+                <div class="cake-top"></div>
+
+                <div class="cake-middle"></div>
+
+                <div class="cake-bottom"></div>
+
+                <div class="cream c1"></div>
+
+                <div class="cream c2"></div>
+
+                <div class="cream c3"></div>
+
+                <div class="cream c4"></div>
+
+                <div class="cream c5"></div>
+
+                <div class="cake-decoration">
+
+                    Happy Birthday
+
+                </div>
+
+            </div>
+
+            <div class="candle can1" onclick="blowCandle(this)">
+
+                <div class="flame"></div>
+
+            </div>
+
+            <div class="candle can2" onclick="blowCandle(this)">
+
+                <div class="flame"></div>
+
+            </div>
+
+            <div class="candle can3" onclick="blowCandle(this)">
+
+                <div class="flame"></div>
+
+            </div>
+
+            <div class="candle can4" onclick="blowCandle(this)">
+
+                <div class="flame"></div>
+
+            </div>
+
+            <div class="candle can5" onclick="blowCandle(this)">
+
+                <div class="flame"></div>
+
+            </div>
+
+        </div>
+
+        <div id="candleHint" class="small">
+
+            Tap the candles to blow them out.
+
+        </div>
+
+        <button
+
+            id="cakeNext"
+
+            class="primary-btn cake-next"
+
+            onclick="go('letterScreen')">
+
+            ∞
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+
+     8. FIRST LOVE LETTER
+
+========================================================= -->
+
+<section id="letterScreen" class="screen">
+
+    <div class="paper">
+
+        <div class="lip lip1"></div>
+
+        <div class="lip lip2"></div>
+
+        <div class="lip lip3"></div>
+
+        <div class="lip lip4"></div>
+
+        <div class="letter">
+
+            <div class="letter-heading">
+
+                My Love,
+
+            </div>
+
+            <p>
+
+                I love you every second, every minute, every hour,
+
+                today, tomorrow, and every single day of our future.
+
+                You are so close to my heart, and I honestly cannot
+
+                explain how much you mean to me.
+
+            </p>
+
+            <p>
+
+                I pray that Allah always blesses you with success,
+
+                prosperity, happiness and everything your heart wishes for.
+
+                I pray that every step you take brings you closer to
+
+                everything you dream of.
+
+            </p>
+
+            <div class="important">
+
+                InshaAllah, one day we will have our beautiful marriage,
+
+                our cozy little home filled with love, and our happy family
+
+                with our two little children.
+
+            </div>
+
+            <p>
+
+                My greatest wish is that we stay together forever,
+
+                loving and supporting each other through every chapter
+
+                of life. I want to be there for your good days and your
+
+                difficult days, celebrating every success with you and
+
+                standing beside you whenever life becomes difficult.
+
+            </p>
+
+            <p>
+
+                By your next birthday, InshaAllah, you will be my husband,
+
+                my mahram, my life partner and my
+
+                <span class="hand">مجازی خدا</span>.
+
+            </p>
+
+            <p>
+
+                You taught me what love feels like. You made me understand
+
+                what it means to have someone who feels like home.
+
+                With you, I feel safe in your hands, and my heart feels
+
+                peaceful knowing that you are the person I want beside me.
+
+            </p>
+
+            <div class="important">
+
+                Next year, InshaAllah, we will celebrate your birthday
+
+                together as husband and wife.
+
+            </div>
+
+            <p>
+
+                Until that day comes, I will keep waiting for the moment
+
+                when we finally get to be together, without distance,
+
+                without waiting, and without wishing that you were here.
+
+            </p>
+
+            <div class="signature">
+
+                Forever yours,
+
+            </div>
+
+            <button class="primary-btn" onclick="go('finalLetterScreen')">
+
+                Keep Reading
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+
+     9. FINAL LETTER
+
+========================================================= -->
+
+<section id="finalLetterScreen" class="screen">
+
+    <div class="paper">
+
+        <div class="lip lip1"></div>
+
+        <div class="lip lip2"></div>
+
+        <div class="lip lip3"></div>
+
+        <div class="lip lip4"></div>
+
+        <div id="finalLetter" class="letter">
+
+            <div class="final-title">
+
+                If Only I Could Be There With You…
+
+            </div>
+
+            <p>
+
+                <span class="hand">I HAVE YOU IN MY HEART.</span>
+
+            </p>
+
+            <p>
+
+                Happy Birthday, my love.
+
+            </p>
+
+            <p>
+
+                Today, more than anything, I wish I could be there with you.
+
+                I wish I could see your face when you wake up, sit beside you,
+
+                look at you and simply tell you how much you mean to me.
+
+            </p>
+
+            <p>
+
+                I wish I could celebrate this day with you in person,
+
+                make you smile, annoy you a little, laugh with you,
+
+                and make memories that we could keep forever.
+
+            </p>
+
+            <div class="final-big">
+
+                But InshaAllah, one day…
+
+            </div>
+
+            <p>
+
+                There will be no screens between us.
+
+            </p>
+
+            <p>
+
+                No miles.
+
+            </p>
+
+            <p>
+
+                No goodbyes.
+
+            </p>
+
+            <p>
+
+                No wishing that I could be there.
+
+            </p>
+
+            <div class="final-big">
+
+                I'll just be there. With you.
+
+            </div>
+
+            <p>
+
+                I will be beside you on your birthdays.
+
+                I will be beside you on ordinary days too.
+
+                I will be there when you are happy, when you are tired,
+
+                when you succeed, and when you need someone to simply
+
+                sit beside you.
+
+            </p>
+
+            <p>
+
+                I don't just want moments with you.
+
+                I want a lifetime with you.
+
+            </p>
+
+            <div class="final-big">
+
+                Not for a while.  
+
+                Not for a moment.  
+
+                But forever. ♾️
+
+            </div>
+
+            <p>
+
+                One day, InshaAllah, all these wishes will become memories
+
+                we can look back on together and smile about.
+
+            </p>
+
+            <p>
+
+                Until then, please remember that no matter how far away
+
+                I am, you are always in my heart.
+
+            </p>
+
+            <div class="signature">
+
+                Happy Birthday, my love.
+
+            </div>
+
+            <button class="infinity-btn" onclick="showFinalNames()">
+
+                ∞
+
+            </button>
+
+            <div id="finalNames" class="final-names">
+
+                <div class="names">
+
+                    A ❤️ M
+
+                </div>
+
+                <div class="final-birthday">
+
+                    Happy Birthday Manni ❤️
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+
+/* =========================================================
+
+   BASIC SCREEN CONTROL
+
+========================================================= */
+
+function go(id){
+
+    document.querySelectorAll(".screen").forEach(screen=>{
+
+        screen.classList.remove("active");
+
+    });
+
+    const target=document.getElementById(id);
+
+    if(target){
+
+        target.classList.add("active");
+
+        window.scrollTo(0,0);
+
+    }
+
+}
+
+/* =========================================================
+
+   NO BUTTON
+
+========================================================= */
+
+let noCount=0;
+
+function noReaction(){
+
+    const msg=document.getElementById("noMessage");
+
+    noCount++;
+
+    if(noCount===1){
+
+        msg.textContent="Are you sure?";
+
+    }
+
+    else if(noCount===2){
+
+        msg.textContent="You really don't want to see it?";
+
+    }
+
+    else{
+
+        msg.textContent="Okay... but I made it just for you.";
+
+    }
+
+    const noBtn=document.getElementById("noBtn");
+
+    noBtn.animate(
+
+        [
+
+            {transform:"translateX(0)"},
+
+            {transform:"translateX(-8px)"},
+
+            {transform:"translateX(8px)"},
+
+            {transform:"translateX(0)"}
+
+        ],
+
+        {
+
+            duration:450
+
+        }
+
+    );
+
+}
+
+/* =========================================================
+
+   START TIME JOURNEY
+
+========================================================= */
+
+function startTimeJourney(){
+
+    go("timeScreen");
+
+    const count=document.getElementById("countNumber");
+
+    const content=document.getElementById("timeJourneyContent");
+
+    let numbers=["3","2","1"];
+
+    let i=0;
+
+    count.textContent=numbers[i];
+
+    const timer=setInterval(()=>{
+
+        i++;
+
+        if(i<numbers.length){
+
+            count.textContent=numbers[i];
+
+            count.style.animation="none";
+
+            void count.offsetWidth;
+
+            count.style.animation="countPop .75s ease both";
+
+        }
+
+        else{
+
+            clearInterval(timer);
+
+            count.classList.add("hidden");
+
+            content.classList.remove("hidden");
+
+            beginTimeAnimation();
+
+        }
+
+    },900);
+
+}
+
+/* =========================================================
+
+   TIME / AGE JOURNEY
+
+========================================================= */
+
+function beginTimeAnimation(){
+
+    const day=document.getElementById("dayValue");
+
+    const month=document.getElementById("monthValue");
+
+    const year=document.getElementById("yearValue");
+
+    const fast=document.getElementById("fastTime");
+
+    const message=document.getElementById("yearsMessage");
+
+    const now=document.getElementById("now23");
+
+    const finalDate=document.getElementById("dateFinal");
+
+    const continueBtn=document.getElementById("timeContinue");
+
+    day.textContent="01";
+
+    month.textContent="SEPTEMBER";
+
+    year.textContent="2003";
+
+    message.textContent="";
+
+    now.textContent="";
+
+    finalDate.textContent="";
+
+    continueBtn.classList.add("hidden");
+
+    setTimeout(()=>{
+
+        const months=[
+
+            "JANUARY","FEBRUARY","MARCH","APRIL",
+
+            "MAY","JUNE","JULY","AUGUST",
+
+            "SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER"
+
+        ];
+
+        let y=2003;
+
+        let m=0;
+
+        let d=1;
+
+        const fastTimer=setInterval(()=>{
+
+            d+=Math.floor(Math.random()*7)+1;
+
+            if(d>28){
+
+                d=1;
+
+                m++;
+
+            }
+
+            if(m>=12){
+
+                m=0;
+
+                y++;
+
+            }
+
+            day.textContent=String(d).padStart(2,"0");
+
+            month.textContent=months[m];
+
+            year.textContent=y;
+
+            if(y>=2026){
+
+                clearInterval(fastTimer);
+
+                setTimeout(()=>{
+
+                    day.textContent="07";
+
+                    month.textContent="SEPTEMBER";
+
+                    year.textContent="2026";
+
+                    message.textContent="23 years have passed…";
+
+                    setTimeout(()=>{
+
+                        now.textContent="NOW YOU ARE 23";
+
+                        setTimeout(()=>{
+
+                            finalDate.textContent="07 • SEPTEMBER • 2026";
+
+                            createHearts();
+
+                            setTimeout(()=>{
+
+                                continueBtn.classList.remove("hidden");
+
+                            },1800);
+
+                        },1300);
+
+                    },1200);
+
+                },500);
+
+            }
+
+        },75);
+
+    },500);
+
+}
+
+/* =========================================================
+
+   HEARTS
+
+========================================================= */
+
+function createHearts(){
+
+    const field=document.getElementById("heartField");
+
+    field.innerHTML="";
+
+    for(let i=0;i<28;i++){
+
+        const h=document.createElement("div");
+
+        h.className="heart";
+
+        const size=8+Math.random()*18;
+
+        h.style.width=size+"px";
+
+        h.style.height=size+"px";
+
+        h.style.left=Math.random()*100+"%";
+
+        h.style.bottom="-30px";
+
+        const colors=[
+
+            "#ff9eb8",
+
+            "#ffc1d0",
+
+            "#ff6f91",
+
+            "#f58da8",
+
+            "#ffb0bd"
+
+        ];
+
+        h.style.background=
+
+            colors[Math.floor(Math.random()*colors.length)];
+
+        h.style.animationDelay=(Math.random()*1.7)+"s";
+
+        field.appendChild(h);
+
+    }
+
+}
+
+/* =========================================================
+
+   PASSWORD
+
+========================================================= */
+
+let passwordStage=1;
+
+function openPassword(){
+
+    go("passwordScreen");
+
+    passwordStage=1;
+
+    document.getElementById("passwordInput").value="";
+
+    document.getElementById("errorBox").textContent="";
+
+    makeSparkles();
+
+}
+
+/* =========================================================
+
+   SPARKLES
+
+========================================================= */
+
+function makeSparkles(){
+
+    const box=document.getElementById("sparkles");
+
+    box.innerHTML="";
+
+    for(let i=0;i<20;i++){
+
+        const s=document.createElement("span");
+
+        s.className="sparkle";
+
+        s.style.left=Math.random()*100+"%";
+
+        s.style.top=Math.random()*100+"%";
+
+        s.style.animationDelay=(Math.random()*2.5)+"s";
+
+        box.appendChild(s);
+
+    }
+
+}
+
+/* =========================================================
+
+   PASSWORD CHECK
+
+========================================================= */
+
+function checkPassword(){
+
+    const input=document
+
+        .getElementById("passwordInput")
+
+        .value
+
+        .trim()
+
+        .toLowerCase();
+
+    const error=document.getElementById("errorBox");
+
+    const stage=document.getElementById("cartoonStage");
+
+    if(input!=="infinity" && input!=="∞"){
+
+        stage.classList.remove("correct");
+
+        stage.classList.remove("wrong");
+
+        void stage.offsetWidth;
+
+        stage.classList.add("wrong");
+
+        error.innerHTML=
+
+            "Wrong Password!<br><strong>BREAK UP.</strong>";
+
+        return;
+
+    }
+
+    if(passwordStage===1){
+
+        stage.classList.remove("wrong");
+
+        stage.classList.remove("correct");
+
+        void stage.offsetWidth;
+
+        stage.classList.add("correct");
+
+        error.innerHTML=
+
+            "You got it right!<br>Now enter your password again…";
+
+        passwordStage=2;
+
+        document.getElementById("passwordInput").value="";
+
+        return;
+
+    }
+
+    error.textContent="";
+
+    go("waitScreen");
+
+    setTimeout(()=>{
+
+        go("childhoodScreen");
+
+    },3500);
+
+}
+
+/* =========================================================
+
+   ENTER KEY FOR PASSWORD
+
+========================================================= */
+
+document
+
+.getElementById("passwordInput")
+
+.addEventListener("keydown",function(e){
+
+    if(e.key==="Enter"){
+
+        checkPassword();
+
+    }
+
+});
+
+/* =========================================================
+
+   MEMORY REVEAL
+
+========================================================= */
+
+function revealMemory(card){
+
+    card.classList.toggle("revealed");
+
+}
+
+/* =========================================================
+
+   CANDLES
+
+========================================================= */
+
+let candlesOff=0;
+
+function blowCandle(candle){
+
+    if(candle.classList.contains("off")){
+
+        return;
+
+    }
+
+    candle.classList.add("off");
+
+    candlesOff++;
+
+    if(candlesOff===5){
+
+        document.getElementById("candleHint").textContent=
+
+            "Your wish is ready. ♾️";
+
+        document
+
+            .getElementById("cakeNext")
+
+            .classList.add("show");
+
+    }
+
+}
+
+/* =========================================================
+
+   FINAL
+
+========================================================= */
+
+function showFinalNames(){
+
+    document
+
+        .getElementById("finalNames")
+
+        .classList.add("show");
+
+    document
+
+        .querySelector(".infinity-btn")
+
+        .classList.add("hidden");
+
+}
+
+</script>
+
+</body>
+
+</html>
