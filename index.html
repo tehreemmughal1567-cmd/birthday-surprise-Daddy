@@ -3,1682 +3,1827 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daddy Birthday</title>
+<title>Happy Birthday Aman ❤️</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
 
 html{
-  scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-  margin:0;
-  background:#071a33;
-  font-family:Georgia,"Times New Roman",serif;
-  overflow-x:hidden;
+    font-family: Georgia, "Times New Roman", serif;
+    background:#eef7ff;
+    color:#10243d;
+    overflow-x:hidden;
 }
 
-button,input{
-  font-family:inherit;
-  -webkit-tap-highlight-color:transparent;
+button,
+input{
+    font-family:inherit;
 }
 
-button{cursor:pointer}
+.screen{
+    min-height:100vh;
+    width:100%;
+    display:none;
+    position:relative;
+    overflow:hidden;
+}
 
-.hidden{display:none!important}
+.screen.active{
+    display:flex;
+    animation:fadeIn .8s ease;
+}
 
 @keyframes fadeIn{
-  from{opacity:0;transform:translateY(25px)}
-  to{opacity:1;transform:translateY(0)}
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
-@keyframes float{
-  0%,100%{transform:translateY(0) rotate(-2deg)}
-  50%{transform:translateY(-22px) rotate(3deg)}
-}
-
-@keyframes pulse{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.08)}
-}
-
-@keyframes flame{
-  0%,100%{transform:scaleY(1) rotate(-3deg)}
-  50%{transform:scaleY(1.2) rotate(4deg)}
-}
-
-@keyframes smoke{
-  from{opacity:.8;transform:translateY(0) scale(.7)}
-  to{opacity:0;transform:translateY(-40px) scale(1.5)}
-}
-
-@keyframes flowerOpen{
-  0%{opacity:0;transform:scale(0) rotate(-20deg)}
-  70%{opacity:1;transform:scale(1.08) rotate(5deg)}
-  100%{opacity:1;transform:scale(1) rotate(0)}
-}
-
-@keyframes paperIn{
-  from{opacity:0;transform:translateY(35px) rotate(1deg)}
-  to{opacity:1;transform:translateY(0) rotate(0)}
-}
-
-@keyframes sparkle{
-  0%,100%{opacity:.3;transform:scale(.7)}
-  50%{opacity:1;transform:scale(1)}
-}
-
-/* ================= OPENING ================= */
+/* =========================
+   OPENING
+========================= */
 
 #opening{
-  min-height:100vh;
-}
-
-.opening-screen{
-  position:relative;
-  min-height:100vh;
-  overflow:hidden;
-  background:
-    radial-gradient(circle at 50% 25%,#244e89 0%,#0b294f 42%,#03101e 100%);
-  color:white;
-  text-align:center;
-  padding:35px 20px 230px;
+    min-height:100vh;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:
+        radial-gradient(circle at 50% 20%, #ffffff 0%, #f4faff 45%, #dcefff 100%);
 }
 
 .opening-content{
-  position:relative;
-  z-index:10;
-  max-width:430px;
-  margin:auto;
-  padding-top:45px;
-  animation:fadeIn 1.2s ease;
+    width:90%;
+    max-width:600px;
+    z-index:5;
 }
 
-.opening-small{
-  font-size:12px;
-  letter-spacing:5px;
-  text-transform:uppercase;
-  opacity:.7;
-}
-
-.opening-title{
-  font-size:35px;
-  line-height:1.2;
-  margin:18px 0 10px;
-}
-
-.opening-subtitle{
-  font-size:16px;
-  opacity:.8;
-  line-height:1.6;
-}
-
-.infinity-opening{
-  font-size:72px;
-  color:#dff3ff;
-  margin:20px 0;
-  animation:pulse 2.4s infinite;
-}
-
-.for-daddy{
-  font-size:23px;
-  letter-spacing:2px;
-  margin-bottom:28px;
-}
-
-.password-box{
-  max-width:285px;
-  margin:auto;
-}
-
-.password-box input{
-  width:100%;
-  padding:15px 18px;
-  border:1px solid rgba(255,255,255,.4);
-  border-radius:30px;
-  background:rgba(255,255,255,.1);
-  color:white;
-  text-align:center;
-  outline:none;
-  font-size:16px;
-  backdrop-filter:blur(10px);
-}
-
-.password-box input::placeholder{
-  color:rgba(255,255,255,.7);
-}
-
-.unlock-button,
-.primary-button{
-  border:0;
-  border-radius:30px;
-  padding:14px 30px;
-  background:white;
-  color:#071a33;
-  font-size:16px;
-  font-weight:bold;
-  margin-top:15px;
-  box-shadow:0 8px 25px rgba(0,0,0,.3);
-}
-
-.opening-stars{
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-}
-
-.opening-stars span{
-  position:absolute;
-  width:3px;
-  height:3px;
-  background:white;
-  border-radius:50%;
-  animation:sparkle 2s infinite;
-}
-
-/* ================= FLOWERS ================= */
-
-.flower-garden{
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
-  height:220px;
-  pointer-events:none;
+.flowers{
+    height:280px;
+    position:relative;
+    margin-bottom:20px;
 }
 
 .flower{
-  position:absolute;
-  bottom:20px;
-  width:95px;
-  height:175px;
-  opacity:0;
-  animation:flowerOpen 1s ease forwards;
+    position:absolute;
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    opacity:0;
+    animation:flowerAppear 1.2s ease forwards;
 }
 
-.flower:nth-child(1){left:0;animation-delay:.2s}
-.flower:nth-child(2){left:14%;transform:scale(.8);animation-delay:.5s}
-.flower:nth-child(3){left:30%;animation-delay:.8s}
-.flower:nth-child(4){left:48%;transform:scale(.75);animation-delay:1.1s}
-.flower:nth-child(5){left:65%;transform:scale(.9);animation-delay:1.4s}
-.flower:nth-child(6){left:82%;transform:scale(.78);animation-delay:1.7s}
-
-.flower-head{
-  position:absolute;
-  top:0;
-  left:50%;
-  width:62px;
-  height:62px;
-  transform:translateX(-50%);
+.flower:before,
+.flower:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:50%;
+    background:inherit;
 }
 
-.petal{
-  position:absolute;
-  width:30px;
-  height:42px;
-  left:16px;
-  top:8px;
-  border-radius:50% 50% 45% 45%;
-  transform-origin:50% 85%;
+.flower:before{
+    transform:rotate(45deg);
 }
 
-.petal:nth-child(1){transform:rotate(0) translateY(-17px)}
-.petal:nth-child(2){transform:rotate(60deg) translateY(-17px)}
-.petal:nth-child(3){transform:rotate(120deg) translateY(-17px)}
-.petal:nth-child(4){transform:rotate(180deg) translateY(-17px)}
-.petal:nth-child(5){transform:rotate(240deg) translateY(-17px)}
-.petal:nth-child(6){transform:rotate(300deg) translateY(-17px)}
-
-.flower.white .petal{
-  background:linear-gradient(145deg,#fff,#dceeff);
-  box-shadow:inset 0 -5px 8px rgba(60,120,170,.15),0 4px 10px rgba(0,0,0,.2);
-}
-
-.flower.blue .petal{
-  background:linear-gradient(145deg,#fff,#9ed5fa);
-  box-shadow:inset 0 -5px 8px rgba(40,120,180,.2),0 4px 10px rgba(0,0,0,.2);
+.flower:after{
+    transform:rotate(90deg);
 }
 
 .flower-center{
-  position:absolute;
-  width:17px;
-  height:17px;
-  border-radius:50%;
-  background:#d8b76a;
-  left:50%;
-  top:50%;
-  transform:translate(-50%,-50%);
-  z-index:5;
+    position:absolute;
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    background:#d6a85b;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    z-index:2;
 }
 
-.flower-stem{
-  position:absolute;
-  width:5px;
-  height:125px;
-  left:50%;
-  top:55px;
-  transform:translateX(-50%);
-  border-radius:5px;
-  background:linear-gradient(to right,#315e45,#87ad7e,#315e45);
+.flower:nth-child(1){
+    left:8%;
+    top:75px;
+    background:#fff;
+    animation-delay:.2s;
 }
 
-.leaf{
-  position:absolute;
-  width:31px;
-  height:15px;
-  top:112px;
-  background:linear-gradient(135deg,#426d52,#9abc95);
-  border-radius:100% 0 100% 0;
+.flower:nth-child(2){
+    left:25%;
+    top:25px;
+    background:#9ed2f3;
+    animation-delay:.7s;
 }
 
-.leaf.left{
-  left:12px;
-  transform:rotate(-25deg);
+.flower:nth-child(3){
+    right:24%;
+    top:65px;
+    background:#fff;
+    animation-delay:1.2s;
 }
 
-.leaf.right{
-  right:12px;
-  transform:scaleX(-1) rotate(-25deg);
+.flower:nth-child(4){
+    right:7%;
+    top:25px;
+    background:#acd9f5;
+    animation-delay:1.7s;
 }
 
-/* ================= SIMPLE SCREENS ================= */
-
-.simple-screen{
-  min-height:100vh;
-  background:radial-gradient(circle at 50% 20%,#244e89,#071a33 70%);
-  color:white;
-  text-align:center;
-  padding:60px 20px;
-  animation:fadeIn .8s ease;
+.flower:nth-child(5){
+    left:44%;
+    top:125px;
+    width:52px;
+    height:52px;
+    background:#dff1ff;
+    animation-delay:2.2s;
 }
 
-.simple-inner{
-  max-width:430px;
-  margin:auto;
-  padding-top:70px;
+@keyframes flowerAppear{
+    0%{
+        opacity:0;
+        transform:scale(.2) rotate(-30deg);
+    }
+    70%{
+        opacity:1;
+        transform:scale(1.08) rotate(5deg);
+    }
+    100%{
+        opacity:1;
+        transform:scale(1) rotate(0);
+    }
 }
 
-.simple-inner h1{
-  font-size:34px;
+.opening-title{
+    font-size:clamp(38px,9vw,70px);
+    letter-spacing:-2px;
+    margin-bottom:15px;
+    color:#0c2039;
 }
 
-.simple-inner p{
-  font-size:17px;
-  line-height:1.8;
+.opening-subtitle{
+    font-size:20px;
+    color:#55708d;
+    margin-bottom:30px;
 }
 
-.round-infinity,
-.next-button{
-  border:0;
-  width:70px;
-  height:70px;
-  border-radius:50%;
-  background:#071a33;
-  color:white;
-  font-size:35px;
-  margin-top:30px;
-  animation:pulse 2s infinite;
+.begin-btn,
+.primary-btn{
+    border:none;
+    background:#102b48;
+    color:white;
+    padding:15px 32px;
+    border-radius:40px;
+    font-size:18px;
+    cursor:pointer;
+    box-shadow:0 10px 30px rgba(16,43,72,.22);
+    transition:.3s;
 }
 
-/* ================= MEMORIES ================= */
-
-.memory-screen{
-  min-height:100vh;
-  background:linear-gradient(180deg,#071a33,#10416e,#071a33);
-  color:white;
-  text-align:center;
-  padding:45px 15px 70px;
-  animation:fadeIn .8s ease;
+.begin-btn:hover,
+.primary-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 14px 35px rgba(16,43,72,.3);
 }
 
-.memory-screen h1{
-  font-size:31px;
+/* =========================
+   PASSWORD
+========================= */
+
+#passwordScreen{
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:
+        radial-gradient(circle at top,#ffffff,#e7f5ff 65%,#cfe8fa);
 }
 
-.memory-intro{
-  opacity:.8;
-  line-height:1.6;
+.password-card{
+    width:90%;
+    max-width:430px;
+    padding:45px 30px;
+    background:rgba(255,255,255,.82);
+    border:1px solid rgba(120,180,220,.35);
+    border-radius:28px;
+    box-shadow:0 25px 70px rgba(31,81,117,.15);
+    backdrop-filter:blur(15px);
 }
 
-.memory-heart{
-  position:relative;
-  width:320px;
-  height:330px;
-  max-width:100%;
-  margin:30px auto;
+.infinity-symbol{
+    font-size:70px;
+    color:#74b9df;
+    margin-bottom:10px;
 }
 
-.memoryPhoto{
-  position:absolute;
-  width:90px;
-  height:90px;
-  border-radius:18px;
-  overflow:hidden;
-  background:#29496b;
-  filter:blur(7px);
-  transition:.6s;
-  border:2px solid rgba(255,255,255,.6);
-  box-shadow:0 8px 20px rgba(0,0,0,.4);
+.password-card h2{
+    font-size:32px;
+    margin-bottom:10px;
 }
 
-.memoryPhoto img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+.password-card p{
+    color:#667c92;
+    margin-bottom:25px;
+    font-size:17px;
 }
 
-.memoryPhoto.revealed{
-  filter:blur(0);
-  transform:scale(1.06);
+.password-input{
+    width:100%;
+    padding:15px 18px;
+    border:1px solid #bdd8eb;
+    border-radius:15px;
+    outline:none;
+    font-size:18px;
+    text-align:center;
+    margin-bottom:15px;
+    background:#fff;
 }
 
-.memory-message{
-  max-width:320px;
-  min-height:75px;
-  margin:20px auto 45px;
-  font-size:17px;
-  line-height:1.7;
+.password-input:focus{
+    border-color:#6faed6;
+    box-shadow:0 0 0 4px rgba(111,174,214,.12);
 }
 
-.letter-section{
-  max-width:380px;
-  margin:50px auto;
+.error{
+    color:#bd5d68;
+    margin-top:12px;
+    display:none;
 }
 
-.infinity-card{
-  background:#f7f1e3;
-  color:#263238;
-  padding:35px 25px;
-  border-radius:8px;
-  box-shadow:0 15px 40px rgba(0,0,0,.4);
+/* =========================
+   WELCOME
+========================= */
+
+#welcome{
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:
+        linear-gradient(180deg,#ffffff 0%,#eff8ff 65%,#d8edfc 100%);
 }
 
-.infinity-card-button{
-  border:0;
-  background:none;
-  font-size:70px;
-  color:#244b88;
-  animation:pulse 2s infinite;
+.welcome-box{
+    width:90%;
+    max-width:700px;
 }
 
-/* ================= LOVE LETTER ================= */
-
-.love-letter{
-  display:none;
-  position:relative;
-  margin-top:25px;
-  padding:42px 27px;
-  background:
-    linear-gradient(90deg,rgba(180,150,100,.06) 1px,transparent 1px),
-    #fffdf7;
-  background-size:25px 25px;
-  color:#263238;
-  text-align:left;
-  line-height:1.8;
-  font-size:16px;
-  border:1px solid #d8c7a8;
-  border-radius:4px;
-  box-shadow:0 18px 45px rgba(0,0,0,.35);
-  animation:paperIn .9s ease;
+.welcome-box h1{
+    font-size:clamp(42px,10vw,78px);
+    margin-bottom:15px;
 }
 
-.love-letter:before,
-.love-letter:after{
-  content:"";
-  position:absolute;
-  width:42px;
-  height:25px;
-  border-radius:60% 40% 55% 45%;
-  background:linear-gradient(135deg,#b94e70,#e58ba0);
-  opacity:.65;
+.welcome-box p{
+    font-size:21px;
+    color:#5c7188;
+    line-height:1.7;
+    margin-bottom:30px;
 }
 
-.love-letter:before{
-  top:14px;
-  left:12px;
-  transform:rotate(-20deg);
-}
+/* =========================
+   BALLOONS
+========================= */
 
-.love-letter:after{
-  right:12px;
-  bottom:14px;
-  transform:rotate(20deg);
-}
-
-.love-letter p{
-  margin:17px 0;
-}
-
-.next-letter-button{
-  text-align:center;
-  margin-top:25px;
-}
-
-.next-letter-button button{
-  border:0;
-  width:65px;
-  height:65px;
-  border-radius:50%;
-  background:#071a33;
-  color:white;
-  font-size:32px;
-}
-
-/* ================= CHILDHOOD ================= */
-
-.childhood-screen{
-  min-height:100vh;
-  background:radial-gradient(circle at 50% 10%,#fff,#eaf6ff 45%,#b9dcf7);
-  color:#071a33;
-  text-align:center;
-  padding:45px 20px 70px;
-  animation:fadeIn .8s ease;
-}
-
-.childhood-inner{
-  max-width:400px;
-  margin:auto;
-}
-
-.childhood-title{
-  font-size:30px;
-}
-
-.childhood-photo{
-  background:#fffdf7;
-  padding:12px;
-  max-width:300px;
-  margin:30px auto;
-  border-radius:20px;
-  box-shadow:0 15px 40px rgba(0,45,90,.2);
-}
-
-.childhood-photo img{
-  width:100%;
-  display:block;
-  border-radius:13px;
-}
-
-.childhood-text{
-  background:rgba(255,255,255,.9);
-  padding:22px 18px;
-  border-radius:18px;
-  font-size:17px;
-  line-height:1.7;
-  box-shadow:0 8px 25px rgba(0,45,90,.12);
-}
-
-/* ================= BALLOONS ================= */
-
-.balloon-area{
-  position:relative;
-  height:190px;
-  margin-bottom:5px;
+.balloons{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
 }
 
 .balloon{
-  position:absolute;
-  width:70px;
-  height:92px;
-  border-radius:50% 50% 47% 47%;
-  animation:float 4s ease-in-out infinite;
-  box-shadow:inset -10px -12px 20px rgba(0,70,130,.12),0 8px 20px rgba(0,50,100,.12);
+    position:absolute;
+    width:90px;
+    height:115px;
+    border-radius:50% 50% 46% 46%;
+    background:linear-gradient(145deg,#ffffff,#d6edfc);
+    box-shadow:
+        inset -12px -15px 20px rgba(100,170,215,.15),
+        0 18px 35px rgba(75,135,180,.12);
+    animation:floatBalloon 5s ease-in-out infinite;
 }
 
 .balloon:before{
-  content:"";
-  position:absolute;
-  width:9px;
-  height:8px;
-  bottom:-5px;
-  left:50%;
-  transform:translateX(-50%) rotate(45deg);
-  background:inherit;
+    content:"";
+    position:absolute;
+    width:18px;
+    height:28px;
+    background:rgba(255,255,255,.75);
+    border-radius:50%;
+    top:18px;
+    left:18px;
+    transform:rotate(25deg);
 }
 
 .balloon:after{
-  content:"";
-  position:absolute;
-  top:13px;
-  left:15px;
-  width:13px;
-  height:27px;
-  border-radius:50%;
-  background:rgba(255,255,255,.65);
-  transform:rotate(25deg);
-}
-
-.balloon.white{
-  background:linear-gradient(135deg,#fff,#dcefff);
+    content:"";
+    position:absolute;
+    width:10px;
+    height:10px;
+    bottom:-6px;
+    left:40px;
+    background:inherit;
+    transform:rotate(45deg);
 }
 
 .balloon.blue{
-  background:linear-gradient(135deg,#d8f0ff,#76b8ea);
+    background:linear-gradient(145deg,#bfe5fb,#65afe0);
 }
 
-.balloon:nth-child(1){left:3%;top:35px}
-.balloon:nth-child(2){left:25%;top:5px;width:58px;height:78px;animation-delay:.8s}
-.balloon:nth-child(3){right:24%;top:18px;width:65px;height:87px;animation-delay:1.3s}
-.balloon:nth-child(4){right:2%;top:42px;width:75px;height:98px;animation-delay:1.8s}
-
-.string{
-  position:absolute;
-  width:1px;
-  height:75px;
-  background:rgba(40,80,110,.55);
-  left:50%;
-  top:95%;
+.balloon:nth-child(1){
+    left:3%;
+    top:8%;
 }
 
-/* ================= CAKE ================= */
-
-.cake-screen{
-  position:relative;
-  min-height:100vh;
-  overflow:hidden;
-  background:radial-gradient(circle at 50% 15%,#fff,#eaf6ff 50%,#c5e3f9);
-  color:#071a33;
-  text-align:center;
-  padding:25px 15px 70px;
-  animation:fadeIn .8s ease;
+.balloon:nth-child(2){
+    left:23%;
+    top:2%;
+    animation-delay:1s;
 }
 
-.cake-screen h1{
-  font-size:32px;
-  margin:10px 0;
+.balloon:nth-child(3){
+    right:22%;
+    top:6%;
+    animation-delay:2s;
 }
 
-.cake-screen p{
-  font-size:16px;
-  line-height:1.6;
+.balloon:nth-child(4){
+    right:3%;
+    top:12%;
+    animation-delay:1.4s;
 }
+
+@keyframes floatBalloon{
+    0%,100%{
+        transform:translateY(0) rotate(-2deg);
+    }
+    50%{
+        transform:translateY(-18px) rotate(3deg);
+    }
+}
+
+/* =========================
+   MEMORIES
+========================= */
+
+#memories{
+    padding:70px 18px;
+    min-height:100vh;
+    background:linear-gradient(180deg,#f7fcff,#e1f2ff);
+    flex-direction:column;
+    align-items:center;
+}
+
+.section-title{
+    text-align:center;
+    font-size:clamp(34px,8vw,58px);
+    margin-bottom:12px;
+}
+
+.section-subtitle{
+    text-align:center;
+    color:#647a90;
+    font-size:18px;
+    margin-bottom:40px;
+}
+
+.memory-grid{
+    width:100%;
+    max-width:850px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.memory{
+    position:relative;
+    height:260px;
+    border-radius:22px;
+    overflow:hidden;
+    background:#d8ebf7;
+    box-shadow:0 15px 40px rgba(37,86,119,.14);
+    cursor:pointer;
+}
+
+.memory:first-child{
+    grid-column:span 2;
+    height:310px;
+}
+
+.memory img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:blur(18px);
+    transform:scale(1.08);
+    transition:1s ease;
+}
+
+.memory.revealed img{
+    filter:blur(0);
+    transform:scale(1);
+}
+
+.memory-cover{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(14,39,63,.28);
+    color:white;
+    font-size:20px;
+    transition:.5s;
+}
+
+.memory.revealed .memory-cover{
+    opacity:0;
+    pointer-events:none;
+}
+
+.next-btn{
+    margin-top:35px;
+}
+
+/* =========================
+   CHILDHOOD
+========================= */
+
+#childhood{
+    min-height:100vh;
+    padding:65px 20px;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:
+        radial-gradient(circle at 50% 20%,#ffffff,#edf8ff 70%,#d9efff);
+}
+
+.childhood-frame{
+    width:min(88vw,420px);
+    padding:12px;
+    background:#fff;
+    border-radius:25px;
+    box-shadow:0 25px 60px rgba(45,87,120,.2);
+    margin-bottom:30px;
+}
+
+.childhood-frame img{
+    width:100%;
+    display:block;
+    border-radius:18px;
+}
+
+.childhood-text{
+    max-width:650px;
+}
+
+.childhood-text h2{
+    font-size:38px;
+    margin-bottom:20px;
+}
+
+.childhood-text p{
+    font-size:20px;
+    line-height:1.8;
+    color:#5e7288;
+}
+
+/* =========================
+   CAKE
+========================= */
+
+#cakeScreen{
+    min-height:100vh;
+    padding:50px 15px 70px;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    background:
+        radial-gradient(circle at 50% 10%,#ffffff 0%,#eff8ff 55%,#cde9fb 100%);
+}
+
+.cake-heading{
+    font-size:clamp(40px,9vw,65px);
+    margin-bottom:10px;
+}
+
+.cake-instruction{
+    font-size:18px;
+    color:#60768b;
+    margin-bottom:35px;
+}
+
+.cake-area{
+    position:relative;
+    width:360px;
+    max-width:92vw;
+    height:390px;
+    margin:auto;
+}
+
+.cake-shadow{
+    position:absolute;
+    width:320px;
+    height:35px;
+    background:rgba(61,105,136,.16);
+    border-radius:50%;
+    bottom:28px;
+    left:20px;
+    filter:blur(8px);
+}
+
+/* cake layers */
 
 .cake{
-  position:relative;
-  width:270px;
-  height:230px;
-  margin:15px auto 20px;
+    position:absolute;
+    width:310px;
+    left:25px;
+    bottom:50px;
 }
 
 .cake-layer{
-  position:absolute;
-  left:20px;
-  width:230px;
-  height:55px;
-  border-radius:12px 12px 16px 16px;
-  background:linear-gradient(#fff,#e8f5ff);
-  border:2px solid #c4e2f7;
-  box-shadow:0 10px 15px rgba(0,70,130,.15);
+    position:relative;
+    height:75px;
+    margin-top:-3px;
+    border-radius:15px 15px 20px 20px;
+    background:linear-gradient(180deg,#fff,#eaf7ff);
+    border:3px solid #c2e3f6;
+    box-shadow:
+        0 12px 18px rgba(75,139,177,.15),
+        inset 0 -10px 15px rgba(132,194,228,.12);
 }
 
-.cake-layer.one{bottom:15px}
-.cake-layer.two{bottom:65px;left:35px;width:200px}
-.cake-layer.three{bottom:115px;left:52px;width:166px}
-
-.cake-top{
-  position:absolute;
-  left:52px;
-  bottom:150px;
-  width:166px;
-  height:38px;
-  border-radius:50%;
-  background:#fff;
-  border:2px solid #c4e2f7;
+.layer-bottom{
+    height:82px;
 }
 
-.drip{
-  position:absolute;
-  top:25px;
-  width:20px;
-  height:25px;
-  background:#9bd3f5;
-  border-radius:0 0 15px 15px;
+.layer-middle{
+    width:285px;
+    margin-left:13px;
+    height:75px;
 }
 
-.drip:nth-child(1){left:20px}
-.drip:nth-child(2){left:65px;height:34px}
-.drip:nth-child(3){right:25px;height:29px}
+.layer-top{
+    width:255px;
+    margin-left:28px;
+    height:80px;
+    border-radius:50% 50% 18px 18px;
+    z-index:3;
+}
+
+.cream-drip{
+    position:absolute;
+    top:42px;
+    width:30px;
+    height:35px;
+    border-radius:0 0 18px 18px;
+    background:#a7d9f5;
+}
+
+.drip1{left:35px;}
+.drip2{left:105px;height:45px;}
+.drip3{right:35px;height:30px;}
+
+.top-cream{
+    position:absolute;
+    width:255px;
+    height:52px;
+    left:28px;
+    bottom:320px;
+    border-radius:50%;
+    background:linear-gradient(180deg,#fff,#f0f9ff);
+    border:3px solid #c2e3f6;
+    z-index:5;
+    box-shadow:0 7px 10px rgba(63,120,157,.1);
+}
+
+/* candles */
+
+.candles{
+    position:absolute;
+    z-index:10;
+    width:255px;
+    left:53px;
+    bottom:350px;
+    display:flex;
+    justify-content:space-around;
+    align-items:flex-end;
+}
 
 .candle{
-  position:absolute;
-  bottom:150px;
-  width:13px;
-  height:48px;
-  border-radius:4px;
-  background:repeating-linear-gradient(135deg,#8ec8ee 0 5px,#fff 5px 10px);
-  z-index:5;
-  cursor:pointer;
+    position:relative;
+    width:18px;
+    height:72px;
+    border-radius:5px;
+    background:
+        repeating-linear-gradient(
+            -45deg,
+            #fff 0px,
+            #fff 7px,
+            #8bc8eb 7px,
+            #8bc8eb 13px
+        );
+    border:1px solid #b9dff3;
+    cursor:pointer;
+    transition:.3s;
 }
 
-.candle:nth-child(1){left:83px}
-.candle:nth-child(2){left:128px}
-.candle:nth-child(3){right:83px}
+.candle:nth-child(2){
+    height:84px;
+}
+
+.candle:nth-child(3){
+    height:76px;
+}
+
+.candle:nth-child(4){
+    height:88px;
+}
+
+.candle:nth-child(5){
+    height:70px;
+}
+
+.candle:hover{
+    transform:translateY(-5px);
+}
+
+.wick{
+    position:absolute;
+    width:3px;
+    height:10px;
+    background:#303030;
+    top:-10px;
+    left:7px;
+}
 
 .flame{
-  position:absolute;
-  width:15px;
-  height:23px;
-  left:50%;
-  top:-24px;
-  transform:translateX(-50%);
-  border-radius:50% 50% 50% 50%;
-  background:radial-gradient(circle at 50% 70%,#fff 0 20%,#ffd86b 35%,#ff9c42 65%,transparent 70%);
-  animation:flame .7s infinite;
+    position:absolute;
+    width:18px;
+    height:27px;
+    top:-37px;
+    left:0;
+    border-radius:50% 50% 50% 50%;
+    background:radial-gradient(circle at 50% 65%,#fff 0 18%,#ffd86a 30%,#ffad37 65%,#ff7a22 100%);
+    box-shadow:0 0 14px #ffc75c,0 0 28px rgba(255,180,55,.55);
+    animation:flicker .7s ease-in-out infinite alternate;
+    transform-origin:bottom;
+}
+
+@keyframes flicker{
+    from{transform:scale(.92) rotate(-3deg);}
+    to{transform:scale(1.08) rotate(3deg);}
 }
 
 .candle.off .flame{
-  display:none;
+    display:none;
 }
 
-.candle.off:after{
-  content:"";
-  position:absolute;
-  width:8px;
-  height:18px;
-  left:3px;
-  top:-18px;
-  border-radius:50%;
-  background:#b8c2c8;
-  animation:smoke 1.4s ease-out forwards;
+.candle.off{
+    opacity:.65;
 }
 
-.cake-choices{
-  max-width:360px;
-  margin:15px auto;
+.candle.off .wick{
+    background:#777;
 }
 
-.cake-choice{
-  border:1px solid #9dcbe9;
-  background:rgba(255,255,255,.8);
-  color:#071a33;
-  padding:10px 15px;
-  margin:4px;
-  border-radius:20px;
-  font-size:14px;
+/* cake decorations */
+
+.cake-dot{
+    position:absolute;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:#8cccef;
+    bottom:25px;
 }
 
-.cake-choice.selected{
-  background:#071a33;
-  color:white;
+.dot1{left:35px;}
+.dot2{left:95px;}
+.dot3{right:95px;}
+.dot4{right:35px;}
+
+.cake-message{
+    margin-top:20px;
+    min-height:70px;
 }
 
-.cakeMessage{
-  display:none;
-  max-width:340px;
-  margin:25px auto;
-  padding:20px;
-  background:rgba(255,255,255,.8);
-  border-radius:18px;
-  box-shadow:0 8px 25px rgba(0,50,100,.15);
+.blessing{
+    display:none;
+    font-size:21px;
+    color:#526c82;
+    line-height:1.7;
+    margin-bottom:20px;
 }
 
-.cake-next{
-  display:none;
+.blessing.show{
+    display:block;
+    animation:fadeIn .8s ease;
 }
 
-/* ================= FINAL PAGE ================= */
+/* =========================
+   LOVE LETTER
+========================= */
 
-#finalPage{
-  display:none;
+#loveLetter{
+    padding:70px 15px;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    background:
+        radial-gradient(circle at top,#ffffff,#edf7ff 60%,#d9edf9);
 }
 
-.final-page{
-  min-height:100vh;
-  background:linear-gradient(180deg,#0a2342,#123f6b,#071a33);
-  color:white;
-  padding:45px 18px 80px;
-  text-align:center;
+.paper{
+    position:relative;
+    width:min(92vw,760px);
+    padding:55px 45px;
+    background:
+        linear-gradient(90deg,rgba(145,112,72,.03) 1px,transparent 1px),
+        linear-gradient(rgba(145,112,72,.025) 1px,transparent 1px),
+        #fffdf7;
+    background-size:25px 25px;
+    border:1px solid #e8dcc7;
+    box-shadow:
+        0 25px 70px rgba(42,60,73,.18),
+        0 3px 0 rgba(255,255,255,.9) inset;
+    transform:rotate(-.3deg);
+}
+
+.paper:before{
+    content:"";
+    position:absolute;
+    inset:12px;
+    border:1px solid rgba(176,137,92,.3);
+    pointer-events:none;
+}
+
+.letter-title{
+    text-align:center;
+    font-size:clamp(32px,7vw,50px);
+    margin-bottom:30px;
+    color:#18324d;
+}
+
+.letter-content{
+    position:relative;
+    z-index:2;
+}
+
+.letter-content p{
+    font-size:19px;
+    line-height:1.9;
+    color:#4e5560;
+    margin-bottom:20px;
+}
+
+.letter-content p:first-child{
+    font-size:25px;
+    color:#20364c;
+}
+
+.letter-content .highlight{
+    text-align:center;
+    font-size:25px;
+    color:#7b9fbd;
+    font-style:italic;
+    margin:30px 0;
+}
+
+.kiss{
+    position:absolute;
+    width:38px;
+    height:24px;
+    border-radius:50%;
+    border:4px solid rgba(177,103,128,.42);
+    transform:rotate(-25deg);
+    opacity:.8;
+}
+
+.kiss:before,
+.kiss:after{
+    content:"";
+    position:absolute;
+    width:17px;
+    height:13px;
+    border-radius:50%;
+    border:3px solid rgba(177,103,128,.42);
+    top:-9px;
+}
+
+.kiss:before{
+    left:0;
+}
+
+.kiss:after{
+    right:0;
+}
+
+.kiss1{
+    top:35px;
+    right:40px;
+}
+
+.kiss2{
+    bottom:45px;
+    left:35px;
+    transform:rotate(25deg) scale(.8);
+}
+
+.kiss3{
+    bottom:110px;
+    right:35px;
+    transform:rotate(-15deg) scale(.7);
+}
+
+.letter-button{
+    margin-top:30px;
+    text-align:center;
+}
+
+/* =========================
+   FINAL LETTER
+========================= */
+
+#finalLetter{
+    padding:70px 15px;
+    flex-direction:column;
+    align-items:center;
+    background:
+        radial-gradient(circle at top,#ffffff,#edf7ff 60%,#d8edf9);
 }
 
 .final-paper{
-  max-width:420px;
-  margin:auto;
-  position:relative;
-  padding:45px 27px;
-  background:
-    linear-gradient(90deg,rgba(180,150,100,.06) 1px,transparent 1px),
-    #fffdf7;
-  background-size:25px 25px;
-  color:#263238;
-  text-align:left;
-  line-height:1.8;
-  font-size:16px;
-  border:1px solid #d8c7a8;
-  box-shadow:0 20px 50px rgba(0,0,0,.4);
-  animation:paperIn 1s ease;
-}
-
-.final-paper:before,
-.final-paper:after{
-  content:"";
-  position:absolute;
-  width:44px;
-  height:27px;
-  border-radius:60% 40% 55% 45%;
-  background:linear-gradient(135deg,#b94e70,#e58ba0);
-  opacity:.65;
-}
-
-.final-paper:before{
-  left:12px;
-  top:14px;
-  transform:rotate(-20deg);
-}
-
-.final-paper:after{
-  right:12px;
-  bottom:14px;
-  transform:rotate(20deg);
+    width:min(92vw,780px);
+    padding:55px 45px;
+    background:#fffdf7;
+    border:1px solid #e7dbc8;
+    box-shadow:0 25px 70px rgba(36,56,73,.2);
+    position:relative;
 }
 
 .final-paper h1{
-  text-align:center;
-  color:#244b88;
-  font-size:28px;
-  line-height:1.3;
-  margin-bottom:30px;
+    text-align:center;
+    font-size:clamp(30px,7vw,52px);
+    color:#18324d;
+    margin-bottom:35px;
 }
 
 .final-paper p{
-  margin:17px 0;
-}
-
-.special,
-.quote,
-.promise,
-.together,
-.forever,
-.ending,
-.love{
-  text-align:center;
+    font-size:19px;
+    line-height:1.9;
+    color:#4e5660;
+    margin-bottom:22px;
 }
 
 .special{
-  color:#244b88;
-  font-size:21px;
-  font-weight:bold;
+    text-align:center;
+    font-size:27px !important;
+    font-weight:bold;
+    color:#1d4767 !important;
+    letter-spacing:1px;
+    margin:35px 0 !important;
 }
 
 .quote{
-  font-style:italic;
-  font-size:19px;
+    text-align:center;
+    font-size:23px !important;
+    font-style:italic;
+    color:#6b8ea9 !important;
 }
 
 .promise{
-  font-size:22px;
-  color:#244b88;
-  font-weight:bold;
+    text-align:center;
+    font-size:26px !important;
+    font-weight:bold;
+    color:#274d6b !important;
 }
 
 .together{
-  font-size:21px;
-  color:#244b88;
-}
-
-.forever{
-  font-size:22px;
-  color:#244b88;
-  font-weight:bold;
+    text-align:center;
+    font-size:25px !important;
+    color:#315c79 !important;
 }
 
 .ending{
-  font-size:17px;
+    text-align:center;
+    font-size:21px !important;
+}
+
+.ending b{
+    font-size:28px;
+    color:#1d4865;
 }
 
 .love{
-  font-size:20px;
-  color:#244b88;
-  font-weight:bold;
+    text-align:center;
+    font-size:25px !important;
+    font-style:italic;
+    color:#315f7e !important;
+    margin-top:35px !important;
 }
 
-.final-signature{
-  text-align:center;
-  margin-top:35px;
+.final-infinity-area{
+    text-align:center;
+    margin-top:35px;
 }
 
 .big-infinity{
-  border:0;
-  width:80px;
-  height:80px;
-  border-radius:50%;
-  background:#071a33;
-  color:white;
-  font-size:42px;
-  animation:pulse 2s infinite;
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    border:1px solid #a8cee5;
+    background:linear-gradient(145deg,#fff,#dceffc);
+    color:#6faed4;
+    font-size:55px;
+    cursor:pointer;
+    box-shadow:0 15px 35px rgba(54,111,149,.2);
+    transition:.35s;
 }
 
-.alm,
-.birthday{
-  display:none;
+.big-infinity:hover{
+    transform:scale(1.08) rotate(5deg);
 }
 
-.alm{
-  margin-top:30px;
-  font-size:42px;
-  font-weight:bold;
-  color:#244b88;
+.final-names{
+    display:none;
+    margin-top:35px;
+    animation:finalReveal 1.2s ease;
 }
 
-.alm span{
-  color:#b94e70;
+@keyframes finalReveal{
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
 }
 
-.birthday{
-  margin-top:12px;
-  font-size:23px;
-  color:#244b88;
-  font-weight:bold;
+.final-names .names{
+    font-size:65px;
+    color:#18324d;
+    font-weight:bold;
+    letter-spacing:8px;
 }
 
-/* ================= MOBILE ================= */
+.final-names .heart{
+    color:#c66c82;
+    font-size:50px;
+}
 
-@media(max-width:380px){
-  .opening-title{font-size:31px}
-  .memory-heart{transform:scale(.9);margin-left:-5%;margin-right:-5%}
-  .cake{transform:scale(.9);margin-left:-5%;margin-right:-5%}
+.final-names .birthday{
+    margin-top:12px;
+    font-size:25px;
+    color:#52718b;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .opening-title{
+        font-size:43px;
+    }
+
+    .flowers{
+        height:240px;
+    }
+
+    .flower{
+        width:52px;
+        height:52px;
+    }
+
+    .memory-grid{
+        grid-template-columns:1fr;
+    }
+
+    .memory:first-child{
+        grid-column:span 1;
+        height:270px;
+    }
+
+    .memory{
+        height:250px;
+    }
+
+    .paper,
+    .final-paper{
+        padding:40px 25px;
+    }
+
+    .paper:before{
+        inset:9px;
+    }
+
+    .letter-content p,
+    .final-paper p{
+        font-size:17px;
+        line-height:1.8;
+    }
+
+    .cake-area{
+        transform:scale(.92);
+        margin-left:-10px;
+    }
+
+    .balloon{
+        width:65px;
+        height:85px;
+    }
+
+    .final-names .names{
+        font-size:50px;
+        letter-spacing:4px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<div id="opening"></div>
+<!-- =========================
+     OPENING
+========================= -->
 
-<div id="finalPage"></div>
+<section id="opening" class="screen active">
 
-<script>
+    <div class="opening-content">
 
-/* ================= PASSWORD ================= */
+        <div class="flowers">
 
-const PASSWORD = "0709";
+            <div class="flower">
+                <div class="flower-center"></div>
+            </div>
 
-/* ================= OPENING ================= */
+            <div class="flower">
+                <div class="flower-center"></div>
+            </div>
 
-function createOpening(){
+            <div class="flower">
+                <div class="flower-center"></div>
+            </div>
 
-  document.getElementById("opening").innerHTML = `
-    <section class="opening-screen">
+            <div class="flower">
+                <div class="flower-center"></div>
+            </div>
 
-      <div class="opening-stars">
-        <span style="left:8%;top:15%"></span>
-        <span style="left:22%;top:27%;animation-delay:.5s"></span>
-        <span style="left:39%;top:10%;animation-delay:1s"></span>
-        <span style="left:62%;top:20%;animation-delay:1.4s"></span>
-        <span style="left:80%;top:12%;animation-delay:.8s"></span>
-        <span style="left:91%;top:35%;animation-delay:1.7s"></span>
-      </div>
+            <div class="flower">
+                <div class="flower-center"></div>
+            </div>
 
-      <div class="opening-content">
-
-        <div class="opening-small">A little surprise for you</div>
+        </div>
 
         <h1 class="opening-title">
-          Happy Birthday Daddy
+            Happy Birthday Aman
         </h1>
 
         <p class="opening-subtitle">
-          A little world made with love, just for you.
+            A little surprise, made with all my heart.
         </p>
 
-        <div class="infinity-opening">∞</div>
+        <button class="begin-btn" onclick="showScreen('passwordScreen')">
+            Open Your Surprise
+        </button>
 
-        <div class="for-daddy">
-          For Daddy
-        </div>
+    </div>
 
-        <div class="password-box">
+</section>
 
-          <input
-            id="password"
+
+<!-- =========================
+     PASSWORD
+========================= -->
+
+<section id="passwordScreen" class="screen">
+
+    <div class="password-card">
+
+        <div class="infinity-symbol">∞</div>
+
+        <h2>Something Special Awaits</h2>
+
+        <p>
+            Enter the little secret between us.
+        </p>
+
+        <input
+            id="passwordInput"
+            class="password-input"
             type="password"
-            placeholder="Enter Password"
-          >
+            placeholder="Enter password"
+            autocomplete="off"
+        >
 
-          <button
-            class="unlock-button"
-            onclick="checkPassword()"
-          >
+        <button class="primary-btn" onclick="checkPassword()">
             Unlock
-          </button>
-
-        </div>
-
-      </div>
-
-      <div class="flower-garden">
-
-        <div class="flower white">
-          <div class="flower-head">
-            <div class="petal"></div><div class="petal"></div>
-            <div class="petal"></div><div class="petal"></div>
-            <div class="petal"></div><div class="petal"></div>
-            <div class="flower-center"></div>
-          </div>
-          <div class="flower-stem"></div>
-          <div class="leaf left"></div>
-          <div class="leaf right"></div>
-        </div>
-
-        <div class="flower blue">
-          <div class="flower-head">
-            <div class="petal"></div><div class="petal"></div>
-            <div class="petal"></div><div class="petal"></div>
-            <div class="petal"></div><div class="petal"></div>
-            <div class="flower-center"></div>
-          </div>
-          <div class="flower-stem"></div>
-          <div class="leaf left"></div>
-          <div class="leaf right"></div>
-        </div>
-
-        <div class="flower white">
-          <div class="flower-head">
-            <div class="petal"></div><div class="petal"></div>
-            <div class="petal"></div><div class="petal"></div>
-            <div class="petal"></div><div class="petal"></div>
-            <div class="flower-center"></div>
-          </div>
-          <div class="flower-stem"></div>
-          <div class="leaf left"></div>
-          <div class="leaf right"></div>
-        </div>
-
-        <div class="flower blue">
-          <div class="flower-head">
-            <div class="petal"></div><div class="petal"></div>
-            <div class="petal"></div><div class="petal"></div>
-            <div class="petal"></div><div class="petal"></div>
-            <div class="flower-center"></div>
-          </div>
-          <div class="flower-stem"></div>
-          <div class="leaf left"></div>
-          <div class="leaf right"></div>
-        </div>
-
-        <div class="flower white">
-          <div class="flower-head">
-            <div class="petal"></div><div class="petal"></div>
-            <div class="petal"></div><div class="petal"></div>
-            <div class="petal"></div><div class="petal"></div>
-            <div class="flower-center"></div>
-          </div>
-          <div class="flower-stem"></div>
-          <div class="leaf left"></div>
-          <div class="leaf right"></div>
-        </div>
-
-        <div class="flower blue">
-          <div class="flower-head">
-            <div class="petal"></div><div class="petal"></div>
-            <div class="petal"></div><div class="petal"></div>
-            <div class="petal"></div><div class="petal"></div>
-            <div class="flower-center"></div>
-          </div>
-          <div class="flower-stem"></div>
-          <div class="leaf left"></div>
-          <div class="leaf right"></div>
-        </div>
-
-      </div>
-
-    </section>
-  `;
-}
-
-function checkPassword(){
-
-  const value = document.getElementById("password").value;
-
-  if(value === PASSWORD){
-    showWelcome();
-  }else{
-    alert("Wrong password");
-  }
-}
-
-/* ================= WELCOME ================= */
-
-function showWelcome(){
-
-  document.getElementById("opening").innerHTML = `
-    <section class="simple-screen">
-
-      <div class="simple-inner">
-
-        <div class="infinity-opening">∞</div>
-
-        <h1>Welcome, Daddy</h1>
-
-        <p>
-          Your little surprise is finally unlocked.
-          <br><br>
-          There is a whole little journey waiting for you.
-        </p>
-
-        <button
-          class="primary-button"
-          onclick="showMemories()"
-        >
-          Open Your Surprise
         </button>
 
-      </div>
-
-    </section>
-  `;
-
-  window.scrollTo({top:0,behavior:"smooth"});
-}
-
-/* ================= MEMORIES ================= */
-
-function showMemories(){
-
-  document.getElementById("opening").innerHTML = `
-
-    <section class="memory-screen">
-
-      <h1>Our Little Memories</h1>
-
-      <p class="memory-intro">
-        Tap each picture and reveal a little piece of our story.
-      </p>
-
-      <div class="memory-heart">
-
-        <div
-          class="memoryPhoto"
-          style="left:115px;top:0"
-          onclick="revealMemory(this,1)"
-        >
-          <img src="471DBFA2-5788-45A0-AC2F-3D14ADE51C0E.jpeg">
+        <div id="passwordError" class="error">
+            That's not it. Try again ❤️
         </div>
 
-        <div
-          class="memoryPhoto"
-          style="left:25px;top:55px"
-          onclick="revealMemory(this,2)"
-        >
-          <img src="54CD354B-0E3F-4100-A519-05EC68A424BB.jpeg">
-        </div>
+    </div>
 
-        <div
-          class="memoryPhoto"
-          style="right:25px;top:55px"
-          onclick="revealMemory(this,3)"
-        >
-          <img src="EF3F30E1-97F2-4E17-AE7D-C8E7A59D1FFE.jpeg">
-        </div>
+</section>
 
-        <div
-          class="memoryPhoto"
-          style="left:65px;top:150px"
-          onclick="revealMemory(this,4)"
-        >
-          <img src="IMG_4665.jpeg">
-        </div>
 
-        <div
-          class="memoryPhoto"
-          style="right:65px;top:150px"
-          onclick="revealMemory(this,5)"
-        >
-          <img src="IMG_7137.jpeg">
-        </div>
+<!-- =========================
+     WELCOME
+========================= -->
 
-      </div>
+<section id="welcome" class="screen">
 
-      <div id="memoryMessage" class="memory-message">
-        Tap a picture...
-      </div>
+    <div class="balloons">
 
-      <div class="letter-section">
+        <div class="balloon"></div>
+        <div class="balloon blue"></div>
+        <div class="balloon"></div>
+        <div class="balloon blue"></div>
 
-        <div class="infinity-card">
+    </div>
 
-          <p>
-            Some feelings are too big for a picture.
-          </p>
-
-          <button
-            class="infinity-card-button"
-            onclick="openLoveLetter()"
-          >
-            ∞
-          </button>
-
-          <p>
-            Tap infinity to read what my heart wants to say.
-          </p>
-
-        </div>
-
-        <div id="loveLetter" class="love-letter">
-
-          <p><b>My Love,</b></p>
-
-          <p>
-            I love you every second, every minute, every hour,
-            today, tomorrow, and every single day of our future.
-            You are so close to my heart, and I never want to lose
-            you or be apart from you. I want to spend my whole life
-            with you, sharing every moment, every happiness, and
-            every dream.
-          </p>
-
-          <p>
-            I want to see you happy, successful, and achieving
-            everything you desire. I pray that Allah blesses you
-            with even more success, prosperity, and happiness.
-          </p>
-
-          <p>
-            InshaAllah, one day we’ll have our beautiful marriage,
-            a cozy little home filled with love, and a happy family
-            with our two little children.
-          </p>
-
-          <p>
-            My greatest wish is that we stay together forever,
-            loving and supporting each other through every chapter
-            of life.
-          </p>
-
-          <p>
-            InshaAllah, by your next birthday, you will be my husband,
-            my mahram, and my life partner.
-          </p>
-
-          <p>
-            I’m genuinely so happy, so peaceful, and so grateful
-            knowing that you are going to be my husband and my
-            مجازی خدا.
-          </p>
-
-          <p>
-            You are the person who taught me what love really feels like.
-            Before you, I never knew that love could be such a beautiful,
-            warm, and peaceful feeling.
-          </p>
-
-          <p>
-            You made me understand what it means to love someone
-            with your whole heart and to feel safe with them.
-            I feel so blessed knowing that I have you, and I truly
-            believe that my whole life ahead is safe in your hands.
-          </p>
-
-          <p>
-            I feel peaceful when I think about spending my entire
-            life with you. InshaAllah, next year we will celebrate
-            your birthday together, as husband and wife.
-          </p>
-
-          <p>
-            Just a little more waiting, just a few more moments,
-            and then we’ll finally be together, InshaAllah.
-            I’m waiting for that beautiful day with all my heart,
-            and I can’t wait to spend the rest of my life with you.
-          </p>
-
-          <div class="next-letter-button">
-
-            <button onclick="showChildhood()">
-              ∞
-            </button>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-  `;
-
-  window.scrollTo({top:0,behavior:"smooth"});
-}
-
-function revealMemory(element,number){
-
-  element.classList.add("revealed");
-
-  const messages = {
-    1:"A little moment that became a beautiful memory.",
-    2:"Every picture holds a piece of my heart.",
-    3:"Some memories become precious because of the person beside them.",
-    4:"I would choose these moments again and again.",
-    5:"And somehow, every memory leads me back to you."
-  };
-
-  document.getElementById("memoryMessage").innerText =
-    messages[number];
-}
-
-function openLoveLetter(){
-
-  const letter = document.getElementById("loveLetter");
-
-  letter.style.display = "block";
-
-  setTimeout(()=>{
-    letter.scrollIntoView({
-      behavior:"smooth",
-      block:"start"
-    });
-  },100);
-}
-
-/* ================= CHILDHOOD ================= */
-
-function showChildhood(){
-
-  document.getElementById("opening").innerHTML = `
-
-    <section class="childhood-screen">
-
-      <div class="childhood-inner">
-
-        <h1 class="childhood-title">
-          Before You Became My Daddy...
-        </h1>
-
-        <div class="childhood-photo">
-
-          <img src="IMG_8595.jpeg">
-
-        </div>
-
-        <div class="childhood-text">
-
-          <p>
-            Once you were just my little boy…
-          </p>
-
-          <p>
-            And look at you now — so hardworking, wise, and strong.
-          </p>
-
-          <p>
-            My little bee, I’m so proud of the person you’ve become.
-          </p>
-
-        </div>
-
-        <button
-          class="primary-button childhood-button"
-          onclick="showBirthdayCake()"
-        >
-          Continue
-        </button>
-
-      </div>
-
-    </section>
-  `;
-
-  window.scrollTo({top:0,behavior:"smooth"});
-}
-
-/* ================= CAKE ================= */
-
-let selectedCake = "classic";
-
-function showBirthdayCake(){
-
-  document.getElementById("opening").innerHTML = `
-
-    <section class="cake-screen">
-
-      <div class="balloon-area">
-
-        <div class="balloon white">
-          <div class="string"></div>
-        </div>
-
-        <div class="balloon blue">
-          <div class="string"></div>
-        </div>
-
-        <div class="balloon white">
-          <div class="string"></div>
-        </div>
-
-        <div class="balloon blue">
-          <div class="string"></div>
-        </div>
-
-      </div>
-
-      <h1>
-        Happy Birthday Aman
-      </h1>
-
-      <p>
-        Choose your cake, make a wish,
-        <br>
-        then tap each candle to blow it out.
-      </p>
-
-      <div class="cake-choices">
-
-        <button
-          class="cake-choice selected"
-          onclick="selectCake('classic',this)"
-        >
-          Classic
-        </button>
-
-        <button
-          class="cake-choice"
-          onclick="selectCake('heart',this)"
-        >
-          Heart Style
-        </button>
-
-        <button
-          class="cake-choice"
-          onclick="selectCake('blue',this)"
-        >
-          Blue Ribbon
-        </button>
-
-      </div>
-
-      <div id="cake" class="cake">
-
-        <div class="cake-layer one">
-          <div class="drip"></div>
-          <div class="drip"></div>
-          <div class="drip"></div>
-        </div>
-
-        <div class="cake-layer two">
-          <div class="drip"></div>
-          <div class="drip"></div>
-          <div class="drip"></div>
-        </div>
-
-        <div class="cake-layer three">
-          <div class="drip"></div>
-          <div class="drip"></div>
-          <div class="drip"></div>
-        </div>
-
-        <div class="cake-top"></div>
-
-        <div
-          class="candle"
-          onclick="blowCandle(this)"
-        >
-          <div class="flame"></div>
-        </div>
-
-        <div
-          class="candle"
-          onclick="blowCandle(this)"
-        >
-          <div class="flame"></div>
-        </div>
-
-        <div
-          class="candle"
-          onclick="blowCandle(this)"
-        >
-          <div class="flame"></div>
-        </div>
-
-      </div>
-
-      <div id="cakeMessage" class="cakeMessage">
-
-        <h2>
-          Make your wish...
-        </h2>
-
-        <p>
-          May Allah bless your life with happiness,
-          success, peace and everything your heart wishes for.
-        </p>
-
-        <button
-          class="next-button"
-          onclick="showFinalPage()"
-        >
-          ∞
-        </button>
-
-      </div>
-
-    </section>
-  `;
-
-  window.scrollTo({top:0,behavior:"smooth"});
-}
-
-function selectCake(type,button){
-
-  selectedCake = type;
-
-  document.querySelectorAll(".cake-choice")
-    .forEach(btn=>btn.classList.remove("selected"));
-
-  button.classList.add("selected");
-
-  const cake = document.getElementById("cake");
-
-  if(type === "heart"){
-    cake.style.transform = "scale(1.05)";
-    cake.style.filter = "drop-shadow(0 12px 15px rgba(80,140,190,.25))";
-  }
-
-  if(type === "blue"){
-    cake.style.transform = "scale(1.08)";
-    cake.style.filter = "drop-shadow(0 12px 20px rgba(50,130,200,.3))";
-  }
-
-  if(type === "classic"){
-    cake.style.transform = "scale(1)";
-    cake.style.filter = "none";
-  }
-}
-
-function blowCandle(candle){
-
-  if(candle.classList.contains("off")) return;
-
-  candle.classList.add("off");
-
-  const candles =
-    document.querySelectorAll(".candle");
-
-  const allOff =
-    [...candles].every(c =>
-      c.classList.contains("off")
-    );
-
-  if(allOff){
-
-    document.getElementById("cakeMessage").style.display =
-      "block";
-
-    setTimeout(()=>{
-      document.getElementById("cakeMessage")
-        .scrollIntoView({
-          behavior:"smooth",
-          block:"center"
-        });
-    },300);
-  }
-}
-
-/* ================= FINAL PAGE ================= */
-
-function showFinalPage(){
-
-  document.getElementById("opening").style.display = "none";
-
-  document.getElementById("finalPage").style.display = "block";
-
-  document.getElementById("finalPage").innerHTML = `
-
-    <section class="final-page">
-
-      <div class="final-paper">
+    <div class="welcome-box">
 
         <h1>
-          If Only I Could Be There With You…
+            Happy Birthday Aman
         </h1>
 
         <p>
-          If only I could be there with you today… sitting beside you,
-          looking at your smile and watching your eyes light up while you
-          celebrate your special day.
+            Today is all about celebrating you,
+            the person who means more to me than
+            words can ever explain.
+        </p>
+
+        <button class="primary-btn" onclick="showScreen('childhood')">
+            Begin Your Birthday
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CHILDHOOD
+========================= -->
+
+<section id="childhood" class="screen">
+
+    <div class="childhood-frame">
+
+        <img
+            src="IMG_8595.jpeg"
+            alt="Childhood memory"
+        >
+
+    </div>
+
+    <div class="childhood-text">
+
+        <h2>Once Upon a Time...</h2>
+
+        <p>
+            Once you were just my little boy… 🥹❤️
+            <br><br>
+            And look at you now — so hardworking,
+            wise, and strong.
+            <br><br>
+            My little bee, I’m so proud of the person
+            you’ve become. ♾️❤️
+        </p>
+
+        <button
+            class="primary-btn next-btn"
+            onclick="showScreen('cakeScreen')"
+        >
+            Continue
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CAKE
+========================= -->
+
+<section id="cakeScreen" class="screen">
+
+    <h1 class="cake-heading">
+        Happy Birthday Aman
+    </h1>
+
+    <p class="cake-instruction">
+        Make a wish... then tap each candle to blow it out.
+    </p>
+
+    <div class="cake-area">
+
+        <div class="cake-shadow"></div>
+
+        <!-- Candles -->
+        <div class="candles">
+
+            <div class="candle" onclick="blowCandle(this)">
+                <div class="wick"></div>
+                <div class="flame"></div>
+            </div>
+
+            <div class="candle" onclick="blowCandle(this)">
+                <div class="wick"></div>
+                <div class="flame"></div>
+            </div>
+
+            <div class="candle" onclick="blowCandle(this)">
+                <div class="wick"></div>
+                <div class="flame"></div>
+            </div>
+
+            <div class="candle" onclick="blowCandle(this)">
+                <div class="wick"></div>
+                <div class="flame"></div>
+            </div>
+
+            <div class="candle" onclick="blowCandle(this)">
+                <div class="wick"></div>
+                <div class="flame"></div>
+            </div>
+
+        </div>
+
+
+        <!-- Cake -->
+        <div class="cake">
+
+            <div class="cake-layer layer-bottom">
+
+                <div class="cream-drip drip1"></div>
+                <div class="cream-drip drip2"></div>
+                <div class="cream-drip drip3"></div>
+
+                <div class="cake-dot dot1"></div>
+                <div class="cake-dot dot2"></div>
+                <div class="cake-dot dot3"></div>
+                <div class="cake-dot dot4"></div>
+
+            </div>
+
+            <div class="cake-layer layer-middle">
+
+                <div class="cream-drip drip1"></div>
+                <div class="cream-drip drip2"></div>
+                <div class="cream-drip drip3"></div>
+
+            </div>
+
+            <div class="cake-layer layer-top">
+
+                <div class="cream-drip drip1"></div>
+                <div class="cream-drip drip2"></div>
+                <div class="cream-drip drip3"></div>
+
+            </div>
+
+        </div>
+
+        <div class="top-cream"></div>
+
+    </div>
+
+
+    <div class="cake-message">
+
+        <div id="blessing" class="blessing">
+
+            May Allah bless your life with endless happiness,
+            success, peace and love.
+            <br>
+            May every beautiful dream in your heart come true. ❤️
+
+            <br><br>
+
+            <button
+                class="primary-btn"
+                onclick="showScreen('memories')"
+            >
+                Continue
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MEMORIES
+========================= -->
+
+<section id="memories" class="screen">
+
+    <h1 class="section-title">
+        Our Little Memories
+    </h1>
+
+    <p class="section-subtitle">
+        Tap each picture and uncover a little piece of us.
+    </p>
+
+
+    <div class="memory-grid">
+
+        <div class="memory" onclick="revealMemory(this)">
+            <img src="471DBFA2-5788-45A0-AC2F-3D14ADE51C0E.jpeg">
+            <div class="memory-cover">
+                Tap to reveal
+            </div>
+        </div>
+
+        <div class="memory" onclick="revealMemory(this)">
+            <img src="54CD354B-0E3F-4100-A519-05EC68A424BB.jpeg">
+            <div class="memory-cover">
+                Tap to reveal
+            </div>
+        </div>
+
+        <div class="memory" onclick="revealMemory(this)">
+            <img src="EF3F30E1-97F2-4E17-AE7D-C8E7A59D1FFE.jpeg">
+            <div class="memory-cover">
+                Tap to reveal
+            </div>
+        </div>
+
+        <div class="memory" onclick="revealMemory(this)">
+            <img src="IMG_4665.jpeg">
+            <div class="memory-cover">
+                Tap to reveal
+            </div>
+        </div>
+
+        <div class="memory" onclick="revealMemory(this)">
+            <img src="IMG_7137.jpeg">
+            <div class="memory-cover">
+                Tap to reveal
+            </div>
+        </div>
+
+    </div>
+
+
+    <button
+        class="primary-btn next-btn"
+        onclick="showScreen('loveLetter')"
+    >
+        There Is More...
+    </button>
+
+</section>
+
+
+<!-- =========================
+     LOVE LETTER
+========================= -->
+
+<section id="loveLetter" class="screen">
+
+    <div class="paper">
+
+        <div class="kiss kiss1"></div>
+        <div class="kiss kiss2"></div>
+        <div class="kiss kiss3"></div>
+
+        <h1 class="letter-title">
+            A Letter From My Heart
+        </h1>
+
+        <div class="letter-content">
+
+            <p>
+                <b>My Love,</b>
+            </p>
+
+            <p>
+                I love you every second, every minute, every hour,
+                today, tomorrow, and every single day of our future.
+                You are so close to my heart, and I never want to lose
+                you or be apart from you. I want to spend my whole life
+                with you, sharing every moment, every happiness, and
+                every dream.
+            </p>
+
+            <p>
+                I want to see you happy, successful, and achieving
+                everything you desire. I pray that Allah blesses you
+                with even more success, prosperity, and happiness.
+            </p>
+
+            <p>
+                InshaAllah, one day we’ll have our beautiful marriage,
+                a cozy little home filled with love, and a happy family
+                with our two little children.
+            </p>
+
+            <p class="highlight">
+                My greatest wish is that we stay together forever,
+                loving and supporting each other through every chapter
+                of life.
+            </p>
+
+            <p>
+                InshaAllah, by your next birthday, you will be my husband,
+                my mahram, and my life partner. 🥹❤️
+            </p>
+
+            <p>
+                I’m genuinely so happy, so peaceful, and so grateful
+                knowing that you are going to be my husband and my
+                مجازی خدا.
+            </p>
+
+            <p>
+                You are the person who taught me what love really feels like.
+                Before you, I never knew that love could be such a beautiful,
+                warm, and peaceful feeling.
+            </p>
+
+            <p>
+                You made me understand what it means to love someone
+                with your whole heart and to feel safe with them.
+                I feel so blessed knowing that I have you, and I truly
+                believe that my whole life ahead is safe in your hands.
+            </p>
+
+            <p>
+                I feel peaceful when I think about spending my entire
+                life with you. InshaAllah, next year we will celebrate
+                your birthday together, as husband and wife. ❤️
+            </p>
+
+            <p>
+                Just a little more waiting, just a few more moments,
+                and then we’ll finally be together, InshaAllah.
+                I’m waiting for that beautiful day with all my heart,
+                and I can’t wait to spend the rest of my life with you.
+                🥹❤️✨
+            </p>
+
+        </div>
+
+
+        <div class="letter-button">
+
+            <button
+                class="primary-btn"
+                onclick="showScreen('finalLetter')"
+            >
+                One Last Letter
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FINAL LETTER
+========================= -->
+
+<section id="finalLetter" class="screen">
+
+    <div class="final-paper">
+
+        <div class="kiss kiss1"></div>
+        <div class="kiss kiss2"></div>
+        <div class="kiss kiss3"></div>
+
+        <h1>
+            If Only I Could Be There With You… 🥹❤️
+        </h1>
+
+
+        <p>
+            If only I could be there with you today… sitting beside you,
+            looking at your smile and watching your eyes light up while you
+            celebrate your special day.
         </p>
 
         <p>
-          I wish I could see your happiness with my own eyes, hold your hand,
-          give you the tightest hug, and simply be there beside you.
+            I wish I could see your happiness with my own eyes, hold your hand,
+            give you the tightest hug, and simply be there beside you.
         </p>
 
         <p>
-          But this is the hardest part of loving someone from a long distance…
-          sometimes you have so much love to give, but you can't be there to
-          give it in person.
+            But this is the hardest part of loving someone from a long distance…
+            sometimes you have so much love to give, but you can't be there to
+            give it in person. 🥹
         </p>
 
         <p>
-          I may not have everything I wish I could have with you right now.
-          I don't have your hand in mine, I can't sit beside you, I can't
-          surprise you by showing up at your door, and I can't see your
-          beautiful smile when you read this.
+            I may not have everything I wish I could have with you right now.
+            I don't have your hand in mine, I can't sit beside you, I can't
+            surprise you by showing up at your door, and I can't see your
+            beautiful smile when you read this.
         </p>
 
         <p>
-          But you know what I do have?
+            But you know what I do have?
         </p>
 
         <p class="special">
-          I HAVE YOU IN MY HEART.
+            I HAVE YOU IN MY HEART. ❤️
         </p>
 
         <p>
-          No matter how many miles are between us, you are still one of the
-          closest people to my heart. Distance can keep me away from your
-          arms, but it can never keep my love away from you.
+            No matter how many miles are between us, you are still one of the
+            closest people to my heart. Distance can keep me away from your
+            arms, but it can never keep my love away from you.
         </p>
 
         <p>
-          Sometimes I wish I could pause everything, cross all these miles,
-          and just appear beside you for a little while… just to look at you
-          and say,
+            Sometimes I wish I could pause everything, cross all these miles,
+            and just appear beside you for a little while… just to look at you
+            and say,
         </p>
 
         <p class="quote">
-          “Happy Birthday, my love.”
+            “Happy Birthday, my love.” 🥹❤️
         </p>
 
         <p>
-          Maybe today I can't celebrate your birthday the way I want to.
-          Maybe I can't be there to see your happiness, hear your laughter,
-          or hold you close.
+            Maybe today I can't celebrate your birthday the way I want to.
+            Maybe I can't be there to see your happiness, hear your laughter,
+            or hold you close.
         </p>
 
         <p class="promise">
-          But InshaAllah, one day…
+            But InshaAllah, one day…
         </p>
 
         <p>
-          There will be no screens between us.<br>
-          No miles.<br>
-          No goodbyes.<br>
-          No wishing that I could be there.
+            There will be no screens between us.<br>
+            No miles.<br>
+            No goodbyes.<br>
+            No wishing that I could be there.
         </p>
 
         <p class="together">
-          I'll just be <b>there. With you.</b>
+            I'll just be <b>there. With you. ❤️</b>
         </p>
 
         <p>
-          And when that day comes, I want to celebrate every birthday with you,
-          make you smile, annoy you, love you, and remind you again and again
-          how much you mean to me.
+            And when that day comes, I want to celebrate every birthday with you,
+            make you smile, annoy you, love you, and remind you again and again
+            how much you mean to me.
         </p>
 
         <p>
-          Until then, whenever you miss me, look at this little infinity…
+            Until then, whenever you miss me, look at this little infinity…
         </p>
 
         <div style="
-          text-align:center;
-          font-size:65px;
-          color:#244b88;
-          animation:pulse 2s infinite;
+            text-align:center;
+            font-size:60px;
+            color:#75afd0;
+            margin:20px 0;
         ">
-          ∞
+            ∞
         </div>
 
-        <p class="forever">
-          Because that's what I want my love for you to be.
+        <p class="forever" style="text-align:center;">
+            Because that's what I want my love for you to be.
         </p>
 
         <p class="ending">
-          Not temporary.<br>
-          Not for a moment.<br>
-          Not until distance gets difficult.<br><br>
-          <b>But forever.</b>
+            Not temporary.<br>
+            Not for a moment.<br>
+            Not until distance gets difficult.<br><br>
+
+            <b>But forever. ∞</b>
         </p>
 
         <p class="love">
-          I love you more than these words could ever explain.
+            I love you more than these words could ever explain.
         </p>
 
-        <div class="final-signature">
 
-          <button
-            class="big-infinity"
-            onclick="showFinalNames()"
-          >
-            ∞
-          </button>
+        <!-- FINAL INFINITY -->
 
-          <div class="alm">
-            A <span>♥</span> M
-          </div>
+        <div class="final-infinity-area">
 
-          <div class="birthday">
-            Happy Birthday Manni
-          </div>
+            <button
+                class="big-infinity"
+                onclick="showFinalNames()"
+            >
+                ∞
+            </button>
+
+            <div
+                id="finalNames"
+                class="final-names"
+            >
+
+                <div class="names">
+                    A <span class="heart">♥</span> M
+                </div>
+
+                <div class="birthday">
+                    Happy Birthday Manni ❤️
+                </div>
+
+            </div>
 
         </div>
 
-      </div>
+    </div>
 
-    </section>
-  `;
+</section>
 
-  window.scrollTo({top:0,behavior:"smooth"});
+
+<script>
+
+/* =========================
+   PASSWORD
+========================= */
+
+/*
+   Password is INFINITY.
+
+   These both work:
+   infinity
+   ∞
+*/
+
+const PASSWORDS = [
+    "infinity",
+    "∞"
+];
+
+
+/* =========================
+   SCREEN SWITCHING
+========================= */
+
+function showScreen(id){
+
+    const screens = document.querySelectorAll(".screen");
+
+    screens.forEach(function(screen){
+        screen.classList.remove("active");
+    });
+
+    const target = document.getElementById(id);
+
+    if(target){
+        target.classList.add("active");
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+    }
 }
+
+
+/* =========================
+   PASSWORD CHECK
+========================= */
+
+function checkPassword(){
+
+    const input = document.getElementById("passwordInput");
+    const error = document.getElementById("passwordError");
+
+    const value = input.value.trim().toLowerCase();
+
+    if(PASSWORDS.includes(value)){
+
+        error.style.display = "none";
+
+        input.value = "";
+
+        showScreen("welcome");
+
+    }else{
+
+        error.style.display = "block";
+
+        input.style.borderColor = "#bd5d68";
+
+        setTimeout(function(){
+            input.style.borderColor = "";
+        },1000);
+    }
+}
+
+
+/* Press Enter to unlock */
+
+document.getElementById("passwordInput").addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Enter"){
+            checkPassword();
+        }
+
+    }
+);
+
+
+/* =========================
+   MEMORY REVEAL
+========================= */
+
+function revealMemory(element){
+
+    element.classList.toggle("revealed");
+
+}
+
+
+/* =========================
+   CANDLE BLOW
+========================= */
+
+let candlesOff = 0;
+
+function blowCandle(candle){
+
+    if(candle.classList.contains("off")){
+        return;
+    }
+
+    candle.classList.add("off");
+
+    candlesOff++;
+
+    if(candlesOff >= 5){
+
+        setTimeout(function(){
+
+            document.getElementById("blessing")
+                .classList.add("show");
+
+        },700);
+
+    }
+
+}
+
+
+/* =========================
+   FINAL NAMES
+========================= */
 
 function showFinalNames(){
 
-  const alm = document.querySelector(".alm");
-  const birthday = document.querySelector(".birthday");
+    const finalNames =
+        document.getElementById("finalNames");
 
-  alm.style.display = "block";
-  birthday.style.display = "block";
+    finalNames.style.display = "block";
 
-  document.querySelector(".final-signature")
-    .scrollIntoView({
-      behavior:"smooth",
-      block:"center"
-    });
+    setTimeout(function(){
+
+        finalNames.scrollIntoView({
+            behavior:"smooth",
+            block:"center"
+        });
+
+    },150);
+
 }
 
-/* ================= START ================= */
 
-createOpening();
+/* =========================
+   RESET CAKE WHEN PAGE LOADS
+========================= */
+
+window.addEventListener("load",function(){
+
+    candlesOff = 0;
+
+});
 
 </script>
 
