@@ -3,1728 +3,1364 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Daddy</title>
+<title>Happy Birthday Aman</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
+*{box-sizing:border-box;margin:0;padding:0;}
 
 html,body{
-    width:100%;
-    min-height:100%;
+width:100%;
+min-height:100%;
 }
 
 body{
-    font-family:"Cormorant Garamond",serif;
-    background:#071a45;
-    color:white;
-    overflow-x:hidden;
+font-family:"Cormorant Garamond",serif;
+background:#071a45;
+color:white;
+overflow-x:hidden;
 }
 
 .screen{
-    display:none;
-    min-height:100vh;
-    width:100%;
-    position:relative;
-    overflow:hidden;
-    align-items:center;
-    justify-content:center;
-    padding:25px;
+display:none;
+min-height:100vh;
+width:100%;
+position:relative;
+overflow:hidden;
+align-items:center;
+justify-content:center;
+padding:25px;
 }
 
 .screen.active{
-    display:flex;
-    animation:screenIn .8s ease both;
+display:flex;
+animation:screenIn .8s ease both;
 }
 
 @keyframes screenIn{
-    from{
-        opacity:0;
-        transform:scale(.98);
-    }
-    to{
-        opacity:1;
-        transform:scale(1);
-    }
+from{opacity:0;transform:scale(.98);}
+to{opacity:1;transform:scale(1);}
 }
 
 .center{
-    width:100%;
-    max-width:900px;
-    text-align:center;
-    position:relative;
-    z-index:5;
-}
-
-.script{
-    font-family:"Dancing Script",cursive;
-}
-
-.small{
-    font-size:18px;
-    opacity:.85;
+width:100%;
+max-width:900px;
+text-align:center;
+position:relative;
+z-index:5;
 }
 
 button{
-    border:0;
-    cursor:pointer;
-    font-family:"Cormorant Garamond",serif;
-    -webkit-tap-highlight-color:transparent;
+border:0;
+cursor:pointer;
+font-family:"Cormorant Garamond",serif;
+-webkit-tap-highlight-color:transparent;
 }
 
 .primary-btn{
-    margin-top:25px;
-    padding:14px 35px;
-    border-radius:50px;
-    background:#dcecff;
-    color:#092052;
-    font-size:20px;
-    font-weight:600;
-    box-shadow:0 8px 25px rgba(0,0,0,.25);
-    transition:.25s;
+margin-top:25px;
+padding:14px 35px;
+border-radius:50px;
+background:#dcecff;
+color:#092052;
+font-size:20px;
+font-weight:600;
+box-shadow:0 8px 25px rgba(0,0,0,.25);
+transition:.25s;
 }
 
 .primary-btn:active{
-    transform:scale(.94);
+transform:scale(.94);
 }
 
 .hidden{
-    display:none !important;
+display:none!important;
 }
 
 .blue-bg{
-    background:
-      radial-gradient(circle at 20% 15%,rgba(90,160,255,.22),transparent 25%),
-      radial-gradient(circle at 80% 80%,rgba(130,190,255,.16),transparent 28%),
-      linear-gradient(145deg,#04143c,#092866,#06183e);
+background:
+radial-gradient(circle at 20% 15%,rgba(90,160,255,.22),transparent 25%),
+radial-gradient(circle at 80% 80%,rgba(130,190,255,.16),transparent 28%),
+linear-gradient(145deg,#04143c,#092866,#06183e);
 }
-
 
 /* START */
 
 #startScreen{
-    background:
-      radial-gradient(circle at 50% 45%,rgba(55,120,220,.24),transparent 35%),
-      linear-gradient(145deg,#03133a,#082967,#04183f);
+background:
+radial-gradient(circle at 50% 45%,rgba(55,120,220,.24),transparent 35%),
+linear-gradient(145deg,#03133a,#082967,#04183f);
 }
 
 .start-title{
-    font-size:clamp(38px,8vw,70px);
-    line-height:1.05;
-    font-family:"Dancing Script",cursive;
-    font-weight:600;
-    text-shadow:0 5px 20px rgba(0,0,0,.2);
+font-size:clamp(38px,8vw,70px);
+line-height:1.05;
+font-family:"Dancing Script",cursive;
+font-weight:600;
 }
 
 .start-subtitle{
-    margin-top:10px;
-    font-size:clamp(22px,4.5vw,34px);
-    color:#dcecff;
+margin-top:10px;
+font-size:clamp(22px,4.5vw,34px);
+color:#dcecff;
 }
 
 .choice-row{
-    display:flex;
-    justify-content:center;
-    gap:18px;
-    margin-top:35px;
+display:flex;
+justify-content:center;
+gap:18px;
+margin-top:35px;
 }
 
 .choice{
-    min-width:105px;
-    padding:14px 30px;
-    border-radius:40px;
-    font-size:19px;
-    font-weight:700;
-    color:#082052;
-    background:#e8f3ff;
-    box-shadow:0 8px 25px rgba(0,0,0,.2);
-    transition:.25s;
-}
-
-.choice:active{
-    transform:scale(.92);
+min-width:105px;
+padding:14px 30px;
+border-radius:40px;
+font-size:19px;
+font-weight:700;
+color:#082052;
+background:#e8f3ff;
+box-shadow:0 8px 25px rgba(0,0,0,.2);
 }
 
 .no-message{
-    min-height:28px;
-    margin-top:18px;
-    font-family:"Dancing Script",cursive;
-    font-size:24px;
-    color:#d8eaff;
+min-height:28px;
+margin-top:18px;
+font-family:"Dancing Script",cursive;
+font-size:24px;
+color:#d8eaff;
 }
 
-
-/* TIME JOURNEY */
+/* TIME */
 
 #timeScreen{
-    background:
-      radial-gradient(circle at center,rgba(85,150,240,.22),transparent 38%),
-      linear-gradient(150deg,#03133b,#0b2c69,#04183f);
+background:
+radial-gradient(circle at center,rgba(85,150,240,.22),transparent 38%),
+linear-gradient(150deg,#03133b,#0b2c69,#04183f);
 }
 
 .count-number{
-    font-size:clamp(80px,22vw,180px);
-    font-weight:700;
-    line-height:1;
-    color:#e7f3ff;
-    text-shadow:0 0 35px rgba(170,215,255,.45);
-    animation:countPop .75s ease both;
+font-size:clamp(80px,22vw,180px);
+font-weight:700;
+line-height:1;
+color:#e7f3ff;
+text-shadow:0 0 35px rgba(170,215,255,.45);
 }
 
 @keyframes countPop{
-    from{
-        opacity:0;
-        transform:scale(1.7);
-    }
-    to{
-        opacity:1;
-        transform:scale(1);
-    }
+from{opacity:0;transform:scale(1.7);}
+to{opacity:1;transform:scale(1);}
 }
 
 .time-card{
-    margin:auto;
-    max-width:500px;
-    padding:25px;
+margin:auto;
+max-width:500px;
+padding:25px;
 }
 
 .time-label{
-    font-size:15px;
-    letter-spacing:5px;
-    color:#9ec9ff;
+font-size:15px;
+letter-spacing:5px;
+color:#9ec9ff;
 }
 
 .time-value{
-    font-size:clamp(42px,10vw,75px);
-    margin:5px 0 20px;
-}
-
-.fast-time{
-    font-size:clamp(22px,6vw,40px);
-    color:#dcecff;
-    min-height:55px;
+font-size:clamp(42px,10vw,75px);
+margin:5px 0 20px;
 }
 
 .years-message{
-    margin-top:22px;
-    font-size:26px;
-    color:#dbeaff;
+margin-top:18px;
+font-size:28px;
+color:#dbeaff;
+}
+
+.age-number{
+font-size:clamp(48px,12vw,85px);
+font-weight:600;
+margin-top:10px;
+color:#edf7ff;
 }
 
 .now-23{
-    margin-top:18px;
-    font-family:"Dancing Script",cursive;
-    font-size:clamp(48px,12vw,90px);
-    color:white;
-    text-shadow:0 0 25px rgba(170,220,255,.5);
+margin-top:12px;
+font-family:"Dancing Script",cursive;
+font-size:clamp(45px,11vw,75px);
+color:white;
 }
-
-.date-final{
-    margin-top:15px;
-    letter-spacing:5px;
-    color:#a9d2ff;
-    font-size:20px;
-}
-
-
-/* HEARTS */
 
 .heart-field{
-    position:absolute;
-    inset:0;
-    pointer-events:none;
-    overflow:hidden;
+position:absolute;
+inset:0;
+pointer-events:none;
+overflow:hidden;
 }
 
 .heart{
-    position:absolute;
-    width:15px;
-    height:15px;
-    background:#ff9db8;
-    transform:rotate(45deg);
-    opacity:0;
-    animation:heartRise 4s ease forwards;
+position:absolute;
+width:15px;
+height:15px;
+background:#ff9db8;
+transform:rotate(45deg);
+opacity:0;
+animation:heartRise 4s ease forwards;
 }
 
-.heart:before,
-.heart:after{
-    content:"";
-    position:absolute;
-    width:15px;
-    height:15px;
-    border-radius:50%;
-    background:inherit;
+.heart:before,.heart:after{
+content:"";
+position:absolute;
+width:15px;
+height:15px;
+border-radius:50%;
+background:inherit;
 }
 
-.heart:before{
-    left:-7px;
-}
-
-.heart:after{
-    top:-7px;
-}
+.heart:before{left:-7px;}
+.heart:after{top:-7px;}
 
 @keyframes heartRise{
-    0%{
-        opacity:0;
-        transform:translateY(30px) rotate(45deg) scale(.4);
-    }
-    20%{
-        opacity:.9;
-    }
-    100%{
-        opacity:0;
-        transform:translateY(-90vh) rotate(45deg) scale(1.2);
-    }
+0%{opacity:0;transform:translateY(30px) rotate(45deg) scale(.4);}
+20%{opacity:.9;}
+100%{opacity:0;transform:translateY(-90vh) rotate(45deg) scale(1.2);}
 }
 
+/* INTRO BEFORE PASSWORD */
+
+#introScreen{
+background:
+radial-gradient(circle at 50% 35%,rgba(100,165,255,.18),transparent 35%),
+linear-gradient(145deg,#04143d,#09285e,#06173d);
+}
+
+.intro-title{
+font-family:"Dancing Script",cursive;
+font-size:clamp(45px,10vw,72px);
+margin-bottom:20px;
+}
+
+.intro-text{
+max-width:680px;
+margin:auto;
+font-size:clamp(20px,4.8vw,27px);
+line-height:1.65;
+color:#e1eeff;
+}
+
+.intro-highlight{
+font-family:"Dancing Script",cursive;
+font-size:30px;
+color:#d9ecff;
+margin-top:20px;
+}
 
 /* PASSWORD */
 
 #passwordScreen{
-    background:
-      radial-gradient(circle at 50% 35%,rgba(90,150,240,.2),transparent 32%),
-      linear-gradient(145deg,#04143d,#09285e,#06173d);
+background:
+radial-gradient(circle at 50% 35%,rgba(90,150,240,.2),transparent 32%),
+linear-gradient(145deg,#04143d,#09285e,#06173d);
 }
 
 .sparkles{
-    position:absolute;
-    inset:0;
-    pointer-events:none;
+position:absolute;
+inset:0;
+pointer-events:none;
 }
 
 .sparkle{
-    position:absolute;
-    width:3px;
-    height:3px;
-    border-radius:50%;
-    background:#dcecff;
-    opacity:.5;
-    animation:sparkle 2.8s infinite ease-in-out;
+position:absolute;
+width:3px;
+height:3px;
+border-radius:50%;
+background:#dcecff;
+opacity:.5;
+animation:sparkle 2.8s infinite ease-in-out;
 }
 
 @keyframes sparkle{
-    0%,100%{
-        opacity:.15;
-        transform:scale(.7);
-    }
-    50%{
-        opacity:.75;
-        transform:scale(1.5);
-    }
+0%,100%{opacity:.15;transform:scale(.7);}
+50%{opacity:.75;transform:scale(1.5);}
 }
 
 .lock-title{
-    font-family:"Dancing Script",cursive;
-    font-size:clamp(45px,10vw,78px);
+font-family:"Dancing Script",cursive;
+font-size:clamp(45px,10vw,78px);
 }
 
 .lock-sub{
-    margin-top:8px;
-    font-size:22px;
-    color:#bfdcff;
+margin-top:8px;
+font-size:22px;
+color:#bfdcff;
 }
 
 .password-box{
-    margin:28px auto 0;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:14px;
+margin:28px auto 0;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:14px;
 }
 
 .password-input{
-    width:min(300px,85vw);
-    padding:15px 20px;
-    border:1px solid rgba(220,240,255,.45);
-    border-radius:40px;
-    outline:none;
-    background:rgba(255,255,255,.1);
-    color:white;
-    text-align:center;
-    font-size:19px;
+width:min(300px,85vw);
+padding:15px 20px;
+border:1px solid rgba(220,240,255,.45);
+border-radius:40px;
+outline:none;
+background:rgba(255,255,255,.1);
+color:white;
+text-align:center;
+font-size:19px;
 }
 
 .password-input::placeholder{
-    color:#bad0ed;
+color:#bad0ed;
 }
 
 .error-box{
-    min-height:50px;
-    margin-top:18px;
-    color:#ffc0d0;
-    font-family:"Dancing Script",cursive;
-    font-size:29px;
+min-height:50px;
+margin-top:18px;
+color:#ffc0d0;
+font-family:"Dancing Script",cursive;
+font-size:29px;
 }
 
-
-/* CARTOON COUPLE
-   BOW REMOVED COMPLETELY
-*/
-
-.cartoon-stage{
-    width:260px;
-    height:180px;
-    margin:20px auto 0;
-    position:relative;
-}
-
-.char{
-    position:absolute;
-    bottom:20px;
-    width:95px;
-    height:125px;
-    transition:.6s;
-}
-
-.char-left{
-    left:20px;
-}
-
-.char-right{
-    right:20px;
-}
-
-.head{
-    width:78px;
-    height:70px;
-    border-radius:50%;
-    position:absolute;
-    top:0;
-    left:8px;
-    background:#fff;
-    border:2px solid rgba(0,0,0,.08);
-    box-shadow:0 5px 12px rgba(0,0,0,.15);
-}
-
-.ear{
-    position:absolute;
-    width:25px;
-    height:25px;
-    border-radius:50%;
-    background:#fff;
-    top:-5px;
-}
-
-.ear.one{
-    left:-7px;
-}
-
-.ear.two{
-    right:-7px;
-}
-
-.eye{
-    position:absolute;
-    width:6px;
-    height:9px;
-    border-radius:50%;
-    background:#17213b;
-    top:30px;
-}
-
-.eye.one{
-    left:25px;
-}
-
-.eye.two{
-    right:25px;
-}
-
-.mouth{
-    position:absolute;
-    width:22px;
-    height:11px;
-    border-bottom:3px solid #27304b;
-    border-radius:50%;
-    left:28px;
-    top:45px;
-}
-
-.body{
-    position:absolute;
-    width:75px;
-    height:65px;
-    left:10px;
-    bottom:0;
-    border-radius:42px 42px 25px 25px;
-    background:#a8d3ff;
-}
-
-.arm{
-    position:absolute;
-    width:45px;
-    height:15px;
-    border-radius:20px;
-    background:#fff;
-    top:82px;
-}
-
-.char-left .arm{
-    right:-16px;
-    transform:rotate(-20deg);
-}
-
-.char-right .arm{
-    left:-16px;
-    transform:rotate(20deg);
-}
-
-.kiss{
-    display:none;
-    position:absolute;
-    left:50%;
-    top:35px;
-    transform:translateX(-50%);
-    font-size:30px;
-    color:#ff8eae;
-    animation:kissPop 1s ease infinite alternate;
-}
-
-@keyframes kissPop{
-    from{
-        transform:translateX(-50%) scale(.8);
-    }
-    to{
-        transform:translateX(-50%) scale(1.15);
-    }
-}
-
-.cartoon-stage.wrong .char-left{
-    animation:pullLeft 1.7s ease-in-out forwards;
-}
-
-.cartoon-stage.wrong .char-right{
-    animation:pullRight 1.7s ease-in-out forwards;
-}
-
-@keyframes pullLeft{
-    50%{
-        transform:translateX(75px) rotate(7deg);
-    }
-    100%{
-        transform:translateX(115px) rotate(10deg);
-    }
-}
-
-@keyframes pullRight{
-    50%{
-        transform:translateX(-45px);
-    }
-    100%{
-        transform:translateX(-75px);
-    }
-}
-
-.cartoon-stage.correct .char-left{
-    animation:kissLeft 1.8s ease forwards;
-}
-
-.cartoon-stage.correct .char-right{
-    animation:kissRight 1.8s ease forwards;
-}
-
-.cartoon-stage.correct .kiss{
-    display:block;
-}
-
-@keyframes kissLeft{
-    to{
-        transform:translateX(32px);
-    }
-}
-
-@keyframes kissRight{
-    to{
-        transform:translateX(-32px);
-    }
-}
-
-
-/* WAIT / GIFT */
+/* WAIT */
 
 #waitScreen{
-    background:linear-gradient(145deg,#061640,#0a2e70,#06183e);
-}
-
-.gift{
-    width:140px;
-    height:120px;
-    margin:30px auto;
-    position:relative;
-    animation:giftFloat 1.8s ease-in-out infinite;
-}
-
-.gift-box{
-    position:absolute;
-    width:140px;
-    height:90px;
-    bottom:0;
-    background:#b9ddff;
-    border-radius:8px;
-}
-
-.gift-box:before{
-    content:"";
-    position:absolute;
-    left:58px;
-    width:24px;
-    height:90px;
-    background:#4e82c5;
-}
-
-.gift-lid{
-    position:absolute;
-    width:150px;
-    height:25px;
-    left:-5px;
-    top:15px;
-    background:#d7ecff;
-    border-radius:7px;
-    z-index:2;
-}
-
-.gift-lid:before{
-    content:"";
-    position:absolute;
-    left:63px;
-    width:24px;
-    height:25px;
-    background:#4e82c5;
-}
-
-@keyframes giftFloat{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-12px);
-    }
+background:linear-gradient(145deg,#061640,#0a2e70,#06183e);
 }
 
 .wait-title{
-    font-family:"Dancing Script",cursive;
-    font-size:45px;
+font-family:"Dancing Script",cursive;
+font-size:45px;
 }
 
 .wait-text{
-    margin-top:10px;
-    font-size:22px;
+margin-top:10px;
+font-size:22px;
 }
 
+.gift{
+width:160px;
+height:140px;
+margin:35px auto;
+position:relative;
+cursor:pointer;
+animation:giftFloat 1.8s ease-in-out infinite;
+}
+
+.gift-box{
+position:absolute;
+width:150px;
+height:95px;
+bottom:0;
+left:5px;
+background:#b9ddff;
+border-radius:8px;
+}
+
+.gift-box:before{
+content:"";
+position:absolute;
+left:63px;
+width:25px;
+height:95px;
+background:#4e82c5;
+}
+
+.gift-lid{
+position:absolute;
+width:160px;
+height:28px;
+left:0;
+top:20px;
+background:#d7ecff;
+border-radius:7px;
+z-index:2;
+}
+
+.gift-lid:before{
+content:"";
+position:absolute;
+left:67px;
+width:25px;
+height:28px;
+background:#4e82c5;
+}
+
+.gift-ribbon{
+position:absolute;
+z-index:4;
+top:-5px;
+left:48px;
+font-size:48px;
+color:#dcecff;
+font-family:"Dancing Script",cursive;
+}
+
+.gift-hint{
+font-family:"Dancing Script",cursive;
+font-size:24px;
+color:#dcecff;
+}
+
+@keyframes giftFloat{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-12px);}
+}
 
 /* CHILDHOOD */
 
-#childhoodScreen,
-#memoryScreen,
-#cakeScreen{
-    background:linear-gradient(145deg,#061640,#0b2d6d,#06183e);
+#childhoodScreen,#memoryScreen{
+background:linear-gradient(145deg,#061640,#0b2d6d,#06183e);
 }
 
 .photo-frame{
-    width:min(320px,82vw);
-    padding:10px;
-    background:#f4f0e7;
-    border-radius:5px;
-    margin:25px auto;
-    box-shadow:0 15px 40px rgba(0,0,0,.3);
+width:min(320px,82vw);
+padding:10px;
+background:#f4f0e7;
+border-radius:5px;
+margin:25px auto;
+box-shadow:0 15px 40px rgba(0,0,0,.3);
 }
 
 .photo-frame img{
-    display:block;
-    width:100%;
-    max-height:420px;
-    object-fit:cover;
-    border-radius:2px;
+display:block;
+width:100%;
+max-height:420px;
+object-fit:cover;
 }
 
 .section-title{
-    font-family:"Dancing Script",cursive;
-    font-size:clamp(42px,10vw,68px);
+font-family:"Dancing Script",cursive;
+font-size:clamp(42px,10vw,68px);
 }
 
 .section-text{
-    max-width:650px;
-    margin:15px auto;
-    font-size:21px;
-    line-height:1.6;
-    color:#e0edff;
+max-width:700px;
+margin:15px auto;
+font-size:clamp(22px,5vw,29px);
+line-height:1.55;
+color:#e0edff;
 }
 
 .proud{
-    font-family:"Dancing Script",cursive;
-    font-size:29px;
-    color:#c7e3ff;
-    margin-top:15px;
+font-family:"Dancing Script",cursive;
+font-size:29px;
+color:#c7e3ff;
+margin-top:15px;
 }
-
 
 /* MEMORIES */
 
 .memory-title{
-    font-family:"Dancing Script",cursive;
-    font-size:55px;
-}
-
-.memory-grid{
-    width:min(380px,90vw);
-    height:450px;
-    margin:25px auto;
-    position:relative;
-}
-
-.memory{
-    position:absolute;
-    width:125px;
-    height:155px;
-    padding:7px;
-    background:#fff;
-    border-radius:5px;
-    box-shadow:0 10px 30px rgba(0,0,0,.3);
-    cursor:pointer;
-    transition:.5s;
-}
-
-.memory img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-    filter:blur(9px);
-    transition:.7s;
-}
-
-.memory.revealed img{
-    filter:blur(0);
-}
-
-.memory:after{
-    content:"TAP";
-    position:absolute;
-    inset:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:white;
-    font-family:"Dancing Script",cursive;
-    font-size:28px;
-    text-shadow:0 2px 8px #000;
-    pointer-events:none;
-}
-
-.memory.revealed:after{
-    display:none;
-}
-
-.m1{
-    top:20px;
-    left:125px;
-    transform:rotate(-3deg);
-}
-
-.m2{
-    top:110px;
-    left:10px;
-    transform:rotate(-12deg);
-}
-
-.m3{
-    top:110px;
-    right:10px;
-    transform:rotate(12deg);
-}
-
-.m4{
-    top:265px;
-    left:65px;
-    transform:rotate(-7deg);
-}
-
-.m5{
-    top:265px;
-    right:65px;
-    transform:rotate(7deg);
+font-family:"Dancing Script",cursive;
+font-size:55px;
 }
 
 .memory-note{
-    font-size:19px;
-    color:#bddcff;
+font-size:19px;
+color:#bddcff;
 }
 
+.memory-grid{
+width:min(380px,90vw);
+height:450px;
+margin:25px auto;
+position:relative;
+}
+
+.memory{
+position:absolute;
+width:125px;
+height:155px;
+padding:7px;
+background:#fff;
+border-radius:5px;
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+cursor:pointer;
+}
+
+.memory img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+filter:blur(9px);
+transition:.7s;
+}
+
+.memory.revealed img{
+filter:blur(0);
+}
+
+.memory:after{
+content:"TAP";
+position:absolute;
+inset:0;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-family:"Dancing Script",cursive;
+font-size:28px;
+text-shadow:0 2px 8px #000;
+pointer-events:none;
+}
+
+.memory.revealed:after{
+display:none;
+}
+
+.m1{top:20px;left:125px;transform:rotate(-3deg);}
+.m2{top:110px;left:10px;transform:rotate(-12deg);}
+.m3{top:110px;right:10px;transform:rotate(12deg);}
+.m4{top:265px;left:65px;transform:rotate(-7deg);}
+.m5{top:265px;right:65px;transform:rotate(7deg);}
 
 /* CAKE */
 
+#cakeScreen{
+background:
+radial-gradient(circle at 50% 35%,rgba(100,170,255,.22),transparent 35%),
+linear-gradient(145deg,#061640,#0b2d6d,#06183e);
+min-height:100vh;
+}
+
 .cake-title{
-    font-family:"Dancing Script",cursive;
-    font-size:52px;
-}
-
-.cake-scene{
-    position:relative;
-    width:350px;
-    height:370px;
-    margin:10px auto 0;
-}
-
-.cake{
-    position:absolute;
-    bottom:45px;
-    left:50%;
-    transform:translateX(-50%);
-    width:290px;
-    height:180px;
-}
-
-.cake-bottom{
-    position:absolute;
-    bottom:0;
-    width:290px;
-    height:95px;
-    background:linear-gradient(#e8f3ff,#b8d8f8);
-    border-radius:0 0 22px 22px;
-    box-shadow:0 15px 25px rgba(0,0,0,.3);
-}
-
-.cake-middle{
-    position:absolute;
-    bottom:72px;
-    left:15px;
-    width:260px;
-    height:70px;
-    background:linear-gradient(#ffffff,#d5e8fa);
-    border-radius:50% 50% 18px 18px;
-}
-
-.cake-top{
-    position:absolute;
-    bottom:126px;
-    left:15px;
-    width:260px;
-    height:55px;
-    background:#f8fcff;
-    border-radius:50%;
-    box-shadow:inset 0 -8px 0 #b5d7f5;
-}
-
-.cream{
-    position:absolute;
-    bottom:112px;
-    width:32px;
-    height:42px;
-    border-radius:0 0 20px 20px;
-    background:white;
-}
-
-.c1{
-    left:35px;
-}
-
-.c2{
-    left:88px;
-}
-
-.c3{
-    left:141px;
-}
-
-.c4{
-    left:194px;
-}
-
-.c5{
-    left:240px;
+font-family:"Dancing Script",cursive;
+font-size:48px;
 }
 
 .cake-decoration{
-    position:absolute;
-    bottom:90px;
-    width:100%;
-    text-align:center;
-    color:#4f83c0;
-    font-family:"Dancing Script",cursive;
-    font-size:27px;
+font-family:"Dancing Script",cursive;
+font-size:clamp(32px,8vw,55px);
+color:#dcecff;
+margin-bottom:20px;
+letter-spacing:2px;
 }
 
-.candle{
-    position:absolute;
-    bottom:174px;
-    width:13px;
-    height:70px;
-    background:repeating-linear-gradient(
-        45deg,
-        #76a9dc 0 8px,
-        #f7fbff 8px 16px
-    );
-    border-radius:4px 4px 2px 2px;
-    cursor:pointer;
-    z-index:5;
+.emoji-cake{
+font-size:clamp(150px,42vw,270px);
+line-height:1;
+margin:5px auto 15px;
+filter:drop-shadow(0 18px 25px rgba(0,0,0,.3));
+cursor:pointer;
+transition:.3s;
 }
 
-.candle.off{
-    opacity:.45;
+.emoji-cake:active{
+transform:scale(.94);
 }
 
-.candle .flame{
-    position:absolute;
-    width:18px;
-    height:25px;
-    left:-2px;
-    top:-22px;
-    background:#ffd77a;
-    border-radius:50% 50% 50% 0;
-    transform:rotate(-45deg);
-    box-shadow:0 0 15px rgba(255,205,90,.8);
-    animation:flame .45s infinite alternate;
+.cake-main-text{
+font-family:"Dancing Script",cursive;
+font-size:clamp(42px,10vw,68px);
+color:white;
+margin-top:8px;
+text-shadow:0 5px 18px rgba(0,0,0,.25);
 }
 
-.candle.off .flame{
-    display:none;
-}
-
-@keyframes flame{
-    from{
-        transform:rotate(-45deg) scale(.9);
-    }
-    to{
-        transform:rotate(-38deg) scale(1.1);
-    }
-}
-
-.can1{
-    left:52px;
-}
-
-.can2{
-    left:110px;
-    height:82px;
-    bottom:174px;
-}
-
-.can3{
-    left:168px;
-    height:62px;
-}
-
-.can4{
-    left:215px;
-    height:86px;
-}
-
-.can5{
-    left:270px;
-    height:67px;
+.cake-hint{
+font-size:19px;
+color:#cfe4ff;
+margin-top:15px;
 }
 
 .cake-next{
-    display:none;
-    margin-top:5px;
+display:none;
+margin-top:22px;
 }
 
 .cake-next.show{
-    display:inline-block;
+display:inline-block;
 }
 
+/* LOVE LETTER */
 
-/* PAPER LETTER */
-
-#letterScreen,
-#finalLetterScreen{
-    background:
-      radial-gradient(circle at 50% 50%,rgba(80,130,220,.2),transparent 35%),
-      #06183e;
-    padding:35px 16px;
-    align-items:flex-start;
+#letterScreen{
+background:
+radial-gradient(circle at 15% 20%,rgba(110,180,140,.15),transparent 22%),
+radial-gradient(circle at 85% 80%,rgba(255,220,190,.14),transparent 25%),
+linear-gradient(145deg,#123b35,#244e45,#0e302b);
+padding:35px 16px;
+align-items:flex-start;
 }
 
-.paper{
-    width:min(760px,94vw);
-    margin:20px auto;
-    padding:38px 30px;
-    position:relative;
-    color:#17233b;
-    background:
-      linear-gradient(rgba(255,255,255,.4),rgba(255,255,255,.4)),
-      #f5efdf;
-    border:2px solid #d7c9a9;
-    box-shadow:
-      0 20px 60px rgba(0,0,0,.35),
-      inset 0 0 35px rgba(120,90,40,.08);
-    border-radius:4px;
+.letter-wrap{
+width:min(850px,96vw);
+margin:20px auto;
+position:relative;
+padding:55px 45px;
+background:#f7f3df;
+color:#19352d;
+border-radius:18px;
+box-shadow:0 25px 70px rgba(0,0,0,.35);
+overflow:hidden;
 }
 
-.paper:before{
-    content:"";
-    position:absolute;
-    inset:8px;
-    border:1px solid #c9b88f;
-    pointer-events:none;
+.letter-wrap:before{
+content:"";
+position:absolute;
+inset:16px;
+border:2px solid rgba(69,116,79,.45);
+border-radius:12px;
+pointer-events:none;
 }
 
-.lip{
-    position:absolute;
-    width:38px;
-    height:20px;
-    border-radius:50% 40% 50% 40%;
-    background:#b84e69;
-    opacity:.72;
-    transform:rotate(-15deg);
+.letter-wrap:after{
+content:"";
+position:absolute;
+top:25px;
+bottom:25px;
+left:28px;
+width:2px;
+background:rgba(76,130,88,.25);
+box-shadow:0 0 0 1px rgba(255,255,255,.5);
 }
 
-.lip:after{
-    content:"";
-    position:absolute;
-    width:30px;
-    height:7px;
-    left:4px;
-    top:7px;
-    background:#f5efdf;
-    border-radius:50%;
+.leaf{
+position:absolute;
+color:#477b55;
+font-size:45px;
+opacity:.8;
 }
 
-.lip1{
-    top:18px;
-    left:18px;
+.leaf1{top:20px;left:25px;transform:rotate(-25deg);}
+.leaf2{top:20px;right:25px;transform:rotate(25deg);}
+.leaf3{bottom:25px;left:25px;transform:rotate(25deg);}
+.leaf4{bottom:25px;right:25px;transform:rotate(-25deg);}
+
+.flower{
+position:absolute;
+font-size:27px;
 }
 
-.lip2{
-    top:20px;
-    right:22px;
-    transform:rotate(17deg);
+.flower1{top:28px;left:78px;}
+.flower2{top:32px;right:78px;}
+.flower3{bottom:32px;left:78px;}
+.flower4{bottom:30px;right:78px;}
+
+.tulip{
+position:absolute;
+font-size:42px;
 }
 
-.lip3{
-    bottom:20px;
-    left:20px;
-    transform:rotate(10deg);
-}
+.tulip1{top:75px;left:24px;}
+.tulip2{top:75px;right:24px;}
+.tulip3{bottom:70px;left:24px;}
+.tulip4{bottom:70px;right:24px;}
 
-.lip4{
-    bottom:18px;
-    right:20px;
-    transform:rotate(-13deg);
+.letter{
+position:relative;
+z-index:3;
 }
 
 .letter-heading{
-    position:relative;
-    z-index:2;
-    text-align:center;
-    font-family:"Dancing Script",cursive;
-    font-size:45px;
-    color:#102e62;
-    margin-bottom:25px;
+text-align:center;
+font-family:"Dancing Script",cursive;
+font-size:50px;
+color:#285b42;
+margin-bottom:28px;
 }
 
 .letter p{
-    position:relative;
-    z-index:2;
-    font-size:20px;
-    line-height:1.75;
-    margin-bottom:17px;
+font-size:20px;
+line-height:1.75;
+margin-bottom:17px;
 }
 
 .hand{
-    font-family:"Dancing Script",cursive;
-    font-size:29px;
-    color:#143d79;
+font-family:"Dancing Script",cursive;
+font-size:29px;
+color:#285b42;
 }
 
 .important{
-    font-family:"Dancing Script",cursive;
-    font-size:29px;
-    color:#143d79;
-    text-align:center;
-    margin:20px 0;
+font-family:"Dancing Script",cursive;
+font-size:29px;
+color:#285b42;
+text-align:center;
+margin:22px 0;
 }
 
 .signature{
-    font-family:"Dancing Script",cursive;
-    font-size:31px;
-    color:#143d79;
-    text-align:right;
-    margin-top:25px;
+font-family:"Dancing Script",cursive;
+font-size:31px;
+color:#285b42;
+text-align:right;
+margin-top:25px;
 }
 
+/* FINAL LOVE PAGE */
 
-/* FINAL */
+#finalLetterScreen{
+background:
+radial-gradient(circle at 15% 15%,rgba(255,170,190,.18),transparent 25%),
+radial-gradient(circle at 85% 80%,rgba(255,210,180,.15),transparent 25%),
+linear-gradient(145deg,#3b1830,#54233f,#24152c);
+padding:35px 16px;
+align-items:flex-start;
+}
+
+.final-wrap{
+width:min(850px,96vw);
+margin:20px auto;
+padding:60px 45px;
+position:relative;
+color:#4b2035;
+background:
+repeating-linear-gradient(
+0deg,
+#fff6f1 0px,
+#fff6f1 38px,
+#f5dfe2 39px,
+#fff6f1 40px
+);
+border-radius:20px;
+box-shadow:0 25px 70px rgba(0,0,0,.4);
+border:1px solid rgba(255,255,255,.5);
+overflow:hidden;
+}
+
+.final-wrap:before{
+content:"";
+position:absolute;
+inset:18px;
+border:2px solid rgba(148,72,105,.35);
+border-radius:15px;
+pointer-events:none;
+}
+
+.final-wrap:after{
+content:"♡  ♡  ♡  ♡  ♡";
+position:absolute;
+top:12px;
+left:0;
+right:0;
+text-align:center;
+font-size:25px;
+letter-spacing:18px;
+color:#9d5577;
+}
 
 .final-title{
-    font-family:"Dancing Script",cursive;
-    font-size:clamp(39px,9vw,65px);
-    text-align:center;
+font-family:"Dancing Script",cursive;
+font-size:clamp(42px,9vw,68px);
+text-align:center;
+color:#713451;
+margin-bottom:30px;
 }
 
 .final-big{
-    text-align:center;
-    font-family:"Dancing Script",cursive;
-    font-size:35px;
-    color:#123a76;
-    margin:25px 0;
+text-align:center;
+font-family:"Dancing Script",cursive;
+font-size:35px;
+color:#713451;
+margin:28px 0;
+}
+
+.final-wrap p{
+font-size:20px;
+line-height:1.8;
+margin-bottom:17px;
+}
+
+.final-signature{
+font-family:"Dancing Script",cursive;
+font-size:31px;
+color:#713451;
+text-align:right;
+margin-top:25px;
 }
 
 .infinity-btn{
-    display:block;
-    margin:35px auto 0;
-    width:110px;
-    height:110px;
-    border-radius:50%;
-    background:#dcecff;
-    color:#12396e;
-    font-size:55px;
-    box-shadow:0 12px 35px rgba(0,0,0,.25);
-    transition:.25s;
+display:block;
+margin:35px auto 0;
+width:110px;
+height:110px;
+border-radius:50%;
+background:#f7dce5;
+color:#713451;
+font-size:55px;
+box-shadow:0 12px 35px rgba(0,0,0,.25);
+transition:.25s;
 }
 
 .infinity-btn:active{
-    transform:scale(.9);
+transform:scale(.9);
 }
 
+/* FINAL NAMES */
+
 .final-names{
-    display:none;
-    text-align:center;
-    animation:finalReveal 1s ease both;
+display:none;
+text-align:center;
+padding-top:45px;
+animation:finalReveal 1s ease both;
 }
 
 .final-names.show{
-    display:block;
+display:block;
 }
 
 @keyframes finalReveal{
-    from{
-        opacity:0;
-        transform:scale(.7);
-    }
-    to{
-        opacity:1;
-        transform:scale(1);
-    }
+from{opacity:0;transform:scale(.7);}
+to{opacity:1;transform:scale(1);}
 }
 
 .names{
-    font-family:"Dancing Script",cursive;
-    font-size:clamp(65px,16vw,105px);
-    color:#12396e;
+font-family:"Dancing Script",cursive;
+font-size:clamp(70px,18vw,120px);
+color:#713451;
 }
 
 .final-birthday{
-    font-family:"Dancing Script",cursive;
-    font-size:clamp(32px,8vw,50px);
-    color:#163e76;
+font-family:"Dancing Script",cursive;
+font-size:clamp(32px,8vw,50px);
+color:#713451;
+margin-top:12px;
 }
-
-
-/* MOBILE */
 
 @media(max-width:500px){
 
-    .screen{
-        padding:18px;
-    }
+.screen{
+padding:18px;
+}
 
-    .paper{
-        padding:32px 21px;
-    }
+.intro-text{
+font-size:20px;
+}
 
-    .paper p{
-        font-size:18px;
-        line-height:1.7;
-    }
+.letter-wrap{
+padding:45px 25px;
+}
 
-    .memory-grid{
-        transform:scale(.88);
-        margin-top:5px;
-        margin-bottom:-15px;
-    }
+.letter-wrap p{
+font-size:18px;
+line-height:1.7;
+}
 
-    .cake-scene{
-        transform:scale(.84);
-        margin-top:-15px;
-        margin-bottom:-25px;
-    }
+.final-wrap{
+padding:50px 25px;
+}
+
+.final-wrap p{
+font-size:18px;
+line-height:1.7;
+}
+
+.tulip{
+font-size:30px;
+}
+
+.flower{
+font-size:22px;
+}
+
+.leaf{
+font-size:32px;
+}
 }
 </style>
 </head>
 
 <body>
 
-
-<!-- 1. START -->
+<!-- START -->
 
 <section id="startScreen" class="screen active blue-bg">
+<div class="center">
 
-    <div class="center">
+<div class="start-title">
+Do you want to see
+</div>
 
-        <div class="start-title">
-            Do you want to see
-        </div>
+<div class="start-subtitle">
+what I made for you?
+</div>
 
-        <div class="start-subtitle">
-            what I made for you?
-        </div>
+<div class="choice-row">
+<button class="choice" onclick="startTimeJourney()">YES</button>
+<button class="choice" id="noBtn" onclick="noReaction()">NO</button>
+</div>
 
-        <div class="choice-row">
+<div id="noMessage" class="no-message"></div>
 
-            <button class="choice" onclick="startTimeJourney()">
-                YES
-            </button>
-
-            <button class="choice" id="noBtn" onclick="noReaction()">
-                NO
-            </button>
-
-        </div>
-
-        <div id="noMessage" class="no-message"></div>
-
-    </div>
+</div>
 </section>
 
 
-<!-- 2. TIME JOURNEY -->
+<!-- TIME -->
 
 <section id="timeScreen" class="screen blue-bg">
 
-    <div class="heart-field" id="heartField"></div>
+<div class="heart-field" id="heartField"></div>
 
-    <div class="center">
+<div class="center">
 
-        <div id="countNumber" class="count-number">
-            3
-        </div>
+<div id="countNumber" class="count-number">1</div>
 
-        <div id="timeJourneyContent" class="time-card hidden">
+<div id="timeJourneyContent" class="time-card hidden">
 
-            <div class="time-label">
-                DAY
-            </div>
+<div class="time-label">DAY</div>
+<div id="dayValue" class="time-value">07</div>
 
-            <div id="dayValue" class="time-value">
-                01
-            </div>
+<div class="time-label">MONTH</div>
+<div id="monthValue" class="time-value">SEPTEMBER</div>
 
-            <div class="time-label">
-                MONTH
-            </div>
+<div class="time-label">YEAR</div>
+<div id="yearValue" class="time-value">2026</div>
 
-            <div id="monthValue" class="time-value">
-                SEPTEMBER
-            </div>
+<div id="ageNumber" class="age-number">23</div>
 
-            <div class="time-label">
-                YEAR
-            </div>
+<div id="yearsMessage" class="years-message">
+23 years have passed
+</div>
 
-            <div id="yearValue" class="time-value">
-                2003
-            </div>
+<div id="now23" class="now-23">
+NOW YOU ARE 23
+</div>
 
-            <div id="fastTime" class="fast-time"></div>
+<button id="timeContinue" class="primary-btn hidden" onclick="openIntro()">
+ENTER YOUR SURPRISE
+</button>
 
-            <div id="yearsMessage" class="years-message"></div>
-
-            <div id="now23" class="now-23"></div>
-
-            <div id="dateFinal" class="date-final"></div>
-
-            <button
-                id="timeContinue"
-                class="primary-btn hidden"
-                onclick="openPassword()">
-                ENTER YOUR SURPRISE
-            </button>
-
-        </div>
-
-    </div>
+</div>
+</div>
 </section>
 
 
-<!-- 3. PASSWORD -->
+<!-- INTRO BEFORE PASSWORD -->
+
+<section id="introScreen" class="screen blue-bg">
+
+<div class="center">
+
+<div class="intro-title">
+Hi Daddy ❤️
+</div>
+
+<div class="intro-text">
+
+This is something I made especially for you.
+I wanted to give you something a little different,
+something made with love and only for you.
+
+Your cute little wife may not be able to do
+a hundred things for you, but with whatever
+I had, I tried to make something special for you.
+
+I really hope this little surprise makes you smile
+and reminds you how much you mean to me. ❤️
+
+</div>
+
+<div class="intro-highlight">
+Now enter your code below,
+and your surprise is waiting for you... ♾️
+</div>
+
+<button class="primary-btn" onclick="openPassword()">
+ENTER YOUR CODE
+</button>
+
+</div>
+</section>
+
+
+<!-- PASSWORD -->
 
 <section id="passwordScreen" class="screen blue-bg">
 
-    <div class="sparkles" id="sparkles"></div>
+<div class="sparkles" id="sparkles"></div>
 
-    <div class="center">
+<div class="center">
 
-        <div class="lock-title">
-            Enter Your Surprise
-        </div>
+<div class="lock-title">
+Enter Your Surprise
+</div>
 
-        <div class="lock-sub">
-            Enter the secret password
-        </div>
+<div class="lock-sub">
+Your password is ♾️
+</div>
 
-        <div class="cartoon-stage" id="cartoonStage">
+<div class="password-box">
 
-            <div class="char char-left">
+<input
+id="passwordInput"
+class="password-input"
+type="password"
+placeholder="Password"
+autocomplete="off">
 
-                <div class="head">
-                    <div class="ear one"></div>
-                    <div class="ear two"></div>
-                    <div class="eye one"></div>
-                    <div class="eye two"></div>
-                    <div class="mouth"></div>
-                </div>
+<button class="primary-btn" onclick="checkPassword()">
+OPEN
+</button>
 
-                <div class="body"></div>
-                <div class="arm"></div>
+</div>
 
-            </div>
+<div id="errorBox" class="error-box"></div>
 
-
-            <div class="char char-right">
-
-                <div class="head">
-                    <div class="ear one"></div>
-                    <div class="ear two"></div>
-                    <div class="eye one"></div>
-                    <div class="eye two"></div>
-                    <div class="mouth"></div>
-                </div>
-
-                <div class="body"></div>
-                <div class="arm"></div>
-
-            </div>
-
-            <div class="kiss">
-                ♡
-            </div>
-
-        </div>
-
-
-        <div class="password-box">
-
-            <input
-                id="passwordInput"
-                class="password-input"
-                type="password"
-                placeholder="Password"
-                autocomplete="off"
-            >
-
-            <button class="primary-btn" onclick="checkPassword()">
-                OPEN
-            </button>
-
-        </div>
-
-        <div id="errorBox" class="error-box"></div>
-
-    </div>
+</div>
 </section>
 
 
-<!-- 4. WAIT / GIFT -->
+<!-- WAIT -->
 
 <section id="waitScreen" class="screen blue-bg">
 
-    <div class="center">
+<div class="center">
 
-        <div class="wait-title">
-            Wait for your special birthday gift...
-        </div>
+<div class="wait-title">
+Wait for your special birthday surprise...
+</div>
 
-        <div class="gift">
-            <div class="gift-lid"></div>
-            <div class="gift-box"></div>
-        </div>
+<div class="gift" onclick="openGift()">
 
-        <div class="wait-text">
-            Something special is coming for you.
-        </div>
+<div class="gift-ribbon">🎀</div>
 
-    </div>
+<div class="gift-lid"></div>
+
+<div class="gift-box"></div>
+
+</div>
+
+<div class="gift-hint">
+Tap the gift 🎁
+</div>
+
+</div>
 </section>
 
 
-<!-- 5. CHILDHOOD -->
+<!-- CHILDHOOD -->
 
 <section id="childhoodScreen" class="screen blue-bg">
 
-    <div class="center">
+<div class="center">
 
-        <div class="section-title">
-            Once upon a time...
-        </div>
+<div class="section-title">
+Once upon a time...
+</div>
 
-        <div class="photo-frame">
-            <img
-                src="IMG_8595.jpeg"
-                alt="Childhood memory">
-        </div>
+<div class="photo-frame">
+<img src="IMG_8595.jpeg" alt="Childhood memory">
+</div>
 
-        <div class="section-text">
-            Once, you were just a little boy with a whole life waiting
-            ahead of you. Years passed, and that little boy grew into
-            the mature, hardworking, wise and strong man you are today.
-        </div>
+<div class="section-text">
+Once, you were just a little boy with a whole life waiting ahead of you.
+Years passed, and that little boy grew into the mature, hardworking,
+wise and strong man you are today.
+</div>
 
-        <div class="proud">
-            My little bee, I’m genuinely so proud of the person you’ve become.
-        </div>
+<div class="proud">
+My little bee, I’m genuinely so proud of the person you’ve become.
+</div>
 
-        <button
-            class="primary-btn"
-            onclick="go('memoryScreen')">
-            Our Memories
-        </button>
+<button class="primary-btn" onclick="go('memoryScreen')">
+Our Memories
+</button>
 
-    </div>
+</div>
 </section>
 
 
-<!-- 6. MEMORIES -->
+<!-- MEMORIES -->
 
 <section id="memoryScreen" class="screen blue-bg">
 
-    <div class="center">
+<div class="center">
 
-        <div class="memory-title">
-            Little Memories
-        </div>
+<div class="memory-title">
+Little Memories
+</div>
 
-        <div class="memory-note">
-            Tap each picture to reveal it.
-        </div>
+<div class="memory-note">
+Tap each picture to reveal it.
+</div>
 
-        <div class="memory-grid">
+<div class="memory-grid">
 
-            <div class="memory m1" onclick="revealMemory(this)">
-                <img src="471DBFA2-5788-45A0-AC2F-3D14ADE51C0E.jpeg">
-            </div>
+<div class="memory m1" onclick="revealMemory(this)">
+<img src="471DBFA2-5788-45A0-AC2F-3D14ADE51C0E.jpeg">
+</div>
 
-            <div class="memory m2" onclick="revealMemory(this)">
-                <img src="54CD354B-0E3F-4100-A519-05EC68A424BB.jpeg">
-            </div>
+<div class="memory m2" onclick="revealMemory(this)">
+<img src="54CD354B-0E3F-4100-A519-05EC68A424BB.jpeg">
+</div>
 
-            <div class="memory m3" onclick="revealMemory(this)">
-                <img src="EF3F30E1-97F2-4E17-AE7D-C8E7A59D1FFE.jpeg">
-            </div>
+<div class="memory m3" onclick="revealMemory(this)">
+<img src="EF3F30E1-97F2-4E17-AE7D-C8E7A59D1FFE.jpeg">
+</div>
 
-            <div class="memory m4" onclick="revealMemory(this)">
-                <img src="IMG_4665.jpeg">
-            </div>
+<div class="memory m4" onclick="revealMemory(this)">
+<img src="IMG_4665.jpeg">
+</div>
 
-            <div class="memory m5" onclick="revealMemory(this)">
-                <img src="IMG_7137.jpeg">
-            </div>
+<div class="memory m5" onclick="revealMemory(this)">
+<img src="IMG_7137.jpeg">
+</div>
 
-        </div>
+</div>
 
+<button class="primary-btn" onclick="go('cakeScreen')">
+One More Surprise
+</button>
 
-        <button
-            class="primary-btn"
-            onclick="go('cakeScreen')">
-            One More Surprise
-        </button>
-
-    </div>
+</div>
 </section>
 
 
-<!-- 7. CAKE -->
+<!-- CAKE -->
 
 <section id="cakeScreen" class="screen blue-bg">
 
-    <div class="center">
+<div class="center">
 
-        <div class="cake-title">
-            Make a Wish
-        </div>
+<div class="cake-decoration">
+HAPPY BIRTHDAY
+</div>
 
-        <div class="cake-scene">
+<div class="emoji-cake" onclick="showCakeNext()">
+🎂
+</div>
 
-            <div class="cake">
+<div class="cake-main-text">
+Happy Birthday Aman ❤️
+</div>
 
-                <div class="cake-top"></div>
-                <div class="cake-middle"></div>
-                <div class="cake-bottom"></div>
+<div class="cake-hint">
+Tap the cake
+</div>
 
-                <div class="cream c1"></div>
-                <div class="cream c2"></div>
-                <div class="cream c3"></div>
-                <div class="cream c4"></div>
-                <div class="cream c5"></div>
+<button id="cakeNext" class="primary-btn cake-next" onclick="go('letterScreen')">
+∞
+</button>
 
-                <div class="cake-decoration">
-                    Happy Birthday
-                </div>
-
-            </div>
-
-
-            <div class="candle can1" onclick="blowCandle(this)">
-                <div class="flame"></div>
-            </div>
-
-            <div class="candle can2" onclick="blowCandle(this)">
-                <div class="flame"></div>
-            </div>
-
-            <div class="candle can3" onclick="blowCandle(this)">
-                <div class="flame"></div>
-            </div>
-
-            <div class="candle can4" onclick="blowCandle(this)">
-                <div class="flame"></div>
-            </div>
-
-            <div class="candle can5" onclick="blowCandle(this)">
-                <div class="flame"></div>
-            </div>
-
-        </div>
-
-
-        <div id="candleHint" class="small">
-            Tap the candles to blow them out.
-        </div>
-
-
-        <button
-            id="cakeNext"
-            class="primary-btn cake-next"
-            onclick="go('letterScreen')">
-            ∞
-        </button>
-
-    </div>
+</div>
 </section>
 
 
-<!-- 8. FIRST LOVE LETTER -->
+<!-- LOVE LETTER -->
 
 <section id="letterScreen" class="screen">
 
-    <div class="paper">
+<div class="letter-wrap">
 
-        <div class="lip lip1"></div>
-        <div class="lip lip2"></div>
-        <div class="lip lip3"></div>
-        <div class="lip lip4"></div>
+<div class="leaf leaf1">🌿</div>
+<div class="leaf leaf2">🌿</div>
+<div class="leaf leaf3">🌿</div>
+<div class="leaf leaf4">🌿</div>
 
-        <div class="letter">
+<div class="flower flower1">✿</div>
+<div class="flower flower2">✿</div>
+<div class="flower flower3">✿</div>
+<div class="flower flower4">✿</div>
 
-            <div class="letter-heading">
-                My Love,
-            </div>
+<div class="tulip tulip1">🌷</div>
+<div class="tulip tulip2">🌷</div>
+<div class="tulip tulip3">🌷</div>
+<div class="tulip tulip4">🌷</div>
 
-            <p>
-                I love you every second, every minute, every hour,
-                today, tomorrow, and every single day of our future.
-                You are so close to my heart, and I honestly cannot
-                explain how much you mean to me.
-            </p>
+<div class="letter">
 
-            <p>
-                I pray that Allah always blesses you with success,
-                prosperity, happiness and everything your heart wishes for.
-                I pray that every step you take brings you closer to
-                everything you dream of.
-            </p>
+<div class="letter-heading">
+My Love,
+</div>
 
-            <div class="important">
-                InshaAllah, one day we will have our beautiful marriage,
-                our cozy little home filled with love, and our happy family
-                with our two little children.
-            </div>
+<p>
+I love you every second, every minute, every hour, today, tomorrow,
+and every single day of our future. You are so close to my heart,
+and I honestly cannot explain how much you mean to me.
+</p>
 
-            <p>
-                My greatest wish is that we stay together forever,
-                loving and supporting each other through every chapter
-                of life. I want to be there for your good days and your
-                difficult days, celebrating every success with you and
-                standing beside you whenever life becomes difficult.
-            </p>
+<p>
+I pray that Allah always blesses you with success, prosperity,
+happiness and everything your heart wishes for. I pray that every
+step you take brings you closer to everything you dream of.
+</p>
 
-            <p>
-                By your next birthday, InshaAllah, you will be my husband,
-                my mahram, my life partner and my
-                <span class="hand">مجازی خدا</span>.
-            </p>
+<div class="important">
+InshaAllah, one day we will have our beautiful marriage,
+our cozy little home filled with love, and our happy family
+with our two little children.
+</div>
 
-            <p>
-                You taught me what love feels like. You made me understand
-                what it means to have someone who feels like home.
-                With you, I feel safe in your hands, and my heart feels
-                peaceful knowing that you are the person I want beside me.
-            </p>
+<p>
+My greatest wish is that we stay together forever, loving and
+supporting each other through every chapter of life. I want to
+be there for your good days and your difficult days, celebrating
+every success with you and standing beside you whenever life
+becomes difficult.
+</p>
 
-            <div class="important">
-                Next year, InshaAllah, we will celebrate your birthday
-                together as husband and wife.
-            </div>
+<p>
+By your next birthday, InshaAllah, you will be my husband,
+my mahram, my life partner and my
+<span class="hand">مجازی خدا</span>.
+</p>
 
-            <p>
-                Until that day comes, I will keep waiting for the moment
-                when we finally get to be together, without distance,
-                without waiting, and without wishing that you were here.
-            </p>
+<p>
+You taught me what love feels like. You made me understand what
+it means to have someone who feels like home. With you, I feel
+safe in your hands, and my heart feels peaceful knowing that
+you are the person I want beside me.
+</p>
 
-            <div class="signature">
-                Forever yours,
-            </div>
+<div class="important">
+Next year, InshaAllah, we will celebrate your birthday together
+as husband and wife.
+</div>
 
+<p>
+Until that day comes, I will keep waiting for the moment when
+we finally get to be together, without distance, without waiting,
+and without wishing that you were here.
+</p>
 
-            <button
-                class="primary-btn"
-                onclick="go('finalLetterScreen')">
-                Keep Reading
-            </button>
+<div class="signature">
+Forever yours,
+</div>
 
-        </div>
-    </div>
+<button class="primary-btn" onclick="go('finalLetterScreen')">
+Keep Reading
+</button>
+
+</div>
+</div>
 </section>
 
 
-<!-- 9. FINAL LETTER -->
+<!-- FINAL LETTER -->
 
 <section id="finalLetterScreen" class="screen">
 
-    <div class="paper">
+<div class="final-wrap">
 
-        <div class="lip lip1"></div>
-        <div class="lip lip2"></div>
-        <div class="lip lip3"></div>
-        <div class="lip lip4"></div>
+<div id="finalLetter" class="letter">
 
-        <div id="finalLetter" class="letter">
+<div class="final-title">
+If Only I Could Be There With You…
+</div>
 
-            <div class="final-title">
-                If Only I Could Be There With You…
-            </div>
+<p>
+<span class="hand">
+I HAVE YOU IN MY HEART.
+</span>
+</p>
 
-            <p>
-                <span class="hand">
-                    I HAVE YOU IN MY HEART.
-                </span>
-            </p>
+<p>
+Happy Birthday, my love.
+</p>
 
-            <p>
-                Happy Birthday, my love.
-            </p>
+<p>
+Today, more than anything, I wish I could be there with you.
+I wish I could see your face when you wake up, sit beside you,
+look at you and simply tell you how much you mean to me.
+</p>
 
-            <p>
-                Today, more than anything, I wish I could be there with you.
-                I wish I could see your face when you wake up, sit beside you,
-                look at you and simply tell you how much you mean to me.
-            </p>
+<p>
+I wish I could celebrate this day with you in person, make you smile,
+annoy you a little, laugh with you, and make memories that we could
+keep forever.
+</p>
 
-            <p>
-                I wish I could celebrate this day with you in person,
-                make you smile, annoy you a little, laugh with you,
-                and make memories that we could keep forever.
-            </p>
+<div class="final-big">
+But InshaAllah, one day…
+</div>
 
-            <div class="final-big">
-                But InshaAllah, one day…
-            </div>
+<p>
+There will be no screens between us.
+</p>
 
-            <p>
-                There will be no screens between us.
-            </p>
+<p>
+No miles.
+</p>
 
-            <p>
-                No miles.
-            </p>
+<p>
+No goodbyes.
+</p>
 
-            <p>
-                No goodbyes.
-            </p>
+<p>
+No wishing that I could be there.
+</p>
 
-            <p>
-                No wishing that I could be there.
-            </p>
+<div class="final-big">
+I'll just be there. With you.
+</div>
 
-            <div class="final-big">
-                I'll just be there. With you.
-            </div>
+<p>
+I will be beside you on your birthdays. I will be beside you on
+ordinary days too. I will be there when you are happy, when you
+are tired, when you succeed, and when you need someone to simply
+sit beside you.
+</p>
 
-            <p>
-                I will be beside you on your birthdays.
-                I will be beside you on ordinary days too.
-                I will be there when you are happy, when you are tired,
-                when you succeed, and when you need someone to simply
-                sit beside you.
-            </p>
+<p>
+I don't just want moments with you. I want a lifetime with you.
+</p>
 
-            <p>
-                I don't just want moments with you.
-                I want a lifetime with you.
-            </p>
+<div class="final-big">
+Not for a while.<br>
+Not for a moment.<br>
+But forever. ♾️
+</div>
 
-            <div class="final-big">
-                Not for a while.
-                <br>
-                Not for a moment.
-                <br>
-                But forever. ♾️
-            </div>
+<p>
+One day, InshaAllah, all these wishes will become memories we can
+look back on together and smile about.
+</p>
 
-            <p>
-                One day, InshaAllah, all these wishes will become memories
-                we can look back on together and smile about.
-            </p>
+<p>
+Until then, please remember that no matter how far away I am,
+you are always in my heart.
+</p>
 
-            <p>
-                Until then, please remember that no matter how far away
-                I am, you are always in my heart.
-            </p>
+<div class="final-signature">
+Happy Birthday, my love.
+</div>
 
-            <div class="signature">
-                Happy Birthday, my love.
-            </div>
+<button class="infinity-btn" onclick="showFinalNames()">
+∞
+</button>
 
+<div id="finalNames" class="final-names">
 
-            <button
-                class="infinity-btn"
-                onclick="showFinalNames()">
-                ∞
-            </button>
+<div class="names">
+A ❤️ M
+</div>
 
+<div class="final-birthday">
+Happy Birthday Manni ❤️
+</div>
 
-            <div id="finalNames" class="final-names">
+</div>
 
-                <div class="names">
-                    A ❤️ M
-                </div>
-
-                <div class="final-birthday">
-                    Happy Birthday Manni ❤️
-                </div>
-
-            </div>
-
-        </div>
-    </div>
+</div>
+</div>
 </section>
 
 
 <script>
 
-/* SCREEN CONTROL */
+/* SCREEN CHANGE */
 
 function go(id){
 
-    document
-        .querySelectorAll(".screen")
-        .forEach(screen=>{
-            screen.classList.remove("active");
-        });
+document.querySelectorAll(".screen").forEach(screen=>{
+screen.classList.remove("active");
+});
 
-    const target=document.getElementById(id);
+const target=document.getElementById(id);
 
-    if(target){
-        target.classList.add("active");
-        window.scrollTo(0,0);
-    }
+if(target){
+target.classList.add("active");
+window.scrollTo(0,0);
+}
+
 }
 
 
@@ -1734,231 +1370,202 @@ let noCount=0;
 
 function noReaction(){
 
-    const msg=document.getElementById("noMessage");
+const msg=document.getElementById("noMessage");
 
-    noCount++;
+noCount++;
 
-    if(noCount===1){
-        msg.textContent="Are you sure?";
-    }
-    else if(noCount===2){
-        msg.textContent="You really don't want to see it?";
-    }
-    else{
-        msg.textContent="Okay... but I made it just for you.";
-    }
+if(noCount===1){
+msg.textContent="Are you sure?";
+}
+else if(noCount===2){
+msg.textContent="You really don't want to see it?";
+}
+else{
+msg.textContent="Okay... but I made it just for you.";
+}
 
-    const noBtn=document.getElementById("noBtn");
+const noBtn=document.getElementById("noBtn");
 
-    noBtn.animate(
-        [
-            {transform:"translateX(0)"},
-            {transform:"translateX(-8px)"},
-            {transform:"translateX(8px)"},
-            {transform:"translateX(0)"}
-        ],
-        {
-            duration:450
-        }
-    );
+noBtn.animate(
+[
+{transform:"translateX(0)"},
+{transform:"translateX(-8px)"},
+{transform:"translateX(8px)"},
+{transform:"translateX(0)"}
+],
+{
+duration:450
+}
+);
+
 }
 
 
-/* START TIME JOURNEY */
+/* TIME JOURNEY */
 
 function startTimeJourney(){
 
-    go("timeScreen");
+go("timeScreen");
 
-    const count=document.getElementById("countNumber");
-    const content=document.getElementById("timeJourneyContent");
+const count=document.getElementById("countNumber");
+const content=document.getElementById("timeJourneyContent");
 
-    let numbers=["3","2","1"];
-    let i=0;
+let numbers=["1","2","3"];
+let i=0;
 
-    count.textContent=numbers[i];
+count.textContent=numbers[i];
 
-    const timer=setInterval(()=>{
+const timer=setInterval(()=>{
 
-        i++;
+i++;
 
-        if(i<numbers.length){
+if(i<numbers.length){
 
-            count.textContent=numbers[i];
+count.textContent=numbers[i];
 
-            count.style.animation="none";
+count.style.animation="none";
 
-            void count.offsetWidth;
+void count.offsetWidth;
 
-            count.style.animation="countPop .75s ease both";
+count.style.animation="countPop .75s ease both";
 
-        }
-        else{
+}
+else{
 
-            clearInterval(timer);
+clearInterval(timer);
 
-            count.classList.add("hidden");
+count.classList.add("hidden");
 
-            content.classList.remove("hidden");
+content.classList.remove("hidden");
 
-            beginTimeAnimation();
+beginTimeAnimation();
 
-        }
+}
 
-    },400);
+},650);
+
 }
 
 
-/* FAST + SMOOTH AGE JOURNEY
-   2003 → 2026 ≈ 2 SECONDS
-*/
+/* YEARS */
 
 function beginTimeAnimation(){
 
-    const day=document.getElementById("dayValue");
-    const month=document.getElementById("monthValue");
-    const year=document.getElementById("yearValue");
-    const fast=document.getElementById("fastTime");
-    const message=document.getElementById("yearsMessage");
-    const now=document.getElementById("now23");
-    const finalDate=document.getElementById("dateFinal");
-    const continueBtn=document.getElementById("timeContinue");
+const day=document.getElementById("dayValue");
+const month=document.getElementById("monthValue");
+const year=document.getElementById("yearValue");
+const age=document.getElementById("ageNumber");
+const message=document.getElementById("yearsMessage");
+const now=document.getElementById("now23");
+const continueBtn=document.getElementById("timeContinue");
 
-    const months=[
-        "JANUARY",
-        "FEBRUARY",
-        "MARCH",
-        "APRIL",
-        "MAY",
-        "JUNE",
-        "JULY",
-        "AUGUST",
-        "SEPTEMBER",
-        "OCTOBER",
-        "NOVEMBER",
-        "DECEMBER"
-    ];
+const months=[
+"JANUARY",
+"FEBRUARY",
+"MARCH",
+"APRIL",
+"MAY",
+"JUNE",
+"JULY",
+"AUGUST",
+"SEPTEMBER",
+"OCTOBER",
+"NOVEMBER",
+"DECEMBER"
+];
 
-    day.textContent="01";
-    month.textContent="SEPTEMBER";
-    year.textContent="2003";
+day.textContent="01";
+month.textContent="SEPTEMBER";
+year.textContent="2003";
+age.textContent="";
+message.textContent="";
+now.textContent="";
+continueBtn.classList.add("hidden");
 
-    fast.textContent="";
-    message.textContent="";
-    now.textContent="";
-    finalDate.textContent="";
-    continueBtn.classList.add("hidden");
+let currentYear=2003;
 
+const firstPhase=setInterval(()=>{
 
-    /* 2003 → 2010
-       Around 0.7 second
-    */
+currentYear++;
 
-    let currentYear=2003;
+year.textContent=currentYear;
 
-    const firstPhase=setInterval(()=>{
+day.textContent=
+String(Math.floor(Math.random()*28)+1).padStart(2,"0");
 
-        currentYear++;
+month.textContent=
+months[Math.floor(Math.random()*12)];
 
-        year.textContent=currentYear;
+if(currentYear>=2010){
 
-        day.textContent=String(
-            Math.floor(Math.random()*28)+1
-        ).padStart(2,"0");
+clearInterval(firstPhase);
 
-        month.textContent=
-            months[Math.floor(Math.random()*12)];
+setTimeout(startFastPhase,300);
 
-        fast.textContent="Time is passing...";
+}
 
-        if(currentYear>=2010){
-
-            clearInterval(firstPhase);
-
-            fast.textContent=
-                "And the years are moving faster...";
-
-            setTimeout(startFastPhase,80);
-        }
-
-    },90);
+},150);
 
 
-    /* 2010 → 2026
-       Around 1.3 seconds
-    */
+function startFastPhase(){
 
-    function startFastPhase(){
+let fastYear=2010;
 
-        let fastYear=2010;
+const secondPhase=setInterval(()=>{
 
-        const secondPhase=setInterval(()=>{
+fastYear++;
 
-            fastYear++;
+year.textContent=fastYear;
 
-            year.textContent=fastYear;
+day.textContent=
+String(Math.floor(Math.random()*28)+1).padStart(2,"0");
 
-            day.textContent=String(
-                Math.floor(Math.random()*28)+1
-            ).padStart(2,"0");
+month.textContent=
+months[Math.floor(Math.random()*12)];
 
-            month.textContent=
-                months[Math.floor(Math.random()*12)];
+if(fastYear>=2026){
 
-            if(fastYear>=2026){
+clearInterval(secondPhase);
 
-                clearInterval(secondPhase);
+finishJourney();
 
-                finishJourney();
-            }
+}
 
-        },80);
-    }
+},105);
+
+}
 
 
-    /* FINAL */
+function finishJourney(){
 
-    function finishJourney(){
+setTimeout(()=>{
 
-        setTimeout(()=>{
+day.textContent="07";
+month.textContent="SEPTEMBER";
+year.textContent="2026";
 
-            day.textContent="07";
-            month.textContent="SEPTEMBER";
-            year.textContent="2026";
+age.textContent="23";
 
-            fast.textContent="";
+message.textContent="23 years have passed";
 
-            message.textContent=
-                "23 years have passed…";
+setTimeout(()=>{
 
+now.textContent="NOW YOU ARE 23";
 
-            setTimeout(()=>{
+createHearts();
 
-                now.textContent=
-                    "NOW YOU ARE 23";
+setTimeout(()=>{
 
+continueBtn.classList.remove("hidden");
 
-                setTimeout(()=>{
+},900);
 
-                    finalDate.textContent=
-                        "07 • SEPTEMBER • 2026";
+},700);
 
-                    createHearts();
+},450);
 
+}
 
-                    setTimeout(()=>{
-
-                        continueBtn.classList.remove("hidden");
-
-                    },600);
-
-                },600);
-
-            },500);
-
-        },150);
-
-    }
 }
 
 
@@ -1966,68 +1573,67 @@ function beginTimeAnimation(){
 
 function createHearts(){
 
-    const field=document.getElementById("heartField");
+const field=document.getElementById("heartField");
 
-    field.innerHTML="";
+field.innerHTML="";
 
-    for(let i=0;i<28;i++){
+for(let i=0;i<28;i++){
 
-        const h=document.createElement("div");
+const h=document.createElement("div");
 
-        h.className="heart";
+h.className="heart";
 
-        const size=
-            8+Math.random()*18;
+const size=8+Math.random()*18;
 
-        h.style.width=size+"px";
-        h.style.height=size+"px";
+h.style.width=size+"px";
+h.style.height=size+"px";
 
-        h.style.left=
-            Math.random()*100+"%";
+h.style.left=Math.random()*100+"%";
 
-        h.style.bottom="-30px";
+h.style.bottom="-30px";
 
-        const colors=[
-            "#ff9eb8",
-            "#ffc1d0",
-            "#ff6f91",
-            "#f58da8",
-            "#ffb0bd"
-        ];
+const colors=[
+"#ff9eb8",
+"#ffc1d0",
+"#ff6f91",
+"#f58da8",
+"#ffb0bd"
+];
 
-        h.style.background=
-            colors[
-                Math.floor(Math.random()*colors.length)
-            ];
+h.style.background=
+colors[Math.floor(Math.random()*colors.length)];
 
-        h.style.animationDelay=
-            (Math.random()*1.7)+"s";
+h.style.animationDelay=
+(Math.random()*1.7)+"s";
 
-        field.appendChild(h);
-    }
+field.appendChild(h);
+
+}
+
+}
+
+
+/* INTRO */
+
+function openIntro(){
+
+go("introScreen");
+
 }
 
 
 /* PASSWORD */
 
-let passwordStage=1;
-
 function openPassword(){
 
-    go("passwordScreen");
+go("passwordScreen");
 
-    passwordStage=1;
+document.getElementById("passwordInput").value="";
 
-    document.getElementById("passwordInput").value="";
-    document.getElementById("errorBox").textContent="";
+document.getElementById("errorBox").textContent="";
 
-    const stage=
-        document.getElementById("cartoonStage");
+makeSparkles();
 
-    stage.classList.remove("wrong");
-    stage.classList.remove("correct");
-
-    makeSparkles();
 }
 
 
@@ -2035,148 +1641,112 @@ function openPassword(){
 
 function makeSparkles(){
 
-    const box=
-        document.getElementById("sparkles");
+const box=document.getElementById("sparkles");
 
-    box.innerHTML="";
+box.innerHTML="";
 
-    for(let i=0;i<20;i++){
+for(let i=0;i<20;i++){
 
-        const s=
-            document.createElement("span");
+const s=document.createElement("span");
 
-        s.className="sparkle";
+s.className="sparkle";
 
-        s.style.left=
-            Math.random()*100+"%";
+s.style.left=Math.random()*100+"%";
 
-        s.style.top=
-            Math.random()*100+"%";
+s.style.top=Math.random()*100+"%";
 
-        s.style.animationDelay=
-            (Math.random()*2.5)+"s";
+s.style.animationDelay=
+(Math.random()*2.5)+"s";
 
-        box.appendChild(s);
-    }
+box.appendChild(s);
+
+}
+
 }
 
 
 /* PASSWORD CHECK */
 
+let passwordStage=1;
+
 function checkPassword(){
 
-    const input=
-        document
-        .getElementById("passwordInput")
-        .value
-        .trim()
-        .toLowerCase();
+const input=
+document.getElementById("passwordInput").value
+.trim()
+.toLowerCase();
 
-    const error=
-        document.getElementById("errorBox");
+const error=
+document.getElementById("errorBox");
 
-    const stage=
-        document.getElementById("cartoonStage");
+if(input!=="infinity" && input!=="∞"){
 
+error.innerHTML=
+"Wrong Password!<br><strong>BREAK UP.</strong>";
 
-    if(input!=="infinity" && input!=="∞"){
+return;
 
-        stage.classList.remove("correct");
-        stage.classList.remove("wrong");
+}
 
-        void stage.offsetWidth;
+if(passwordStage===1){
 
-        stage.classList.add("wrong");
+error.innerHTML=
+"You got it right!<br>Now enter your password again…";
 
-        error.innerHTML=
-            "Wrong Password!<br><strong>BREAK UP.</strong>";
+passwordStage=2;
 
-        return;
-    }
+document.getElementById("passwordInput").value="";
 
+return;
 
-    if(passwordStage===1){
+}
 
-        stage.classList.remove("wrong");
-        stage.classList.remove("correct");
+error.textContent="";
 
-        void stage.offsetWidth;
+go("waitScreen");
 
-        stage.classList.add("correct");
-
-        error.innerHTML=
-            "You got it right!<br>Now enter your password again…";
-
-        passwordStage=2;
-
-        document.getElementById("passwordInput").value="";
-
-        return;
-    }
-
-
-    error.textContent="";
-
-    go("waitScreen");
-
-
-    setTimeout(()=>{
-
-        go("childhoodScreen");
-
-    },3500);
 }
 
 
-/* ENTER KEY */
+/* PASSWORD ENTER KEY */
 
 document
 .getElementById("passwordInput")
 .addEventListener("keydown",function(e){
 
-    if(e.key==="Enter"){
-        checkPassword();
-    }
+if(e.key==="Enter"){
+checkPassword();
+}
 
 });
 
 
-/* MEMORY REVEAL */
+/* GIFT */
 
-function revealMemory(card){
+function openGift(){
 
-    card.classList.toggle("revealed");
+go("childhoodScreen");
 
 }
 
 
-/* CANDLES */
+/* MEMORY */
 
-let candlesOff=0;
+function revealMemory(card){
 
-function blowCandle(candle){
+card.classList.toggle("revealed");
 
-    if(candle.classList.contains("off")){
-        return;
-    }
-
-    candle.classList.add("off");
-
-    candlesOff++;
+}
 
 
-    if(candlesOff===5){
+/* CAKE */
 
-        document
-        .getElementById("candleHint")
-        .textContent=
-            "Your wish is ready. ♾️";
+function showCakeNext(){
 
+document
+.getElementById("cakeNext")
+.classList.add("show");
 
-        document
-        .getElementById("cakeNext")
-        .classList.add("show");
-    }
 }
 
 
@@ -2184,13 +1754,14 @@ function blowCandle(candle){
 
 function showFinalNames(){
 
-    document
-    .getElementById("finalNames")
-    .classList.add("show");
+document
+.getElementById("finalNames")
+.classList.add("show");
 
-    document
-    .querySelector(".infinity-btn")
-    .classList.add("hidden");
+document
+.querySelector(".infinity-btn")
+.classList.add("hidden");
+
 }
 
 </script>
